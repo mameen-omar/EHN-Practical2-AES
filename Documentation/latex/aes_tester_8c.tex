@@ -1,0 +1,92 @@
+\hypertarget{aes_tester_8c}{}\section{aes\+Tester.\+c File Reference}
+\label{aes_tester_8c}\index{aes\+Tester.\+c@{aes\+Tester.\+c}}
+
+
+Main file.  
+
+
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+Include dependency graph for aes\+Tester.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes_tester_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{aes_tester_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{aes_tester_8c_afdaefaa3b28b23dc18709335449a1427}\label{aes_tester_8c_afdaefaa3b28b23dc18709335449a1427}} 
+const unsigned char \hyperlink{aes_tester_8c_afdaefaa3b28b23dc18709335449a1427}{inv\+S\+Box} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em const unsigned char inv\+S\+Box. Lookup table for the inverse sbox values used during A\+ES Decryption. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{aes_tester_8c_abbb6f385c467cfd964a68eeb6caaa04f}\label{aes_tester_8c_abbb6f385c467cfd964a68eeb6caaa04f}} 
+const unsigned char \hyperlink{aes_tester_8c_abbb6f385c467cfd964a68eeb6caaa04f}{sbox} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em const unsigned char sbox. Lookup table for the sbox values used during A\+ES Encryption. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{aes_tester_8c_a58c62505f9b71b2c257046ccf4c9153c}\label{aes_tester_8c_a58c62505f9b71b2c257046ccf4c9153c}} 
+const unsigned char \hyperlink{aes_tester_8c_a58c62505f9b71b2c257046ccf4c9153c}{Rcon} \mbox{[}255\mbox{]}
+\begin{DoxyCompactList}\small\item\em const unsigned char Rcon. Lookup table for the Rcon values used during Rijndael Key Schedule during the A\+ES Encryption and Decryption. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main file. 
+
+\begin{DoxyAuthor}{Authors}
+Mohamed Ameen Omar (u16055323) 
+
+Douglas Healy (u16018100) 
+
+Llewellyn Moyse (u15100708) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{aes_tester_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{aes_tester_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{aes\+Tester.\+c@{aes\+Tester.\+c}!main@{main}}
+\index{main@{main}!aes\+Tester.\+c@{aes\+Tester.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Result Should BE\+: d4 e0 b8 1e bf b4 41 27 5d 52 11 98 30 ae f1 e5
+
+Result Should BE\+: e9 cb 3d af 31 32 2e 09 7d 2c 89 07 b5 72 5f 94
+
+Result Should BE\+: {\itshape 20} {\itshape B7} {\itshape EF} {\itshape 8F} {\itshape 45} {\itshape F9} {\itshape B7} {\itshape 92} {\itshape F9} {\itshape 8F} {\itshape 92} {\itshape 31} {\itshape 8F} {\itshape B7} {\itshape 4D} {\itshape 31}
+
+Result Should BE\+: 00 3C 6E 47 1F 4E 22 74 0E 08 1B 31 54 59 0B 1A
+
+Result should be\+: 4a a8 b3 7a 6c 47 d8 c7 5b cf 6 29 7b 3a 3d 93
+
+Result Should BE\+: \{ 0xd4,0xe0,0xb8,0x1e, 0x27,0xbf,0xb4,0x41, 0x11,0x98,0x5d,0x52, 0xae,0xf1,0xe5,0x30\};
+
+Result Should BE\+: \{0xe9,0xcb,0x3d,0xaf, 0x09,0x31,0x32,0x2e, 0x89,0x07,0x7d,0x2c, 0x72,0x5f,0x94,0xb5\};
+
+Result should be\+: \{ 0x74,0x20,0x61,0x73, 0x68,0x69,0x20,0x74, 0x69,0x73,0x74,0x2e, 0x73,0x20,0x65,0x2e \};
+
+Definition at line 32 of file aes\+Tester.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{aes_tester_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

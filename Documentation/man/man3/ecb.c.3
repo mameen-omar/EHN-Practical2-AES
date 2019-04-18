@@ -1,0 +1,252 @@
+.TH "ecb.c" 3 "Thu Apr 18 2019" "Version 1.0" "EHN 410 - Group 7 - AES Encryption" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ecb.c \- Electronic code book (ECB) - AES Implementation file This file contains the implementation of the functions used for the ECB mode of AES encryption\&. This system supports both file and user input encryption, as hex or ascii input\&. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file\&. The ECB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ecb\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBecbEncrypt\fP (unsigned char *plainText, unsigned char *key, int plainTextLength, int keyLength, int isTextHex, int isKeyHex)"
+.br
+.RI "ecbEncrypt - Function to encrypt the user input pointed to by "
+.ti -1c
+.RI "void \fBecbDecrypt\fP (unsigned char *cipherText, unsigned char *key, int cipherTextLength, int keyLength, int isTextHex, int isKeyHex)"
+.br
+.RI "ecbDecrypt - Function to decrypt the user input pointed to by "
+.ti -1c
+.RI "void \fBecbEcryptHelper\fP (unsigned char *plainText, unsigned char *key, int plainTextLength, int keyLength)"
+.br
+.RI "ecbEcryptHelper - Helper function used to encrypt the plaintext pointed to by "
+.ti -1c
+.RI "void \fBecbDecryptHelper\fP (unsigned char *cipherText, unsigned char *key, int cipherTextLength, int keyLength)"
+.br
+.RI "ecbDecryptHelper - Helper function used to decrypt the ciphertext pointed to by "
+.ti -1c
+.RI "void \fBecbEncryptFile\fP (unsigned char *fileName, unsigned char *key, int keyLength, int isTextHex, int isKeyHex)"
+.br
+.RI "ecbEncryptFile - Function to encrypt the file with name "
+.ti -1c
+.RI "void \fBecbDecryptFile\fP (unsigned char *fileName, unsigned char *key, int keyLength, int isTextHex, int isKeyHex)"
+.br
+.RI "ecbDecryptFile - Function to encrypt the file with name "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Electronic code book (ECB) - AES Implementation file This file contains the implementation of the functions used for the ECB mode of AES encryption\&. This system supports both file and user input encryption, as hex or ascii input\&. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file\&. The ECB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding\&. 
+
+
+.PP
+\fBAuthors:\fP
+.RS 4
+Mohamed Ameen Omar (u16055323) 
+.PP
+Douglas Healy (u16018100) 
+.PP
+Llewellyn Moyse (u15100708) 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2019-04-17
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (c) 2019 
+.RE
+.PP
+
+.PP
+Definition in file \fBecb\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void ecbDecrypt (unsigned char * cipherText, unsigned char * key, int cipherTextLength, int keyLength, int isTextHex, int isKeyHex)"
+
+.PP
+ecbDecrypt - Function to decrypt the user input pointed to by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcipherText\fP and print decrypted result in hex to terminal\&. Performs decryption using the ECB mode prints the result to the terminal for each block in hex\&. If any input is hex, it will convert it to ascii, perform decryption and print it in hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* cipherText - the user input to be decrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for decryption\&. 
+.br
+\fIcipherTextLength\fP - int - the length of the ciphertext to be encrypted in 
+.br
+\fIcipherText\&.\fP 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file ecb\&.c\&.
+.SS "void ecbDecryptFile (unsigned char * fileName, unsigned char * key, int keyLength, int isTextHex, int isKeyHex)"
+
+.PP
+ecbDecryptFile - Function to encrypt the file with name 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP and write the decrypted version to file with ecbDecrypted appended to the original filename\&. Performs decryption using the ecb mode and writes the result to a file\&. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII\&. All terminal output, however, will be hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* fileName - the path to the file to be decrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for decryption\&. 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 370 of file ecb\&.c\&.
+.SS "void ecbDecryptHelper (unsigned char * cipherText, unsigned char * key, int cipherTextLength, int keyLength)"
+
+.PP
+ecbDecryptHelper - Helper function used to decrypt the ciphertext pointed to by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcipherText\fP using ECB mode of decryption and output the result to the terminal\&. Decrypts a single block of 16 bytes using AES decryption\&. 
+.br
+\fIchar\fP - unsigned char* cipherText - the block input to be encrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for decryption\&. 
+.br
+\fIcipherTextLength\fP - int - the length of the ciphertext to be encrypted in 
+.br
+\fIcipherText\&.\fP 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 202 of file ecb\&.c\&.
+.SS "void ecbEcryptHelper (unsigned char * plainText, unsigned char * key, int plainTextLength, int keyLength)"
+
+.PP
+ecbEcryptHelper - Helper function used to encrypt the plaintext pointed to by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplainText\fP using ECB mode of encryption and output the result to the terminal\&. Encrypts a single block of 16 bytes using AES encryption\&. 
+.br
+\fIchar\fP - unsigned char* plainText - the block input to be encrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for encryption\&. 
+.br
+\fIplainTextLength\fP - int - the length of the plaintext to be encrypted in 
+.br
+\fIplainText\&.\fP 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file ecb\&.c\&.
+.SS "void ecbEncrypt (unsigned char * plainText, unsigned char * key, int plainTextLength, int keyLength, int isTextHex, int isKeyHex)"
+
+.PP
+ecbEncrypt - Function to encrypt the user input pointed to by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplainText\fP and print encrypted result in hex to terminal\&. Performs encryption using the ECB mode prints the result to the terminal for each block in hex\&. If any input is hex, it will convert it to ascii, perform encryption and print it in hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* plainText - the user input to be encrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for encryption\&. 
+.br
+\fIplainTextLength\fP - int - the length of the plaintext to be encrypted in 
+.br
+\fIplainText\&.\fP 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 34 of file ecb\&.c\&.
+.SS "void ecbEncryptFile (unsigned char * fileName, unsigned char * key, int keyLength, int isTextHex, int isKeyHex)"
+
+.PP
+ecbEncryptFile - Function to encrypt the file with name 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP and write the encrypted version to file with ecbEncrypted appended to the original filename\&. Performs encryption using the ecb mode and writes the result to a file\&. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII\&. All terminal output, however, will be hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* fileName - the path to the file to be encrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for encryption\&. 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 221 of file ecb\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EHN 410 - Group 7 - AES Encryption from the source code\&.

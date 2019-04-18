@@ -1,0 +1,320 @@
+\hypertarget{ecb_8c}{}\section{ecb.\+c File Reference}
+\label{ecb_8c}\index{ecb.\+c@{ecb.\+c}}
+
+
+Electronic code book (E\+CB) -\/ A\+ES Implementation file This file contains the implementation of the functions used for the E\+CB mode of A\+ES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The E\+CB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding.  
+
+
+{\ttfamily \#include \char`\"{}ecb.\+h\char`\"{}}\newline
+Include dependency graph for ecb.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ecb_8c_aa451eb4920a712afa521f06831277731}{ecb\+Encrypt} (unsigned char $\ast$plain\+Text, unsigned char $\ast$key, int plain\+Text\+Length, int key\+Length, int is\+Text\+Hex, int is\+Key\+Hex)
+\begin{DoxyCompactList}\small\item\em ecb\+Encrypt -\/ Function to encrypt the user input pointed to by \end{DoxyCompactList}\item 
+void \hyperlink{ecb_8c_acd982a867b70e4f75f2232c974a1e4ae}{ecb\+Decrypt} (unsigned char $\ast$cipher\+Text, unsigned char $\ast$key, int cipher\+Text\+Length, int key\+Length, int is\+Text\+Hex, int is\+Key\+Hex)
+\begin{DoxyCompactList}\small\item\em ecb\+Decrypt -\/ Function to decrypt the user input pointed to by \end{DoxyCompactList}\item 
+void \hyperlink{ecb_8c_a50ddfe369298c1293b5c57662f569127}{ecb\+Ecrypt\+Helper} (unsigned char $\ast$plain\+Text, unsigned char $\ast$key, int plain\+Text\+Length, int key\+Length)
+\begin{DoxyCompactList}\small\item\em ecb\+Ecrypt\+Helper -\/ Helper function used to encrypt the plaintext pointed to by \end{DoxyCompactList}\item 
+void \hyperlink{ecb_8c_a9661ce321dd2649926ebadd2ab9dcd20}{ecb\+Decrypt\+Helper} (unsigned char $\ast$cipher\+Text, unsigned char $\ast$key, int cipher\+Text\+Length, int key\+Length)
+\begin{DoxyCompactList}\small\item\em ecb\+Decrypt\+Helper -\/ Helper function used to decrypt the ciphertext pointed to by \end{DoxyCompactList}\item 
+void \hyperlink{ecb_8c_ab68902caeba7880cf1be8b40e8bb9a50}{ecb\+Encrypt\+File} (unsigned char $\ast$file\+Name, unsigned char $\ast$key, int key\+Length, int is\+Text\+Hex, int is\+Key\+Hex)
+\begin{DoxyCompactList}\small\item\em ecb\+Encrypt\+File -\/ Function to encrypt the file with name \end{DoxyCompactList}\item 
+void \hyperlink{ecb_8c_ab4c77adefd8655ebd7bc79524f958013}{ecb\+Decrypt\+File} (unsigned char $\ast$file\+Name, unsigned char $\ast$key, int key\+Length, int is\+Text\+Hex, int is\+Key\+Hex)
+\begin{DoxyCompactList}\small\item\em ecb\+Decrypt\+File -\/ Function to encrypt the file with name \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Electronic code book (E\+CB) -\/ A\+ES Implementation file This file contains the implementation of the functions used for the E\+CB mode of A\+ES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The E\+CB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding. 
+
+\begin{DoxyAuthor}{Authors}
+Mohamed Ameen Omar (u16055323) 
+
+Douglas Healy (u16018100) 
+
+Llewellyn Moyse (u15100708) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/04-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ecb_8c_acd982a867b70e4f75f2232c974a1e4ae}\label{ecb_8c_acd982a867b70e4f75f2232c974a1e4ae}} 
+\index{ecb.\+c@{ecb.\+c}!ecb\+Decrypt@{ecb\+Decrypt}}
+\index{ecb\+Decrypt@{ecb\+Decrypt}!ecb.\+c@{ecb.\+c}}
+\subsubsection{\texorpdfstring{ecb\+Decrypt()}{ecbDecrypt()}}
+{\footnotesize\ttfamily void ecb\+Decrypt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{cipher\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{cipher\+Text\+Length,  }\item[{int}]{key\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex }\end{DoxyParamCaption})}
+
+
+
+ecb\+Decrypt -\/ Function to decrypt the user input pointed to by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+Text} & and print decrypted result in hex to terminal. Performs decryption using the E\+CB mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform decryption and print it in hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ cipher\+Text -\/ the user input to be decrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for decryption. \\
+\hline
+{\em cipher\+Text\+Length} & -\/ int -\/ the length of the ciphertext to be encrypted in \\
+\hline
+{\em cipher\+Text.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file ecb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c_acd982a867b70e4f75f2232c974a1e4ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ecb_8c_ab4c77adefd8655ebd7bc79524f958013}\label{ecb_8c_ab4c77adefd8655ebd7bc79524f958013}} 
+\index{ecb.\+c@{ecb.\+c}!ecb\+Decrypt\+File@{ecb\+Decrypt\+File}}
+\index{ecb\+Decrypt\+File@{ecb\+Decrypt\+File}!ecb.\+c@{ecb.\+c}}
+\subsubsection{\texorpdfstring{ecb\+Decrypt\+File()}{ecbDecryptFile()}}
+{\footnotesize\ttfamily void ecb\+Decrypt\+File (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{file\+Name,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{key\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex }\end{DoxyParamCaption})}
+
+
+
+ecb\+Decrypt\+File -\/ Function to encrypt the file with name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & and write the decrypted version to file with ecb\+Decrypted appended to the original filename. Performs decryption using the ecb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as A\+S\+C\+II. All terminal output, however, will be hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ file\+Name -\/ the path to the file to be decrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for decryption. \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 370 of file ecb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c_ab4c77adefd8655ebd7bc79524f958013_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ecb_8c_a9661ce321dd2649926ebadd2ab9dcd20}\label{ecb_8c_a9661ce321dd2649926ebadd2ab9dcd20}} 
+\index{ecb.\+c@{ecb.\+c}!ecb\+Decrypt\+Helper@{ecb\+Decrypt\+Helper}}
+\index{ecb\+Decrypt\+Helper@{ecb\+Decrypt\+Helper}!ecb.\+c@{ecb.\+c}}
+\subsubsection{\texorpdfstring{ecb\+Decrypt\+Helper()}{ecbDecryptHelper()}}
+{\footnotesize\ttfamily void ecb\+Decrypt\+Helper (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{cipher\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{cipher\+Text\+Length,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+ecb\+Decrypt\+Helper -\/ Helper function used to decrypt the ciphertext pointed to by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+Text} & using E\+CB mode of decryption and output the result to the terminal. Decrypts a single block of 16 bytes using A\+ES decryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ cipher\+Text -\/ the block input to be encrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for decryption. \\
+\hline
+{\em cipher\+Text\+Length} & -\/ int -\/ the length of the ciphertext to be encrypted in \\
+\hline
+{\em cipher\+Text.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file ecb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c_a9661ce321dd2649926ebadd2ab9dcd20_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{ecb_8c_a9661ce321dd2649926ebadd2ab9dcd20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ecb_8c_a50ddfe369298c1293b5c57662f569127}\label{ecb_8c_a50ddfe369298c1293b5c57662f569127}} 
+\index{ecb.\+c@{ecb.\+c}!ecb\+Ecrypt\+Helper@{ecb\+Ecrypt\+Helper}}
+\index{ecb\+Ecrypt\+Helper@{ecb\+Ecrypt\+Helper}!ecb.\+c@{ecb.\+c}}
+\subsubsection{\texorpdfstring{ecb\+Ecrypt\+Helper()}{ecbEcryptHelper()}}
+{\footnotesize\ttfamily void ecb\+Ecrypt\+Helper (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{plain\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{plain\+Text\+Length,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+ecb\+Ecrypt\+Helper -\/ Helper function used to encrypt the plaintext pointed to by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plain\+Text} & using E\+CB mode of encryption and output the result to the terminal. Encrypts a single block of 16 bytes using A\+ES encryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ plain\+Text -\/ the block input to be encrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for encryption. \\
+\hline
+{\em plain\+Text\+Length} & -\/ int -\/ the length of the plaintext to be encrypted in \\
+\hline
+{\em plain\+Text.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file ecb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c_a50ddfe369298c1293b5c57662f569127_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{ecb_8c_a50ddfe369298c1293b5c57662f569127_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ecb_8c_aa451eb4920a712afa521f06831277731}\label{ecb_8c_aa451eb4920a712afa521f06831277731}} 
+\index{ecb.\+c@{ecb.\+c}!ecb\+Encrypt@{ecb\+Encrypt}}
+\index{ecb\+Encrypt@{ecb\+Encrypt}!ecb.\+c@{ecb.\+c}}
+\subsubsection{\texorpdfstring{ecb\+Encrypt()}{ecbEncrypt()}}
+{\footnotesize\ttfamily void ecb\+Encrypt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{plain\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{plain\+Text\+Length,  }\item[{int}]{key\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex }\end{DoxyParamCaption})}
+
+
+
+ecb\+Encrypt -\/ Function to encrypt the user input pointed to by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plain\+Text} & and print encrypted result in hex to terminal. Performs encryption using the E\+CB mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform encryption and print it in hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ plain\+Text -\/ the user input to be encrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for encryption. \\
+\hline
+{\em plain\+Text\+Length} & -\/ int -\/ the length of the plaintext to be encrypted in \\
+\hline
+{\em plain\+Text.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file ecb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c_aa451eb4920a712afa521f06831277731_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ecb_8c_ab68902caeba7880cf1be8b40e8bb9a50}\label{ecb_8c_ab68902caeba7880cf1be8b40e8bb9a50}} 
+\index{ecb.\+c@{ecb.\+c}!ecb\+Encrypt\+File@{ecb\+Encrypt\+File}}
+\index{ecb\+Encrypt\+File@{ecb\+Encrypt\+File}!ecb.\+c@{ecb.\+c}}
+\subsubsection{\texorpdfstring{ecb\+Encrypt\+File()}{ecbEncryptFile()}}
+{\footnotesize\ttfamily void ecb\+Encrypt\+File (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{file\+Name,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{key\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex }\end{DoxyParamCaption})}
+
+
+
+ecb\+Encrypt\+File -\/ Function to encrypt the file with name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & and write the encrypted version to file with ecb\+Encrypted appended to the original filename. Performs encryption using the ecb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as A\+S\+C\+II. All terminal output, however, will be hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ file\+Name -\/ the path to the file to be encrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for encryption. \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 221 of file ecb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ecb_8c_ab68902caeba7880cf1be8b40e8bb9a50_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>README</title>
+    <detaileddescription>
+<para><hruler/>
+ <heading level="1">EHN 410 - Group 7</heading>
+</para><para><hruler/>
+</para><para><hruler/>
+ <heading level="2">Group members:</heading>
+</para><para><hruler/>
+<itemizedlist>
+<listitem><para>Mohamed Ameen Omar (u16055323)</para></listitem><listitem><para>Douglas Healy (u16018100)</para></listitem><listitem><para>Llewellyn Moyse (u15100708)</para></listitem></itemizedlist>
+</para><para><hruler/>
+ <heading level="2">To run Encryption Platform</heading>
+</para><para><hruler/>
+<orderedlist>
+<listitem><para>Open a Linux Terminal.</para></listitem><listitem><para>Navigate to the Encyption Platform Directory.</para></listitem><listitem><para>Run the &quot;make&quot; command.</para></listitem><listitem><para>An executable called &quot;encyptionPlatform&quot; will be created.</para></listitem><listitem><para>Use &quot;./encyptionPlatform&quot; to run the encryption platform. (if no input parameters are specified, a help menu will be displayed)</para></listitem><listitem><para>A list of input parameter and default values:</para></listitem></orderedlist>
+</para><para><table rows="17" cols="3"><row>
+<entry thead="yes"><para>Parameter </para></entry><entry thead="yes"><para>Description </para></entry><entry thead="yes"><para>Default Value  </para></entry></row>
+<row>
+<entry thead="no"><para>-h </para></entry><entry thead="no"><para>Print out the help menu </para></entry><entry thead="no"><para></para></entry></row>
+<row>
+<entry thead="no"><para>-f or <ndash/>filename </para></entry><entry thead="no"><para>Path to an ASCII file to encrypt/decrypt </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-F </para></entry><entry thead="no"><para>Path to a hex file to encrypt/decrypt </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-k or <ndash/>key </para></entry><entry thead="no"><para>The encryption key </para></entry><entry thead="no"><para>128 bit NULL key </para></entry></row>
+<row>
+<entry thead="no"><para>-K </para></entry><entry thead="no"><para>The encryption key (in hex) </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-i or <ndash/>IV </para></entry><entry thead="no"><para>The Initialisation vector </para></entry><entry thead="no"><para>128 bit NULL IV </para></entry></row>
+<row>
+<entry thead="no"><para>-I </para></entry><entry thead="no"><para>The Initialisation vector (in hex) </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-p or <ndash/>plaintext </para></entry><entry thead="no"><para>Plaintext to encrypt </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-P </para></entry><entry thead="no"><para>Plaintext to encrypt (in hex) </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-c or <ndash/>ciphertext </para></entry><entry thead="no"><para>Ciphertext to decrypt </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-C </para></entry><entry thead="no"><para>Ciphertext to decrypt (in hex) </para></entry><entry thead="no"><para>None </para></entry></row>
+<row>
+<entry thead="no"><para>-m or <ndash/>mode </para></entry><entry thead="no"><para>Mode of encryption/decryption (ecb, cbc or cfb) </para></entry><entry thead="no"><para>ecb </para></entry></row>
+<row>
+<entry thead="no"><para>-v or <ndash/>verbose </para></entry><entry thead="no"><para>Print verbose output </para></entry><entry thead="no"><para>Flag not set </para></entry></row>
+<row>
+<entry thead="no"><para>-e or <ndash/>encrypt </para></entry><entry thead="no"><para>Encrypt plaintext or file </para></entry><entry thead="no"><para>Flag set </para></entry></row>
+<row>
+<entry thead="no"><para>-d or <ndash/>decrypt </para></entry><entry thead="no"><para>Decrypt ciphertext or file </para></entry><entry thead="no"><para>Flag not set </para></entry></row>
+<row>
+<entry thead="no"><para>-T </para></entry><entry thead="no"><para>Set if input text is a hex string </para></entry><entry thead="no"><para>Flag not set </para></entry></row>
+</table>
+## File Encryption Example <programlisting><codeline><highlight class="normal">./encryptionPlatform<sp/>-e<sp/>-f<sp/>&lt;path/unencrypted_file.ext&gt;<sp/>-k<sp/>&lt;key&gt;<sp/>-i<sp/>&lt;iv&gt;</highlight></codeline>
+<codeline><highlight class="normal">./encryptionPlatform<sp/>-e<sp/>-F<sp/>&lt;path/unencrypted_hex_file.ext&gt;<sp/>-K<sp/>&lt;hex_key&gt;<sp/>-I<sp/>&lt;hex_iv&gt;</highlight></codeline>
+</programlisting></para><para><heading level="2">File Encryption Example</heading>
+</para><para><programlisting><codeline><highlight class="normal">./encryptionPlatform<sp/>-d<sp/>-f<sp/>&lt;path/encrypted_file.ext&gt;<sp/>-k<sp/>&lt;key&gt;<sp/>-i<sp/>&lt;iv&gt;</highlight></codeline>
+<codeline><highlight class="normal">./encryptionPlatform<sp/>-d<sp/>-F<sp/>&lt;path/encrypted_hex_file.ext&gt;<sp/>-F<sp/>&lt;hex_key&gt;<sp/>-I<sp/>&lt;hex_iv&gt;</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

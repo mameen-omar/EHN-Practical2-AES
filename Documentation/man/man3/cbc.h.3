@@ -1,0 +1,250 @@
+.TH "cbc.h" 3 "Thu Apr 18 2019" "Version 1.0" "EHN 410 - Group 7 - AES Encryption" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cbc.h \- Cipher Block Chaining (CBC) - AES Header file This file contains the function headers of the functions used for the CBC mode of AES encryption\&. This system supports both file and user input encryption, as hex or ascii input\&. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file\&. The CBC Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding\&. The IV is limited to 16 bytes and the key is limited to 32 bytes as per the AES encryption standard\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'AES\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcbcEncryptFile\fP (unsigned char *fileName, unsigned char *key, unsigned char *initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+.br
+.RI "cbcEncryptFile - Function to encrypt the file with name "
+.ti -1c
+.RI "void \fBcbcDecryptFile\fP (unsigned char *fileName, unsigned char *key, unsigned char *initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+.br
+.RI "cbcDecryptFile - Function to decrypt the file with name "
+.ti -1c
+.RI "void \fBcbcEncrypt\fP (unsigned char *plainText, unsigned char *key, unsigned char *initializationVector, int plainTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+.br
+.RI "cbcEncrypt - Function to encrypt the user input pointed to by "
+.ti -1c
+.RI "void \fBcbcDecrypt\fP (unsigned char *cipherText, unsigned char *key, unsigned char *initializationVector, int cipherTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+.br
+.RI "cbcDecrypt - Function to decrypt the user input pointed to by "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBVERBOSE\fP"
+.br
+.RI "Variable- size_t VERBOSE Used to dictate whether verbose output is printed to the terminal or not\&. If 0, does not print verbose\&. If 1, prints verbose\&. "
+.ti -1c
+.RI "const size_t \fBAES_BLOCK_SIZE\fP"
+.br
+.RI "Variable- const size_t AES_BLOCK_SIZE\&. Used to dictate the length in bytes of a single AES block used for encryption and decryption\&. Set to 16 bytes for a single block\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Cipher Block Chaining (CBC) - AES Header file This file contains the function headers of the functions used for the CBC mode of AES encryption\&. This system supports both file and user input encryption, as hex or ascii input\&. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file\&. The CBC Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding\&. The IV is limited to 16 bytes and the key is limited to 32 bytes as per the AES encryption standard\&. 
+
+
+.PP
+\fBAuthors:\fP
+.RS 4
+Mohamed Ameen Omar (u16055323) 
+.PP
+Douglas Healy (u16018100) 
+.PP
+Llewellyn Moyse (u15100708) 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2019-03-28
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (c) 2019 
+.RE
+.PP
+
+.PP
+Definition in file \fBcbc\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void cbcDecrypt (unsigned char * cipherText, unsigned char * key, unsigned char * initializationVector, int cipherTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+
+.PP
+cbcDecrypt - Function to decrypt the user input pointed to by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcipherText\fP and print decrypted result in hex to terminal\&. Performs decryption using the cbc mode prints the result to the terminal for each block in hex\&. If any input is hex, it will convert it to ascii, perform decryption and print it in hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* cipherText - the user input to be decrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for decryption\&. 
+.br
+\fIchar\fP - unsigned char* initializationVector - the initialization vector to use for cbc decryption\&. 
+.br
+\fIcipherTextLength\fP - int - the length of the ciphertext to be encrypted in 
+.br
+\fIcipherText\&.\fP 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIinitializationVectorLength\fP - int - the length of the key specified in 
+.br
+\fIinitializationVector\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisIvHex\fP - int - boolean used to signify whether the IV pointed to by 
+.br
+\fIinitializationVector\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 648 of file cbc\&.c\&.
+.SS "void cbcDecryptFile (unsigned char * fileName, unsigned char * key, unsigned char * initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+
+.PP
+cbcDecryptFile - Function to decrypt the file with name 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP and write the decrypted version to file with cbcDecrypted appended to the original filename\&. Performs decryption using the cbc mode and writes the result to a file\&. If any input is hex, it will convert it to ascii, perform decryption and write it back to the file in the same format as the input\&. That is if the input file was a hexString, the decrypted file will also contain a hex string\&. All terminal output, however, will be hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* fileName - the path to the file to be decrypted 
+.br
+\fIchar\fP - unsigned char* key - the key to use for decryption\&. 
+.br
+\fIchar\fP - unsigned char* initializationVector - the initialization vector to use for cbc decryption 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIinitializationVectorLength\fP - int - the length of the key specified in 
+.br
+\fIinitializationVector\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisIvHex\fP - int - boolean used to signify whether the IV pointed to by 
+.br
+\fIinitializationVector\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file cbc\&.c\&.
+.SS "void cbcEncrypt (unsigned char * plainText, unsigned char * key, unsigned char * initializationVector, int plainTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+
+.PP
+cbcEncrypt - Function to encrypt the user input pointed to by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplainText\fP and print encrypted result in hex to terminal\&. Performs encryption using the cbc mode prints the result to the terminal for each block in hex\&. If any input is hex, it will convert it to ascii, perform encryption and print it in hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* plainText - the user input to be encrypted\&. 
+.br
+\fIchar\fP - unsigned char* key - the key to use for encryption\&. 
+.br
+\fIchar\fP - unsigned char* initializationVector - the initialization vector to use for cbc encryption 
+.br
+\fIplainTextLength\fP - - int - the length of the plaintext to be encrypted in 
+.br
+\fIplainText\&.\fP 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIinitializationVectorLength\fP - int - the length of the key specified in 
+.br
+\fIinitializationVector\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisIvHex\fP - int - boolean used to signify whether the IV pointed to by 
+.br
+\fIinitializationVector\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+Process for CBC encrypt file: Read from file, if hex, convert if not do nothing\&. Store read converted in plaintextblock Pad the converted plaintextblock and store in paddedPlaintext Store IV and previous ciphertext in placeholderblock XOR paddedPlaintext and placeholder - store in intermediate Encrypt intermediate - store in cipherTextBlock Write to the file Free memory, read again and check that the read buffer length (amount read from the file iss not 0)
+.PP
+Definition at line 492 of file cbc\&.c\&.
+.SS "void cbcEncryptFile (unsigned char * fileName, unsigned char * key, unsigned char * initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)"
+
+.PP
+cbcEncryptFile - Function to encrypt the file with name 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP and write the encrypted version to file with cbcEncrypted appended to the original filename\&. Performs encryption using the cbc mode and writes the result to a file\&. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII\&. All terminal output, however, will be hex\&. Makes use of zero padding\&. 
+.br
+\fIchar\fP - unsigned char* fileName - the path to the file to be encrypted 
+.br
+\fIchar\fP - unsigned char* key - the key to use for encryption\&. 
+.br
+\fIchar\fP - unsigned char* initializationVector - the initialization vector to use for cbc encryption 
+.br
+\fIkeyLength\fP - int - the length of the key specified in 
+.br
+\fIkey\&.\fP 
+.br
+\fIinitializationVectorLength\fP - int - the length of the key specified in 
+.br
+\fIinitializationVector\&.\fP 
+.br
+\fIisTextHex\fP - int - boolean used to signify whether the file pointed to by 
+.br
+\fIfileName\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisKeyHex\fP - int - boolean used to signify whether the key pointed to by 
+.br
+\fIkey\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.br
+\fIisIvHex\fP - int - boolean used to signify whether the IV pointed to by 
+.br
+\fIinitializationVector\fP is a hexString or ASCII string\&. (1 = file is a hexString) 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file cbc\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EHN 410 - Group 7 - AES Encryption from the source code\&.

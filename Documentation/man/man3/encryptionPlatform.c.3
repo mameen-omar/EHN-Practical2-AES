@@ -1,0 +1,97 @@
+.TH "encryptionPlatform.c" 3 "Thu Apr 18 2019" "Version 1.0" "EHN 410 - Group 7 - AES Encryption" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+encryptionPlatform.c \- Implementation file for the cbc and cfb encryption platform\&. All functions, to specify key, IV, type of encrytion mode, file path or string controlled by commandline parameters\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'encryptionPlatform\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "void \fBprintHelp\fP ()"
+.br
+.RI "Prints a usage menu to be shown to a user when entering the 'help' command line parameter or when parameters are entered incorrectly\&. "
+.ti -1c
+.RI "void \fBfreeMemory\fP (unsigned char *key, unsigned char *IV, int freeKey, int freeIV)"
+.br
+.RI "Free up memory allocated to stored key and IV\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation file for the cbc and cfb encryption platform\&. All functions, to specify key, IV, type of encrytion mode, file path or string controlled by commandline parameters\&. 
+
+
+.PP
+\fBAuthors:\fP
+.RS 4
+Mohamed Ameen Omar (u16055323) 
+.PP
+Douglas Healy (u16018100) 
+.PP
+Llewellyn Moyse (u15100708) 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2019-04-03
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (c) 2019 
+.RE
+.PP
+
+.PP
+Definition in file \fBencryptionPlatform\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void freeMemory (unsigned char * key, unsigned char * IV, int freeKey, int freeIV)"
+
+.PP
+Free up memory allocated to stored key and IV\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchar\fP Pointer to a location in memory containing the key 
+.br
+\fIchar\fP Pointer to a location in memory containing the IV 
+.br
+\fIfreeKey\fP Boolean value indicating whether or not the IV memory should be freed 
+.br
+\fIfreeIV\fP Boolean value indicating whether or not the Key memory should be freed 
+.RE
+.PP
+
+.PP
+Definition at line 262 of file encryptionPlatform\&.c\&.
+.SS "void printHelp ()"
+
+.PP
+Prints a usage menu to be shown to a user when entering the 'help' command line parameter or when parameters are entered incorrectly\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Definition at line 232 of file encryptionPlatform\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EHN 410 - Group 7 - AES Encryption from the source code\&.

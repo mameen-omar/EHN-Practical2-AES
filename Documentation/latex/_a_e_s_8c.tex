@@ -1,0 +1,1549 @@
+\hypertarget{_a_e_s_8c}{}\section{A\+E\+S.\+c File Reference}
+\label{_a_e_s_8c}\index{A\+E\+S.\+c@{A\+E\+S.\+c}}
+
+
+A\+ES encryption and decryption module implementation file. This file contains the implementation of the functions used for A\+ES encryption and decryption. Input must be A\+S\+C\+II and not hex. The functions implemented in this file, perform the A\+ES encryption and decryption on a single block of size dictated by the variable A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE.  
+
+
+{\ttfamily \#include \char`\"{}A\+E\+S.\+h\char`\"{}}\newline
+Include dependency graph for A\+E\+S.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_a_e_s_8c_a1c2a403d95a85400bbae142d48cb8c9d}{get\+Num\+Rounds} (int key\+Length)
+\begin{DoxyCompactList}\small\item\em get\+Num\+Rounds -\/ Function to return the number of rounds of A\+ES encryption and decryption based off of the length of the key given in \end{DoxyCompactList}\item 
+unsigned char \hyperlink{_a_e_s_8c_acdf4abe2846c02b4d3e674782807fdfa}{get\+S\+Box\+Value} (unsigned char index)
+\begin{DoxyCompactList}\small\item\em get\+S\+Box\+Value -\/ Function to return the s\+Box value passed in as a parameter \end{DoxyCompactList}\item 
+unsigned char \hyperlink{_a_e_s_8c_a425f9b1e2cd595f2c45f129bc5d0a6d0}{get\+Inv\+S\+Box} (unsigned char index)
+\begin{DoxyCompactList}\small\item\em get\+Inv\+S\+Box -\/ Function to return the inverse s\+Box value passed in as a parameter \end{DoxyCompactList}\item 
+unsigned char \hyperlink{_a_e_s_8c_a4e58d2e928429bc56387394251b8ece5}{get\+Rcon\+Value} (unsigned char num)
+\begin{DoxyCompactList}\small\item\em get\+Rcon\+Value -\/ Function to return the Rcon value for the index passed in as a parameter \end{DoxyCompactList}\item 
+int \hyperlink{_a_e_s_8c_a5d65eac115e562c64b00a43e72ee6aca}{get\+Padded\+Key\+Length} (int current\+Key\+Length)
+\begin{DoxyCompactList}\small\item\em get\+Padded\+Key\+Length -\/ Function to return a valid key length (in bytes) based off of the current key length passed in as \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_a41cef4df290905c4d632ce1357d0a9bd}{A\+E\+S\+Encrypt} (unsigned char $\ast$plain\+Text, unsigned char $\ast$key, int plain\+Text\+Length, int key\+Length)
+\begin{DoxyCompactList}\small\item\em A\+E\+S\+Encrypt -\/ Function to encrypt a single block of plaintext passed in as parameter  plain\+Text using A\+ES encryption, for 128, 192 and 256 bit keys. Validates the keylength and returns the corresponding ciphertext. The caller of the function must ensure that the returned ciphertext pointer is freed. The ciphertext returned is always 16 bytes and the plain\+Text must be 16 bytes or less. Makes use of zero padding. All input must be in A\+S\+C\+II and N\+OT hex. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_ab51c63e6483f94f12bbc9b256374ec64}{A\+E\+S\+Decrypt} (unsigned char $\ast$cipher\+Text, unsigned char $\ast$key, int cipher\+Text\+Length, int key\+Length)
+\begin{DoxyCompactList}\small\item\em A\+E\+S\+Decrypt -\/ Function to decrypt a single block of ciphertext passed in as parameter  cipher\+Text using A\+ES decryption, for 128, 192 and 256 bit keys. Validates the keylength and returns the corresponding plaintext. The caller of the function must ensure that the returned plaintext pointer is freed. The plaintext returned is always 16 bytes and the plain\+Text must be 16 bytes or less. Makes use of zero padding. All input must be in A\+S\+C\+II and N\+OT hex. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_a185c827e4ccbc8e4608e83dfbf9dfc8e}{Rijndael\+Key\+Schedule} (unsigned char $\ast$original\+Key, int key\+Length)
+\begin{DoxyCompactList}\small\item\em Rijndael\+Key\+Schedule -\/ Function that performs the Rijndael key scheduling for A\+ES encryption. Takes in the original key passed in as parameter. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_af2f914cf17729a0ee89102c98b39665e}{Key\+Schedule\+Core} (unsigned char $\ast$word, int word\+Length, int r\+Con\+Iteration\+Val)
+\begin{DoxyCompactList}\small\item\em Key\+Schedule\+Core -\/ Function that performs the key schedule core for the Rijndael Key Schedule. Performs a single rotate left of the word passed in as. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_ac769b0533ccecd203cc3ab64e6b2f950}{Single\+Rotate\+Left} (unsigned char $\ast$word, int word\+Length)
+\begin{DoxyCompactList}\small\item\em Single\+Rotate\+Left -\/ Function to rotate the array passed in as a paramter. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_ae9af90db32afa65125a7eec339ed9d58}{print\+State\+Array} (uint8\+\_\+t state\+Array\mbox{[}4\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em print\+State\+Array -\/ Function to print the state array to the terminal in hex format. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_aef4d8fc4282e3cc21708d25c0ec9ad06}{Add\+Round\+Key} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}, unsigned char key\mbox{[}4\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em Add\+Round\+Key -\/ Function that performs the Bitwise X\+OR between state and key as per A\+ES encryption. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_aca09b30896a351db6587639a1cc1bf0d}{mix\+Columns} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em mix\+Columns -\/ Function that performs the Mix\+Columns step of A\+ES as specified by A\+ES encryption. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_a9de891875f23dd3dff8fe3f8e10ba3ad}{inv\+Mix\+Columns} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em inv\+Mix\+Columns -\/ Function that does the inverse of the Mix Column Step for A\+ES Encryption. Performs the gallois field multiplication and the required X\+OR to the state passed in as a paramter \end{DoxyCompactList}\item 
+unsigned char \hyperlink{_a_e_s_8c_a7dbbb13c3ab5608765b6d368eb9f4fe1}{gallois\+Field\+Mult} (unsigned char a, unsigned char b)
+\begin{DoxyCompactList}\small\item\em gallois\+Field\+Mult -\/ Function to perform the Galois field multiplication operation required for the inverse mix columns and the mix columns operation of the A\+ES encryption and decryption processes. Returns the result of the multiplication. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_aec40f89d2cbf831fd0d5d5f1bfa616f5}{sub\+Bytes} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em sub\+Bytes -\/ Function that performs the sub byte operation where each value is replaced by the s box value \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_a8e72edc1f652f8626aacd2781303c86b}{inv\+Sub\+Bytes} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em inv\+Sub\+Bytes -\/ Function that performs the inverse of Function sub\+Bytes \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_abeb4dba64fcf4d07eac178e732ca6aa8}{Shift\+Rows} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}, int word\+Length)
+\begin{DoxyCompactList}\small\item\em Shift\+Rows -\/ Function to shift the state array according to the A\+ES encryption standard for 128 -\/ bits blocks. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_a903e34d08dd07be2e2d9618d4d489ee6}{inv\+Shift\+Rows} (unsigned char state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]}, int word\+Length)
+\begin{DoxyCompactList}\small\item\em inv\+Shift\+Rows -\/ Function to shift the state array Inverse according to the A\+ES encryption standard for 128 -\/ bits blocks \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_a4fc33ada95d0d2aaea28086aefe173bb}{Single\+Rotate\+Right} (unsigned char $\ast$word, int word\+Length)
+\begin{DoxyCompactList}\small\item\em Single\+Rotate\+Right -\/ Function to rotate the array passed in as a paramter. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_abe15a731f43315f6f595674d3cd62d57}{get\+Round\+Key} (unsigned char $\ast$expanded\+Key, unsigned char $\ast$round\+Key, int round\+Num)
+\begin{DoxyCompactList}\small\item\em get\+Round\+Key -\/ Function to extract the correct sub-\/key to use for the appropriate round specified by \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_a1c1a633a58f7328faa397db9e45e7e0c}{construct\+State\+Array} (unsigned char $\ast$flat\+Array, unsigned char state\+Array\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]})
+\begin{DoxyCompactList}\small\item\em construct\+State\+Array -\/ Function to convert the state array from a flat 1D array to a multidimensional array. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_a_e_s_8c_a7e5ab2188af44718071074f450963568}{hex\+To\+Int} (char ch)
+\begin{DoxyCompactList}\small\item\em hex\+To\+Int -\/ Function that converts a given hex value into an integer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_a_e_s_8c_aa177516503b10de65b504a3714073ad7}{hex\+To\+Ascii} (char ch1, char ch2)
+\begin{DoxyCompactList}\small\item\em hex\+To\+Ascii -\/ Function that converts a given hex value to its A\+S\+C\+II equivalent. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_ad697cbb5d9e462b3017df1f1d939ee96}{hex\+To\+Ascii\+String} (char $\ast$hex\+String, char $\ast$ascii\+String, int hex\+String\+Length)
+\begin{DoxyCompactList}\small\item\em hex\+To\+Ascii\+String -\/ Function that converts a given string of hex values into its A\+S\+C\+II equivalent. A hex string contains hex chars and is \char`\"{}encoded\char`\"{} in ascii In order to encrypt it, it must be converted to the equivalent ascii plain text string plaintext string is half the size of hex, since two hex chars = 1 ascii char if hex string is \char`\"{}4\+A\char`\"{} it will be converted to \char`\"{}\+J\char`\"{} in ascii which will have a hex representation of \char`\"{}4a\char`\"{} The original hex string converted to hex staright or printed in hex straight rather will print or have the value \char`\"{}0x34\char`\"{}, \char`\"{}0x31\char`\"{} B\+A\+S\+I\+C\+A\+L\+LY T\+HE H\+EX S\+T\+R\+I\+NG FF IS I\+N\+T\+E\+R\+P\+R\+E\+T\+ED AS T\+HE C\+H\+A\+RS FF, whereas when using this function we intend it to be \char`\"{}\+J\char`\"{}, ie the char \char`\"{}\+J\char`\"{} \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_ac189aee6672718650020cf627d45c780}{ascii\+To\+Hex\+String} (unsigned char $\ast$ascii\+String, unsigned char $\ast$hex\+String, size\+\_\+t ascii\+String\+Len)
+\begin{DoxyCompactList}\small\item\em Function name\+: ascii\+To\+Hex\+String -\/ convert an ascii String to an ascii string. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_a0e0b199ded54d7fb53a3bda3fcc02256}{validate\+Num\+Rounds} (int num\+Rounds, int key\+Length)
+\begin{DoxyCompactList}\small\item\em validate\+Num\+Rounds -\/ Function that validates the number of rounds that have been passed in by the \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_acefcd728377e1e14187fa8fcd20f4064}{validate\+Plain\+Text\+Length} (size\+\_\+t plain\+Text\+Length)
+\begin{DoxyCompactList}\small\item\em validate\+Plain\+Text\+Length -\/ Function that validates the length of the plaintext. The validation is done against the A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE value \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_ae01a1e7833d53f19b534e37ace03a691}{validate\+Cipher\+Text\+Length} (int cipher\+Text\+Length)
+\begin{DoxyCompactList}\small\item\em validate\+Cipher\+Text\+Length -\/ Function that validates the length of the ciphertext. The validation is done against the A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE value \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_aaba2e1b9466483b3c6b8669eb42aa5ed}{print\+A\+E\+S\+Block} (unsigned char $\ast$block)
+\begin{DoxyCompactList}\small\item\em print\+A\+E\+S\+Block -\/ Function to print a single block in hex format to the terminal. \end{DoxyCompactList}\item 
+int \hyperlink{_a_e_s_8c_a9dcad0047890de22f3d15611a10ab74f}{file\+Name\+Dir\+Index} (char $\ast$file\+Name, int file\+Name\+Length)
+\begin{DoxyCompactList}\small\item\em Returns the last index of \textquotesingle{}/\textquotesingle{} in a given path, otherwise returns -\/1 if no \textquotesingle{}/\textquotesingle{} is found. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_ab066697b473ad5ce74faaceae6def5e5}{strip\+Directory} (char $\ast$file\+Name, char $\ast$extracted\+File\+Name, char $\ast$extracted\+File\+Path, int file\+Name\+Length, int slash\+Index)
+\begin{DoxyCompactList}\small\item\em Removes path from the provided path to a file and returns only the file name. \end{DoxyCompactList}\item 
+void \hyperlink{_a_e_s_8c_acc2acf0b03a8863f9290bdd36dd6f478}{get\+Output\+File\+Name} (int type, char $\ast$file\+Name, char $\ast$output\+File\+Name, char $\ast$mode)
+\begin{DoxyCompactList}\small\item\em Get the output file name from all the parameters passed in. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{_a_e_s_8c_a3bf513612c15693c3b2be10b94298e05}{is\+File\+Txt} (unsigned char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em is\+File\+Txt -\/ Function to determine if the file passed in as a paramter \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_afba897e91364663f883cc51ed309dc92}{key\+Hex\+To\+Ascii} (unsigned char $\ast$hex\+Key, int key\+Length)
+\begin{DoxyCompactList}\small\item\em key\+Hex\+To\+Ascii -\/ Function to convert a key from a Hex string passed in as a paramter \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_ad82d1b77336ac1292ed5a24b92380f42}{I\+V\+Hex\+To\+Ascii} (unsigned char $\ast$hex\+IV, int I\+V\+Length)
+\begin{DoxyCompactList}\small\item\em I\+V\+Hex\+To\+Ascii -\/ Function to convert a initialization vector from a Hex string passed in as a paramter. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{_a_e_s_8c_ab601c369ba50730fc02d03bc44aad4e0}{X\+O\+R\+Blocks} (unsigned char $\ast$block1, unsigned char $\ast$block2, int length)
+\begin{DoxyCompactList}\small\item\em X\+O\+R\+Blocks -\/ Function to X\+OR two blocks of length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \hyperlink{_a_e_s_8c_ac3c0558617e372fc5ce3648e041e549c}{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE} = 16
+\begin{DoxyCompactList}\small\item\em Variable-\/ const size\+\_\+t A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE. Used to dictate the length in bytes of a single A\+ES block used for encryption and decryption. Set to 16 bytes for a single block. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{_a_e_s_8c_a48113b3faee8aad8efa17aac0b56b63b}{V\+E\+R\+B\+O\+SE} = 0
+\begin{DoxyCompactList}\small\item\em Variable-\/ size\+\_\+t V\+E\+R\+B\+O\+SE Used to dictate whether verbose output is printed to the terminal or not. If 0, does not print verbose. If 1, prints verbose. \end{DoxyCompactList}\item 
+const unsigned char \hyperlink{_a_e_s_8c_abbb6f385c467cfd964a68eeb6caaa04f}{sbox} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em const unsigned char sbox. Lookup table for the sbox values used during A\+ES Encryption. \end{DoxyCompactList}\item 
+const unsigned char \hyperlink{_a_e_s_8c_afdaefaa3b28b23dc18709335449a1427}{inv\+S\+Box} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em const unsigned char inv\+S\+Box. Lookup table for the inverse sbox values used during A\+ES Decryption. \end{DoxyCompactList}\item 
+const unsigned char \hyperlink{_a_e_s_8c_a58c62505f9b71b2c257046ccf4c9153c}{Rcon} \mbox{[}255\mbox{]}
+\begin{DoxyCompactList}\small\item\em const unsigned char Rcon. Lookup table for the Rcon values used during Rijndael Key Schedule during the A\+ES Encryption and Decryption. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+ES encryption and decryption module implementation file. This file contains the implementation of the functions used for A\+ES encryption and decryption. Input must be A\+S\+C\+II and not hex. The functions implemented in this file, perform the A\+ES encryption and decryption on a single block of size dictated by the variable A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE. 
+
+\begin{DoxyAuthor}{Authors}
+Mohamed Ameen Omar (u16055323) 
+
+Douglas Healy (u16018100) 
+
+Llewellyn Moyse (u15100708) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_a_e_s_8c_aef4d8fc4282e3cc21708d25c0ec9ad06}\label{_a_e_s_8c_aef4d8fc4282e3cc21708d25c0ec9ad06}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Add\+Round\+Key@{Add\+Round\+Key}}
+\index{Add\+Round\+Key@{Add\+Round\+Key}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Add\+Round\+Key()}{AddRoundKey()}}
+{\footnotesize\ttfamily void Add\+Round\+Key (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]},  }\item[{unsigned char}]{key\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Add\+Round\+Key -\/ Function that performs the Bitwise X\+OR between state and key as per A\+ES encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption \\
+\hline
+{\em key} & -\/ unsigned char -\/ sub key to be added for the current round to the current state vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 688 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_aef4d8fc4282e3cc21708d25c0ec9ad06_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ab51c63e6483f94f12bbc9b256374ec64}\label{_a_e_s_8c_ab51c63e6483f94f12bbc9b256374ec64}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!A\+E\+S\+Decrypt@{A\+E\+S\+Decrypt}}
+\index{A\+E\+S\+Decrypt@{A\+E\+S\+Decrypt}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{A\+E\+S\+Decrypt()}{AESDecrypt()}}
+{\footnotesize\ttfamily unsigned char$\ast$ A\+E\+S\+Decrypt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{cipher\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{cipher\+Text\+Length,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+A\+E\+S\+Decrypt -\/ Function to decrypt a single block of ciphertext passed in as parameter  cipher\+Text using A\+ES decryption, for 128, 192 and 256 bit keys. Validates the keylength and returns the corresponding plaintext. The caller of the function must ensure that the returned plaintext pointer is freed. The plaintext returned is always 16 bytes and the plain\+Text must be 16 bytes or less. Makes use of zero padding. All input must be in A\+S\+C\+II and N\+OT hex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & -\/ unsigned char$\ast$ cipher\+Text -\/ pointer to the ciphertext that needs to be decrypted using A\+ES decryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ reference to the key that must be used for A\+ES decryption. \\
+\hline
+{\em cipher\+Text\+Length} & -\/ length of the ciphertext in \\
+\hline
+{\em cipher\+Text} & to be decrypted. \\
+\hline
+{\em key\+Length} & -\/ length of the key passed in as \\
+\hline
+{\em key} & used for the A\+ES decryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned$\ast$ char -\/ Plaintext resulting from the decryption of the ciphertext passed in as 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+Text.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 399 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ab51c63e6483f94f12bbc9b256374ec64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ab51c63e6483f94f12bbc9b256374ec64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a41cef4df290905c4d632ce1357d0a9bd}\label{_a_e_s_8c_a41cef4df290905c4d632ce1357d0a9bd}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!A\+E\+S\+Encrypt@{A\+E\+S\+Encrypt}}
+\index{A\+E\+S\+Encrypt@{A\+E\+S\+Encrypt}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{A\+E\+S\+Encrypt()}{AESEncrypt()}}
+{\footnotesize\ttfamily unsigned char$\ast$ A\+E\+S\+Encrypt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{plain\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{int}]{plain\+Text\+Length,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+A\+E\+S\+Encrypt -\/ Function to encrypt a single block of plaintext passed in as parameter  plain\+Text using A\+ES encryption, for 128, 192 and 256 bit keys. Validates the keylength and returns the corresponding ciphertext. The caller of the function must ensure that the returned ciphertext pointer is freed. The ciphertext returned is always 16 bytes and the plain\+Text must be 16 bytes or less. Makes use of zero padding. All input must be in A\+S\+C\+II and N\+OT hex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & -\/ unsigned char$\ast$ plain\+Text -\/ pointer to the plaintext that needs to be encrypted using A\+ES encryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ reference to the key that must be used for A\+ES encryption. \\
+\hline
+{\em plain\+Text\+Length} & -\/ length of the plaintext in \\
+\hline
+{\em plain\+Text} & to be encrypted. \\
+\hline
+{\em key\+Length} & -\/ length of the key passed in as \\
+\hline
+{\em key} & used for the A\+ES encryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned$\ast$ char -\/ Ciphertext resulting from the encryption of the plaintext passed in as 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em plain\+Text.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 198 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a41cef4df290905c4d632ce1357d0a9bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a41cef4df290905c4d632ce1357d0a9bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ac189aee6672718650020cf627d45c780}\label{_a_e_s_8c_ac189aee6672718650020cf627d45c780}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!ascii\+To\+Hex\+String@{ascii\+To\+Hex\+String}}
+\index{ascii\+To\+Hex\+String@{ascii\+To\+Hex\+String}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{ascii\+To\+Hex\+String()}{asciiToHexString()}}
+{\footnotesize\ttfamily unsigned char$\ast$ ascii\+To\+Hex\+String (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{ascii\+String,  }\item[{unsigned char $\ast$}]{hex\+String,  }\item[{size\+\_\+t}]{ascii\+String\+Len }\end{DoxyParamCaption})}
+
+
+
+Function name\+: ascii\+To\+Hex\+String -\/ convert an ascii String to an ascii string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ascii\+String} & -\/ unsigned char$\ast$ pointing to the A\+S\+C\+II String to be converted. \\
+\hline
+{\em hex\+String} & -\/ unsigned char$\ast$ pointing to a memory where the converted Hex string should be stored. \\
+\hline
+{\em ascii\+String\+Len} & -\/ size\+\_\+t containing the length of the A\+S\+C\+II String to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned char$\ast$ ascii\+To\+Hex\+String -\/ pointer to the converted Hex String, pointing to the same memory location as 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+String.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 971 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{_a_e_s_8c_ac189aee6672718650020cf627d45c780_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a1c1a633a58f7328faa397db9e45e7e0c}\label{_a_e_s_8c_a1c1a633a58f7328faa397db9e45e7e0c}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!construct\+State\+Array@{construct\+State\+Array}}
+\index{construct\+State\+Array@{construct\+State\+Array}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{construct\+State\+Array()}{constructStateArray()}}
+{\footnotesize\ttfamily void construct\+State\+Array (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{flat\+Array,  }\item[{unsigned char}]{state\+Array\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+construct\+State\+Array -\/ Function to convert the state array from a flat 1D array to a multidimensional array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & flat\+Array -\/the 1D array to be converted. \\
+\hline
+{\em state\+Array} & -\/ the multidimensional array to which to copy the flat array elements to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 895 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a1c1a633a58f7328faa397db9e45e7e0c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a9dcad0047890de22f3d15611a10ab74f}\label{_a_e_s_8c_a9dcad0047890de22f3d15611a10ab74f}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!file\+Name\+Dir\+Index@{file\+Name\+Dir\+Index}}
+\index{file\+Name\+Dir\+Index@{file\+Name\+Dir\+Index}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{file\+Name\+Dir\+Index()}{fileNameDirIndex()}}
+{\footnotesize\ttfamily int file\+Name\+Dir\+Index (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name,  }\item[{int}]{file\+Name\+Length }\end{DoxyParamCaption})}
+
+
+
+Returns the last index of \textquotesingle{}/\textquotesingle{} in a given path, otherwise returns -\/1 if no \textquotesingle{}/\textquotesingle{} is found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The path to a file \\
+\hline
+{\em file\+Name\+Length} & The length of the provided file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Index of the last \textquotesingle{}/\textquotesingle{} in the path, else -\/1 if no \textquotesingle{}/\textquotesingle{} was found 
+\end{DoxyReturn}
+
+
+Definition at line 1043 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a9dcad0047890de22f3d15611a10ab74f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a7dbbb13c3ab5608765b6d368eb9f4fe1}\label{_a_e_s_8c_a7dbbb13c3ab5608765b6d368eb9f4fe1}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!gallois\+Field\+Mult@{gallois\+Field\+Mult}}
+\index{gallois\+Field\+Mult@{gallois\+Field\+Mult}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{gallois\+Field\+Mult()}{galloisFieldMult()}}
+{\footnotesize\ttfamily unsigned char gallois\+Field\+Mult (\begin{DoxyParamCaption}\item[{unsigned char}]{a,  }\item[{unsigned char}]{b }\end{DoxyParamCaption})}
+
+
+
+gallois\+Field\+Mult -\/ Function to perform the Galois field multiplication operation required for the inverse mix columns and the mix columns operation of the A\+ES encryption and decryption processes. Returns the result of the multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ first character to perform Galois field multiplication. \\
+\hline
+{\em b} & -\/ second character to perform Galois field multiplication. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned char -\/ Result of the Galois field multiplication. 
+\end{DoxyReturn}
+
+
+Definition at line 764 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a7dbbb13c3ab5608765b6d368eb9f4fe1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a425f9b1e2cd595f2c45f129bc5d0a6d0}\label{_a_e_s_8c_a425f9b1e2cd595f2c45f129bc5d0a6d0}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+Inv\+S\+Box@{get\+Inv\+S\+Box}}
+\index{get\+Inv\+S\+Box@{get\+Inv\+S\+Box}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+Inv\+S\+Box()}{getInvSBox()}}
+{\footnotesize\ttfamily unsigned char get\+Inv\+S\+Box (\begin{DoxyParamCaption}\item[{unsigned char}]{index }\end{DoxyParamCaption})}
+
+
+
+get\+Inv\+S\+Box -\/ Function to return the inverse s\+Box value passed in as a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index.} & Requires the original value required in hex.\\
+\hline
+{\em index} & -\/ unsigned char -\/ hexadecimal representation of the index for which the inverse S\+Box value is required. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned char -\/ inverse s\+Box value for the paramter 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em index.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a425f9b1e2cd595f2c45f129bc5d0a6d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a1c2a403d95a85400bbae142d48cb8c9d}\label{_a_e_s_8c_a1c2a403d95a85400bbae142d48cb8c9d}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+Num\+Rounds@{get\+Num\+Rounds}}
+\index{get\+Num\+Rounds@{get\+Num\+Rounds}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+Num\+Rounds()}{getNumRounds()}}
+{\footnotesize\ttfamily int get\+Num\+Rounds (\begin{DoxyParamCaption}\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+get\+Num\+Rounds -\/ Function to return the number of rounds of A\+ES encryption and decryption based off of the length of the key given in 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Length.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ indicates the length of the key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ the number of rounds based off of the length of the key passed in the parameter 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Length.} & If the length of the key is not valid, returns -\/1. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a1c2a403d95a85400bbae142d48cb8c9d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_acc2acf0b03a8863f9290bdd36dd6f478}\label{_a_e_s_8c_acc2acf0b03a8863f9290bdd36dd6f478}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+Output\+File\+Name@{get\+Output\+File\+Name}}
+\index{get\+Output\+File\+Name@{get\+Output\+File\+Name}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+Output\+File\+Name()}{getOutputFileName()}}
+{\footnotesize\ttfamily void get\+Output\+File\+Name (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{char $\ast$}]{file\+Name,  }\item[{char $\ast$}]{output\+File\+Name,  }\item[{char $\ast$}]{mode }\end{DoxyParamCaption})}
+
+
+
+Get the output file name from all the parameters passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & 0 -\/ Encrypt, 1 -\/ Decrypt \\
+\hline
+{\em file\+Name} & The name of the input file \\
+\hline
+{\em output\+File\+Name} & The name of the output file \\
+\hline
+{\em mode} & Chipher mode to be used (E\+CB, C\+BC, C\+FB) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1086 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{_a_e_s_8c_acc2acf0b03a8863f9290bdd36dd6f478_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_a_e_s_8c_acc2acf0b03a8863f9290bdd36dd6f478_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a5d65eac115e562c64b00a43e72ee6aca}\label{_a_e_s_8c_a5d65eac115e562c64b00a43e72ee6aca}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+Padded\+Key\+Length@{get\+Padded\+Key\+Length}}
+\index{get\+Padded\+Key\+Length@{get\+Padded\+Key\+Length}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+Padded\+Key\+Length()}{getPaddedKeyLength()}}
+{\footnotesize\ttfamily int get\+Padded\+Key\+Length (\begin{DoxyParamCaption}\item[{int}]{current\+Key\+Length }\end{DoxyParamCaption})}
+
+
+
+get\+Padded\+Key\+Length -\/ Function to return a valid key length (in bytes) based off of the current key length passed in as 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Key\+Length.} & Corresponds to minimum and maximum key length required for A\+ES encryption and decryption. The key will then be padded to the length of the value returned from this function. If the keylength is less than 16, will return 16. If greater than 16, but less than 24, will return 24. If greater than 32, will return -\/1.\\
+\hline
+{\em current\+Key\+Length} & -\/ int -\/ current key length in bytes, to be padded to the return value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/ the length in bytes that the key should be padded to. 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a5d65eac115e562c64b00a43e72ee6aca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a4e58d2e928429bc56387394251b8ece5}\label{_a_e_s_8c_a4e58d2e928429bc56387394251b8ece5}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+Rcon\+Value@{get\+Rcon\+Value}}
+\index{get\+Rcon\+Value@{get\+Rcon\+Value}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+Rcon\+Value()}{getRconValue()}}
+{\footnotesize\ttfamily unsigned char get\+Rcon\+Value (\begin{DoxyParamCaption}\item[{unsigned char}]{num }\end{DoxyParamCaption})}
+
+
+
+get\+Rcon\+Value -\/ Function to return the Rcon value for the index passed in as a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num.} & Requires the original value required in hex.\\
+\hline
+{\em index} & -\/ unsigned char -\/ hexadecimal representation of the number for which the Rcon value is required during the key schedule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned char -\/ r\+Con value for the paramter 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em num.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a4e58d2e928429bc56387394251b8ece5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_abe15a731f43315f6f595674d3cd62d57}\label{_a_e_s_8c_abe15a731f43315f6f595674d3cd62d57}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+Round\+Key@{get\+Round\+Key}}
+\index{get\+Round\+Key@{get\+Round\+Key}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+Round\+Key()}{getRoundKey()}}
+{\footnotesize\ttfamily void get\+Round\+Key (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{expanded\+Key,  }\item[{unsigned char $\ast$}]{round\+Key,  }\item[{int}]{round\+Num }\end{DoxyParamCaption})}
+
+
+
+get\+Round\+Key -\/ Function to extract the correct sub-\/key to use for the appropriate round specified by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em round\+Num.} & Copies the sub-\/key from the expanded key in \\
+\hline
+{\em expanded\+Key} & to \\
+\hline
+{\em round\+Key.} & \\
+\hline
+{\em char} & -\/ expanded\+Key -\/ The expanded key from which to extract the sub-\/key. \\
+\hline
+{\em char} & -\/ round\+Key -\/ memory to which to copy the sub-\/key. \\
+\hline
+{\em round\+Num} & -\/ int -\/ the round number for which the sub-\/key is required. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 881 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_abe15a731f43315f6f595674d3cd62d57_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_acdf4abe2846c02b4d3e674782807fdfa}\label{_a_e_s_8c_acdf4abe2846c02b4d3e674782807fdfa}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!get\+S\+Box\+Value@{get\+S\+Box\+Value}}
+\index{get\+S\+Box\+Value@{get\+S\+Box\+Value}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{get\+S\+Box\+Value()}{getSBoxValue()}}
+{\footnotesize\ttfamily unsigned char get\+S\+Box\+Value (\begin{DoxyParamCaption}\item[{unsigned char}]{index }\end{DoxyParamCaption})}
+
+
+
+get\+S\+Box\+Value -\/ Function to return the s\+Box value passed in as a parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index.} & Requires the original value required in hex.\\
+\hline
+{\em index} & -\/ unsigned char -\/ hexadecimal representation of the index for which the S\+Box value is required. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned char -\/ s\+Box value for the paramter 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em index.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_acdf4abe2846c02b4d3e674782807fdfa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_aa177516503b10de65b504a3714073ad7}\label{_a_e_s_8c_aa177516503b10de65b504a3714073ad7}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!hex\+To\+Ascii@{hex\+To\+Ascii}}
+\index{hex\+To\+Ascii@{hex\+To\+Ascii}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{hex\+To\+Ascii()}{hexToAscii()}}
+{\footnotesize\ttfamily uint8\+\_\+t hex\+To\+Ascii (\begin{DoxyParamCaption}\item[{char}]{ch1,  }\item[{char}]{ch2 }\end{DoxyParamCaption})}
+
+
+
+hex\+To\+Ascii -\/ Function that converts a given hex value to its A\+S\+C\+II equivalent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch1} & -\/ char value of the first hex value. \\
+\hline
+{\em ch2} & -\/ char value of the second hex value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 928 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{_a_e_s_8c_aa177516503b10de65b504a3714073ad7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_aa177516503b10de65b504a3714073ad7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ad697cbb5d9e462b3017df1f1d939ee96}\label{_a_e_s_8c_ad697cbb5d9e462b3017df1f1d939ee96}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!hex\+To\+Ascii\+String@{hex\+To\+Ascii\+String}}
+\index{hex\+To\+Ascii\+String@{hex\+To\+Ascii\+String}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{hex\+To\+Ascii\+String()}{hexToAsciiString()}}
+{\footnotesize\ttfamily void hex\+To\+Ascii\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{hex\+String,  }\item[{char $\ast$}]{ascii\+String,  }\item[{int}]{hex\+String\+Length }\end{DoxyParamCaption})}
+
+
+
+hex\+To\+Ascii\+String -\/ Function that converts a given string of hex values into its A\+S\+C\+II equivalent. A hex string contains hex chars and is \char`\"{}encoded\char`\"{} in ascii In order to encrypt it, it must be converted to the equivalent ascii plain text string plaintext string is half the size of hex, since two hex chars = 1 ascii char if hex string is \char`\"{}4\+A\char`\"{} it will be converted to \char`\"{}\+J\char`\"{} in ascii which will have a hex representation of \char`\"{}4a\char`\"{} The original hex string converted to hex staright or printed in hex straight rather will print or have the value \char`\"{}0x34\char`\"{}, \char`\"{}0x31\char`\"{} B\+A\+S\+I\+C\+A\+L\+LY T\+HE H\+EX S\+T\+R\+I\+NG FF IS I\+N\+T\+E\+R\+P\+R\+E\+T\+ED AS T\+HE C\+H\+A\+RS FF, whereas when using this function we intend it to be \char`\"{}\+J\char`\"{}, ie the char \char`\"{}\+J\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & hex\+String -\/ The string of hex values to be converted. \\
+\hline
+{\em char$\ast$} & ascii\+String -\/ The output of the converted hex string. \\
+\hline
+{\em int} & hex\+String\+Length -\/ The length of parameter hex\+String. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 948 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ad697cbb5d9e462b3017df1f1d939ee96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ad697cbb5d9e462b3017df1f1d939ee96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a7e5ab2188af44718071074f450963568}\label{_a_e_s_8c_a7e5ab2188af44718071074f450963568}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!hex\+To\+Int@{hex\+To\+Int}}
+\index{hex\+To\+Int@{hex\+To\+Int}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{hex\+To\+Int()}{hexToInt()}}
+{\footnotesize\ttfamily uint8\+\_\+t hex\+To\+Int (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
+
+
+
+hex\+To\+Int -\/ Function that converts a given hex value into an integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & -\/ hex value that wil be converted to int. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t the converted int value. 
+\end{DoxyReturn}
+
+
+Definition at line 909 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a7e5ab2188af44718071074f450963568_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a9de891875f23dd3dff8fe3f8e10ba3ad}\label{_a_e_s_8c_a9de891875f23dd3dff8fe3f8e10ba3ad}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!inv\+Mix\+Columns@{inv\+Mix\+Columns}}
+\index{inv\+Mix\+Columns@{inv\+Mix\+Columns}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{inv\+Mix\+Columns()}{invMixColumns()}}
+{\footnotesize\ttfamily void inv\+Mix\+Columns (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+inv\+Mix\+Columns -\/ Function that does the inverse of the Mix Column Step for A\+ES Encryption. Performs the gallois field multiplication and the required X\+OR to the state passed in as a paramter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state.} & \\
+\hline
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 740 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{_a_e_s_8c_a9de891875f23dd3dff8fe3f8e10ba3ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a9de891875f23dd3dff8fe3f8e10ba3ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a903e34d08dd07be2e2d9618d4d489ee6}\label{_a_e_s_8c_a903e34d08dd07be2e2d9618d4d489ee6}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!inv\+Shift\+Rows@{inv\+Shift\+Rows}}
+\index{inv\+Shift\+Rows@{inv\+Shift\+Rows}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{inv\+Shift\+Rows()}{invShiftRows()}}
+{\footnotesize\ttfamily void inv\+Shift\+Rows (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]},  }\item[{int}]{word\+Length }\end{DoxyParamCaption})}
+
+
+
+inv\+Shift\+Rows -\/ Function to shift the state array Inverse according to the A\+ES encryption standard for 128 -\/ bits blocks 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 835 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{_a_e_s_8c_a903e34d08dd07be2e2d9618d4d489ee6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a903e34d08dd07be2e2d9618d4d489ee6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a8e72edc1f652f8626aacd2781303c86b}\label{_a_e_s_8c_a8e72edc1f652f8626aacd2781303c86b}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!inv\+Sub\+Bytes@{inv\+Sub\+Bytes}}
+\index{inv\+Sub\+Bytes@{inv\+Sub\+Bytes}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{inv\+Sub\+Bytes()}{invSubBytes()}}
+{\footnotesize\ttfamily void inv\+Sub\+Bytes (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+inv\+Sub\+Bytes -\/ Function that performs the inverse of Function sub\+Bytes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 802 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{_a_e_s_8c_a8e72edc1f652f8626aacd2781303c86b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a8e72edc1f652f8626aacd2781303c86b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a3bf513612c15693c3b2be10b94298e05}\label{_a_e_s_8c_a3bf513612c15693c3b2be10b94298e05}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!is\+File\+Txt@{is\+File\+Txt}}
+\index{is\+File\+Txt@{is\+File\+Txt}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{is\+File\+Txt()}{isFileTxt()}}
+{\footnotesize\ttfamily uint8\+\_\+t is\+File\+Txt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+is\+File\+Txt -\/ Function to determine if the file passed in as a paramter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is a text file with extension .txt or not. Returns a 1 if it is and a 0 if it isn\textquotesingle{}t.\\
+\hline
+{\em file\+Name} & -\/ unsigned char$\ast$ file\+Name -\/ path to file to determine if the file is a text file or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t -\/ boolean indicating if it is a text file or not. (0 is not a text file, 1 is a text file) 
+\end{DoxyReturn}
+
+
+Definition at line 1156 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{_a_e_s_8c_a3bf513612c15693c3b2be10b94298e05_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ad82d1b77336ac1292ed5a24b92380f42}\label{_a_e_s_8c_ad82d1b77336ac1292ed5a24b92380f42}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!I\+V\+Hex\+To\+Ascii@{I\+V\+Hex\+To\+Ascii}}
+\index{I\+V\+Hex\+To\+Ascii@{I\+V\+Hex\+To\+Ascii}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{I\+V\+Hex\+To\+Ascii()}{IVHexToAscii()}}
+{\footnotesize\ttfamily unsigned char$\ast$ I\+V\+Hex\+To\+Ascii (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{hex\+IV,  }\item[{int}]{I\+V\+Length }\end{DoxyParamCaption})}
+
+
+
+I\+V\+Hex\+To\+Ascii -\/ Function to convert a initialization vector from a Hex string passed in as a paramter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+IV} & to an ascii string. User must free the returned pointer to memory allocated. Returns the Ascii equivalent. The caller must free the pointer returned. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ hex\+IV -\/ hex representation \\
+\hline
+{\em I\+V\+Length} & -\/ length of the hex representation of the IV passed in as paramter \\
+\hline
+{\em hex\+I\+V.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned$\ast$ -\/ the A\+S\+C\+II representation of the hex IV passed in as parameter 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+I\+V.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1205 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ad82d1b77336ac1292ed5a24b92380f42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{_a_e_s_8c_ad82d1b77336ac1292ed5a24b92380f42_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_afba897e91364663f883cc51ed309dc92}\label{_a_e_s_8c_afba897e91364663f883cc51ed309dc92}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!key\+Hex\+To\+Ascii@{key\+Hex\+To\+Ascii}}
+\index{key\+Hex\+To\+Ascii@{key\+Hex\+To\+Ascii}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{key\+Hex\+To\+Ascii()}{keyHexToAscii()}}
+{\footnotesize\ttfamily unsigned char$\ast$ key\+Hex\+To\+Ascii (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{hex\+Key,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+key\+Hex\+To\+Ascii -\/ Function to convert a key from a Hex string passed in as a paramter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+Key} & to an ascii string. User must free the returned pointer to memory allocated. Returns the Ascii equivalent. The caller must free the pointer returned. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ hex\+Key -\/ hex representation of the key to be converted to A\+S\+C\+II. \\
+\hline
+{\em key\+Length} & -\/ length of the hex representation of the key passed in as paramter \\
+\hline
+{\em hex\+Key.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned$\ast$ -\/ the A\+S\+C\+II representation of the hex key passed in as parameter 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em hex\+Key.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1178 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_afba897e91364663f883cc51ed309dc92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_a_e_s_8c_afba897e91364663f883cc51ed309dc92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_af2f914cf17729a0ee89102c98b39665e}\label{_a_e_s_8c_af2f914cf17729a0ee89102c98b39665e}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Key\+Schedule\+Core@{Key\+Schedule\+Core}}
+\index{Key\+Schedule\+Core@{Key\+Schedule\+Core}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Key\+Schedule\+Core()}{KeyScheduleCore()}}
+{\footnotesize\ttfamily void Key\+Schedule\+Core (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{word,  }\item[{int}]{word\+Length,  }\item[{int}]{r\+Con\+Iteration\+Val }\end{DoxyParamCaption})}
+
+
+
+Key\+Schedule\+Core -\/ Function that performs the key schedule core for the Rijndael Key Schedule. Performs a single rotate left of the word passed in as. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & and applies the required s-\/box substituion and rcon X\+OR. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ word -\/ pointer to the word onto which the key schedule core should be operated. \\
+\hline
+{\em word\+Length} & -\/ length of the word passed in as a parameter \\
+\hline
+{\em word.} & \\
+\hline
+{\em r\+Con\+Iteration\+Val} & -\/ the iteration value to be used for the rcon X\+OR. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 631 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_a_e_s_8c_af2f914cf17729a0ee89102c98b39665e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_af2f914cf17729a0ee89102c98b39665e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_aca09b30896a351db6587639a1cc1bf0d}\label{_a_e_s_8c_aca09b30896a351db6587639a1cc1bf0d}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!mix\+Columns@{mix\+Columns}}
+\index{mix\+Columns@{mix\+Columns}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{mix\+Columns()}{mixColumns()}}
+{\footnotesize\ttfamily void mix\+Columns (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+mix\+Columns -\/ Function that performs the Mix\+Columns step of A\+ES as specified by A\+ES encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 702 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_aca09b30896a351db6587639a1cc1bf0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_aaba2e1b9466483b3c6b8669eb42aa5ed}\label{_a_e_s_8c_aaba2e1b9466483b3c6b8669eb42aa5ed}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!print\+A\+E\+S\+Block@{print\+A\+E\+S\+Block}}
+\index{print\+A\+E\+S\+Block@{print\+A\+E\+S\+Block}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{print\+A\+E\+S\+Block()}{printAESBlock()}}
+{\footnotesize\ttfamily void print\+A\+E\+S\+Block (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{block }\end{DoxyParamCaption})}
+
+
+
+print\+A\+E\+S\+Block -\/ Function to print a single block in hex format to the terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & -\/ block to be printed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1028 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_aaba2e1b9466483b3c6b8669eb42aa5ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ae9af90db32afa65125a7eec339ed9d58}\label{_a_e_s_8c_ae9af90db32afa65125a7eec339ed9d58}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!print\+State\+Array@{print\+State\+Array}}
+\index{print\+State\+Array@{print\+State\+Array}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{print\+State\+Array()}{printStateArray()}}
+{\footnotesize\ttfamily void print\+State\+Array (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{state\+Array\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+print\+State\+Array -\/ Function to print the state array to the terminal in hex format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Array} & -\/ the state array that should be printed to the terminal. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 673 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ae9af90db32afa65125a7eec339ed9d58_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a185c827e4ccbc8e4608e83dfbf9dfc8e}\label{_a_e_s_8c_a185c827e4ccbc8e4608e83dfbf9dfc8e}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Rijndael\+Key\+Schedule@{Rijndael\+Key\+Schedule}}
+\index{Rijndael\+Key\+Schedule@{Rijndael\+Key\+Schedule}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Rijndael\+Key\+Schedule()}{RijndaelKeySchedule()}}
+{\footnotesize\ttfamily unsigned char$\ast$ Rijndael\+Key\+Schedule (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{original\+Key,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+Rijndael\+Key\+Schedule -\/ Function that performs the Rijndael key scheduling for A\+ES encryption. Takes in the original key passed in as parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+Key} & and the length of the original key given as parameter. The caller must free the memory allocated and returned. \\
+\hline
+{\em original\+Key} & -\/ unsigned char $\ast$ -\/ An unsigned char pointer to the original key. \\
+\hline
+{\em key\+Length} & -\/ int -\/ length of original\+Key passed in as a parameter \\
+\hline
+{\em original\+Key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+expanded\+Key -\/ The key that has been expanded. 
+\end{DoxyReturn}
+
+
+Definition at line 577 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a185c827e4ccbc8e4608e83dfbf9dfc8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a185c827e4ccbc8e4608e83dfbf9dfc8e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_abeb4dba64fcf4d07eac178e732ca6aa8}\label{_a_e_s_8c_abeb4dba64fcf4d07eac178e732ca6aa8}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Shift\+Rows@{Shift\+Rows}}
+\index{Shift\+Rows@{Shift\+Rows}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Shift\+Rows()}{ShiftRows()}}
+{\footnotesize\ttfamily void Shift\+Rows (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]},  }\item[{int}]{word\+Length }\end{DoxyParamCaption})}
+
+
+
+Shift\+Rows -\/ Function to shift the state array according to the A\+ES encryption standard for 128 -\/ bits blocks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 815 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{_a_e_s_8c_abeb4dba64fcf4d07eac178e732ca6aa8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_abeb4dba64fcf4d07eac178e732ca6aa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ac769b0533ccecd203cc3ab64e6b2f950}\label{_a_e_s_8c_ac769b0533ccecd203cc3ab64e6b2f950}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Single\+Rotate\+Left@{Single\+Rotate\+Left}}
+\index{Single\+Rotate\+Left@{Single\+Rotate\+Left}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Single\+Rotate\+Left()}{SingleRotateLeft()}}
+{\footnotesize\ttfamily void Single\+Rotate\+Left (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{word,  }\item[{int}]{word\+Length }\end{DoxyParamCaption})}
+
+
+
+Single\+Rotate\+Left -\/ Function to rotate the array passed in as a paramter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word,a} & single time left (8 bits to the left), with the left most element becoming the right most element. As such\+: rotate(1d2c3a4f) = 2c3a4f1d. \\
+\hline
+{\em word} & -\/ unsigned char $\ast$word -\/ the array/word to be left rotated by 8 bits. \\
+\hline
+{\em word\+Length} & -\/ int -\/ length of the parameter \\
+\hline
+{\em word.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 655 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ac769b0533ccecd203cc3ab64e6b2f950_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a4fc33ada95d0d2aaea28086aefe173bb}\label{_a_e_s_8c_a4fc33ada95d0d2aaea28086aefe173bb}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Single\+Rotate\+Right@{Single\+Rotate\+Right}}
+\index{Single\+Rotate\+Right@{Single\+Rotate\+Right}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Single\+Rotate\+Right()}{SingleRotateRight()}}
+{\footnotesize\ttfamily void Single\+Rotate\+Right (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{word,  }\item[{int}]{word\+Length }\end{DoxyParamCaption})}
+
+
+
+Single\+Rotate\+Right -\/ Function to rotate the array passed in as a paramter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word,a} & single time right (8 bits to the right), with the right most element becoming the left most element. As such\+: rotate(1d2c3a4f) = 4f1d2c3a.\\
+\hline
+{\em word} & -\/ unsigned char $\ast$word -\/ the array/word to be right rotated by 8 bits. \\
+\hline
+{\em word\+Length} & -\/ int -\/ length of the parameter \\
+\hline
+{\em word.} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 857 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a4fc33ada95d0d2aaea28086aefe173bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ab066697b473ad5ce74faaceae6def5e5}\label{_a_e_s_8c_ab066697b473ad5ce74faaceae6def5e5}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!strip\+Directory@{strip\+Directory}}
+\index{strip\+Directory@{strip\+Directory}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{strip\+Directory()}{stripDirectory()}}
+{\footnotesize\ttfamily void strip\+Directory (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name,  }\item[{char $\ast$}]{extracted\+File\+Name,  }\item[{char $\ast$}]{extracted\+File\+Path,  }\item[{int}]{file\+Name\+Length,  }\item[{int}]{slash\+Index }\end{DoxyParamCaption})}
+
+
+
+Removes path from the provided path to a file and returns only the file name. 
+
+strip\+Directory -\/ Function that removes path from the provided path to a file and returns only the file name
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The path to a specified file \\
+\hline
+{\em extracted\+File\+Name} & The name of the file within the provided path to a file \\
+\hline
+{\em extracted\+File\+Path} & The path to file, excluding the file name \\
+\hline
+{\em file\+Name\+Length} & The length of the paramter \\
+\hline
+{\em file\+Name} & \\
+\hline
+{\em slash\+Index} & The index of the last \textquotesingle{}/\textquotesingle{} in the original file path passed in as a paramter \\
+\hline
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1063 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ab066697b473ad5ce74faaceae6def5e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_aec40f89d2cbf831fd0d5d5f1bfa616f5}\label{_a_e_s_8c_aec40f89d2cbf831fd0d5d5f1bfa616f5}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!sub\+Bytes@{sub\+Bytes}}
+\index{sub\+Bytes@{sub\+Bytes}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{sub\+Bytes()}{subBytes()}}
+{\footnotesize\ttfamily void sub\+Bytes (\begin{DoxyParamCaption}\item[{unsigned char}]{state\mbox{[}4\mbox{]}\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+sub\+Bytes -\/ Function that performs the sub byte operation where each value is replaced by the s box value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & -\/ unsigned char -\/ is the current state of the ciphertext or plaintext during A\+ES encryption or decryption. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 789 of file A\+E\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{_a_e_s_8c_aec40f89d2cbf831fd0d5d5f1bfa616f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_aec40f89d2cbf831fd0d5d5f1bfa616f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ae01a1e7833d53f19b534e37ace03a691}\label{_a_e_s_8c_ae01a1e7833d53f19b534e37ace03a691}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!validate\+Cipher\+Text\+Length@{validate\+Cipher\+Text\+Length}}
+\index{validate\+Cipher\+Text\+Length@{validate\+Cipher\+Text\+Length}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{validate\+Cipher\+Text\+Length()}{validateCipherTextLength()}}
+{\footnotesize\ttfamily void validate\+Cipher\+Text\+Length (\begin{DoxyParamCaption}\item[{int}]{cipher\+Text\+Length }\end{DoxyParamCaption})}
+
+
+
+validate\+Cipher\+Text\+Length -\/ Function that validates the length of the ciphertext. The validation is done against the A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+Text\+Length} & -\/ int -\/ The length of the cipher text as an integer value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1015 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_ae01a1e7833d53f19b534e37ace03a691_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_a0e0b199ded54d7fb53a3bda3fcc02256}\label{_a_e_s_8c_a0e0b199ded54d7fb53a3bda3fcc02256}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!validate\+Num\+Rounds@{validate\+Num\+Rounds}}
+\index{validate\+Num\+Rounds@{validate\+Num\+Rounds}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{validate\+Num\+Rounds()}{validateNumRounds()}}
+{\footnotesize\ttfamily void validate\+Num\+Rounds (\begin{DoxyParamCaption}\item[{int}]{num\+Rounds,  }\item[{int}]{key\+Length }\end{DoxyParamCaption})}
+
+
+
+validate\+Num\+Rounds -\/ Function that validates the number of rounds that have been passed in by the 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Rounds.} & Upon invalid validation, relevent error information will be printed to terminal and the program will exit with an E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE flag. \\
+\hline
+{\em num\+Rounds} & -\/ int -\/ Integer value of the number rounds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 989 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_a0e0b199ded54d7fb53a3bda3fcc02256_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_acefcd728377e1e14187fa8fcd20f4064}\label{_a_e_s_8c_acefcd728377e1e14187fa8fcd20f4064}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!validate\+Plain\+Text\+Length@{validate\+Plain\+Text\+Length}}
+\index{validate\+Plain\+Text\+Length@{validate\+Plain\+Text\+Length}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{validate\+Plain\+Text\+Length()}{validatePlainTextLength()}}
+{\footnotesize\ttfamily void validate\+Plain\+Text\+Length (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{plain\+Text\+Length }\end{DoxyParamCaption})}
+
+
+
+validate\+Plain\+Text\+Length -\/ Function that validates the length of the plaintext. The validation is done against the A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plain\+Text\+Length} & -\/ int -\/ The length of the plaintext text as an integer value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1002 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_e_s_8c_acefcd728377e1e14187fa8fcd20f4064_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_e_s_8c_ab601c369ba50730fc02d03bc44aad4e0}\label{_a_e_s_8c_ab601c369ba50730fc02d03bc44aad4e0}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!X\+O\+R\+Blocks@{X\+O\+R\+Blocks}}
+\index{X\+O\+R\+Blocks@{X\+O\+R\+Blocks}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{X\+O\+R\+Blocks()}{XORBlocks()}}
+{\footnotesize\ttfamily unsigned char$\ast$ X\+O\+R\+Blocks (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{block1,  }\item[{unsigned char $\ast$}]{block2,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+X\+O\+R\+Blocks -\/ Function to X\+OR two blocks of length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & and retuns the X\+OR\textquotesingle{}d result. User must free the memory returned. \\
+\hline
+{\em char} & -\/ block1 -\/ First block to be X\+OR\textquotesingle{}d. \\
+\hline
+{\em char} & -\/ block2 -\/ Second block to be X\+OR\textquotesingle{}d. \\
+\hline
+{\em length} & -\/ length of the blocks to be X\+OR\textquotesingle{}d. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned$\ast$ -\/ Result of the X\+OR. 
+\end{DoxyReturn}
+
+
+Definition at line 1228 of file A\+E\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{_a_e_s_8c_ab601c369ba50730fc02d03bc44aad4e0_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_a_e_s_8c_ac3c0558617e372fc5ce3648e041e549c}\label{_a_e_s_8c_ac3c0558617e372fc5ce3648e041e549c}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}
+\index{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}{AES\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily const size\+\_\+t A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE = 16}
+
+
+
+Variable-\/ const size\+\_\+t A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE. Used to dictate the length in bytes of a single A\+ES block used for encryption and decryption. Set to 16 bytes for a single block. 
+
+Variable -\/ A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE -\/ specifies the length per A\+ES block -\/ 16 bytes. 
+
+Definition at line 24 of file A\+E\+S.\+c.
+
+\mbox{\Hypertarget{_a_e_s_8c_afdaefaa3b28b23dc18709335449a1427}\label{_a_e_s_8c_afdaefaa3b28b23dc18709335449a1427}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!inv\+S\+Box@{inv\+S\+Box}}
+\index{inv\+S\+Box@{inv\+S\+Box}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{inv\+S\+Box}{invSBox}}
+{\footnotesize\ttfamily const unsigned char inv\+S\+Box\mbox{[}256\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ 
+    
+    0x52,0x09,0x6a,0xd5,0x30,0x36,0xa5,0x38,0xbf,0x40,0xa3,0x9e,0x81,0xf3,0xd7,0xfb, 
+    0x7c,0xe3,0x39,0x82,0x9b,0x2f,0xff,0x87,0x34,0x8e,0x43,0x44,0xc4,0xde,0xe9,0xcb, 
+    0x54,0x7b,0x94,0x32,0xa6,0xc2,0x23,0x3d,0xee,0x4c,0x95,0x0b,0x42,0xfa,0xc3,0x4e, 
+    0x08,0x2e,0xa1,0x66,0x28,0xd9,0x24,0xb2,0x76,0x5b,0xa2,0x49,0x6d,0x8b,0xd1,0x25, 
+    0x72,0xf8,0xf6,0x64,0x86,0x68,0x98,0x16,0xd4,0xa4,0x5c,0xcc,0x5d,0x65,0xb6,0x92, 
+    0x6c,0x70,0x48,0x50,0xfd,0xed,0xb9,0xda,0x5e,0x15,0x46,0x57,0xa7,0x8d,0x9d,0x84, 
+    0x90,0xd8,0xab,0x00,0x8c,0xbc,0xd3,0x0a,0xf7,0xe4,0x58,0x05,0xb8,0xb3,0x45,0x06, 
+    0xd0,0x2c,0x1e,0x8f,0xca,0x3f,0x0f,0x02,0xc1,0xaf,0xbd,0x03,0x01,0x13,0x8a,0x6b, 
+    0x3a,0x91,0x11,0x41,0x4f,0x67,0xdc,0xea,0x97,0xf2,0xcf,0xce,0xf0,0xb4,0xe6,0x73, 
+    0x96,0xac,0x74,0x22,0xe7,0xad,0x35,0x85,0xe2,0xf9,0x37,0xe8,0x1c,0x75,0xdf,0x6e, 
+    0x47,0xf1,0x1a,0x71,0x1d,0x29,0xc5,0x89,0x6f,0xb7,0x62,0x0e,0xaa,0x18,0xbe,0x1b, 
+    0xfc,0x56,0x3e,0x4b,0xc6,0xd2,0x79,0x20,0x9a,0xdb,0xc0,0xfe,0x78,0xcd,0x5a,0xf4, 
+    0x1f,0xdd,0xa8,0x33,0x88,0x07,0xc7,0x31,0xb1,0x12,0x10,0x59,0x27,0x80,0xec,0x5f, 
+    0x60,0x51,0x7f,0xa9,0x19,0xb5,0x4a,0x0d,0x2d,0xe5,0x7a,0x9f,0x93,0xc9,0x9c,0xef, 
+    0xa0,0xe0,0x3b,0x4d,0xae,0x2a,0xf5,0xb0,0xc8,0xeb,0xbb,0x3c,0x83,0x53,0x99,0x61, 
+    0x17,0x2b,0x04,0x7e,0xba,0x77,0xd6,0x26,0xe1,0x69,0x14,0x63,0x55,0x21,0x0c,0x7d   \}
+\end{DoxyCode}
+
+
+const unsigned char inv\+S\+Box. Lookup table for the inverse sbox values used during A\+ES Decryption. 
+
+
+
+Definition at line 60 of file A\+E\+S.\+c.
+
+\mbox{\Hypertarget{_a_e_s_8c_a58c62505f9b71b2c257046ccf4c9153c}\label{_a_e_s_8c_a58c62505f9b71b2c257046ccf4c9153c}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!Rcon@{Rcon}}
+\index{Rcon@{Rcon}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{Rcon}{Rcon}}
+{\footnotesize\ttfamily const unsigned char Rcon\mbox{[}255\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ 
+    0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8,
+    0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3,
+    0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f,
+    0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d,
+    0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab,
+    0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25,
+    0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d,
+    0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01,
+    0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d,
+    0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa,
+    0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a,
+    0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02,
+    0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a,
+    0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef,
+    0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94,
+    0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04,
+    0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f,
+    0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5,
+    0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33,
+    0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb \}
+\end{DoxyCode}
+
+
+const unsigned char Rcon. Lookup table for the Rcon values used during Rijndael Key Schedule during the A\+ES Encryption and Decryption. 
+
+
+
+Definition at line 83 of file A\+E\+S.\+c.
+
+\mbox{\Hypertarget{_a_e_s_8c_abbb6f385c467cfd964a68eeb6caaa04f}\label{_a_e_s_8c_abbb6f385c467cfd964a68eeb6caaa04f}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!sbox@{sbox}}
+\index{sbox@{sbox}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{sbox}{sbox}}
+{\footnotesize\ttfamily const unsigned char sbox\mbox{[}256\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    
+    0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,     
+    0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0,     
+    0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,     
+    0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2, 0xeb, 0x27, 0xb2, 0x75,     
+    0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84,     
+    0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,     
+    0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f, 0x50, 0x3c, 0x9f, 0xa8,     
+    0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2,     
+    0xcd, 0x0c, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,     
+    0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8, 0x14, 0xde, 0x5e, 0x0b, 0xdb,     
+    0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79,     
+    0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,     
+    0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a,     
+    0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61, 0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e,     
+    0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,     
+    0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16 \}
+\end{DoxyCode}
+
+
+const unsigned char sbox. Lookup table for the sbox values used during A\+ES Encryption. 
+
+
+
+Definition at line 37 of file A\+E\+S.\+c.
+
+\mbox{\Hypertarget{_a_e_s_8c_a48113b3faee8aad8efa17aac0b56b63b}\label{_a_e_s_8c_a48113b3faee8aad8efa17aac0b56b63b}} 
+\index{A\+E\+S.\+c@{A\+E\+S.\+c}!V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}}
+\index{V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}!A\+E\+S.\+c@{A\+E\+S.\+c}}
+\subsubsection{\texorpdfstring{V\+E\+R\+B\+O\+SE}{VERBOSE}}
+{\footnotesize\ttfamily size\+\_\+t V\+E\+R\+B\+O\+SE = 0}
+
+
+
+Variable-\/ size\+\_\+t V\+E\+R\+B\+O\+SE Used to dictate whether verbose output is printed to the terminal or not. If 0, does not print verbose. If 1, prints verbose. 
+
+Variable -\/ V\+E\+R\+B\+O\+SE -\/ specifies if verbose output should be printed or not. 
+
+Definition at line 31 of file A\+E\+S.\+c.
+

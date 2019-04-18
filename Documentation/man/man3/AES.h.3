@@ -1,0 +1,980 @@
+.TH "AES.h" 3 "Thu Apr 18 2019" "Version 1.0" "EHN 410 - Group 7 - AES Encryption" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AES.h \- AES encryption and decryption module header file\&. This file contains the function headers for the functions used for AES encryption and decryption\&. Input must be ASCII and not hex\&. The functions implemented in this file, perform the AES encryption and decryption on a single block of size dictated by the variable AES_BLOCK_SIZE\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBgetNumRounds\fP (int)"
+.br
+.RI "getNumRounds - Function to return the number of rounds of AES encryption and decryption based off of the length of the key given in "
+.ti -1c
+.RI "unsigned char * \fBAESEncrypt\fP (unsigned char *, unsigned char *, int, int)"
+.br
+.RI "AESEncrypt - Function to encrypt a single block of plaintext passed in as parameter  plainText using AES encryption, for 128, 192 and 256 bit keys\&. Validates the keylength and returns the corresponding ciphertext\&. The caller of the function must ensure that the returned ciphertext pointer is freed\&. The ciphertext returned is always 16 bytes and the plainText must be 16 bytes or less\&. Makes use of zero padding\&. All input must be in ASCII and NOT hex\&. "
+.ti -1c
+.RI "unsigned char * \fBAESDecrypt\fP (unsigned char *, unsigned char *, int, int)"
+.br
+.RI "AESDecrypt - Function to decrypt a single block of ciphertext passed in as parameter  cipherText using AES decryption, for 128, 192 and 256 bit keys\&. Validates the keylength and returns the corresponding plaintext\&. The caller of the function must ensure that the returned plaintext pointer is freed\&. The plaintext returned is always 16 bytes and the plainText must be 16 bytes or less\&. Makes use of zero padding\&. All input must be in ASCII and NOT hex\&. "
+.ti -1c
+.RI "unsigned char * \fBRijndaelKeySchedule\fP (unsigned char *, int)"
+.br
+.RI "RijndaelKeySchedule - Function that performs the Rijndael key scheduling for AES encryption\&. Takes in the original key passed in as parameter\&. "
+.ti -1c
+.RI "void \fBprintStateArray\fP (uint8_t[4][4])"
+.br
+.RI "printStateArray - Function to print the state array to the terminal in hex format\&. "
+.ti -1c
+.RI "unsigned char \fBgetSBoxValue\fP (unsigned char)"
+.br
+.RI "getSBoxValue - Function to return the sBox value passed in as a parameter "
+.ti -1c
+.RI "unsigned char \fBgetInvSBox\fP (unsigned char)"
+.br
+.RI "getInvSBox - Function to return the inverse sBox value passed in as a parameter "
+.ti -1c
+.RI "unsigned char \fBgetRconValue\fP (unsigned char)"
+.br
+.RI "getRconValue - Function to return the Rcon value for the index passed in as a parameter "
+.ti -1c
+.RI "void \fBSingleRotateLeft\fP (unsigned char *, int)"
+.br
+.RI "SingleRotateLeft - Function to rotate the array passed in as a paramter\&. "
+.ti -1c
+.RI "void \fBKeyScheduleCore\fP (unsigned char *, int, int)"
+.br
+.RI "KeyScheduleCore - Function that performs the key schedule core for the Rijndael Key Schedule\&. Performs a single rotate left of the word passed in as\&. "
+.ti -1c
+.RI "void \fBShiftRows\fP (unsigned char[4][4], int)"
+.br
+.RI "ShiftRows - Function to shift the state array according to the AES encryption standard for 128 - bits blocks\&. "
+.ti -1c
+.RI "void \fBAddRoundKey\fP (unsigned char[4][4], unsigned char[4][4])"
+.br
+.RI "AddRoundKey - Function that performs the Bitwise XOR between state and key as per AES encryption\&. "
+.ti -1c
+.RI "void \fBsubBytes\fP (unsigned char[4][4])"
+.br
+.RI "subBytes - Function that performs the sub byte operation where each value is replaced by the s box value "
+.ti -1c
+.RI "void \fBmixColumns\fP (unsigned char[4][4])"
+.br
+.RI "mixColumns - Function that performs the MixColumns step of AES as specified by AES encryption\&. "
+.ti -1c
+.RI "void \fBinvSubBytes\fP (unsigned char[4][4])"
+.br
+.RI "invSubBytes - Function that performs the inverse of Function subBytes "
+.ti -1c
+.RI "void \fBinvShiftRows\fP (unsigned char[4][4], int)"
+.br
+.RI "invShiftRows - Function to shift the state array Inverse according to the AES encryption standard for 128 - bits blocks "
+.ti -1c
+.RI "void \fBSingleRotateRight\fP (unsigned char *, int)"
+.br
+.RI "SingleRotateRight - Function to rotate the array passed in as a paramter\&. "
+.ti -1c
+.RI "int \fBgetPaddedKeyLength\fP (int)"
+.br
+.RI "getPaddedKeyLength - Function to return a valid key length (in bytes) based off of the current key length passed in as "
+.ti -1c
+.RI "void \fBinvMixColumns\fP (unsigned char[4][4])"
+.br
+.RI "invMixColumns - Function that does the inverse of the Mix Column Step for AES Encryption\&. Performs the gallois field multiplication and the required XOR to the state passed in as a paramter "
+.ti -1c
+.RI "unsigned char \fBgalloisFieldMult\fP (unsigned char, unsigned char)"
+.br
+.RI "galloisFieldMult - Function to perform the Galois field multiplication operation required for the inverse mix columns and the mix columns operation of the AES encryption and decryption processes\&. Returns the result of the multiplication\&. "
+.ti -1c
+.RI "void \fBgetRoundKey\fP (unsigned char *, unsigned char *, int)"
+.br
+.RI "getRoundKey - Function to extract the correct sub-key to use for the appropriate round specified by "
+.ti -1c
+.RI "void \fBconstructStateArray\fP (unsigned char *, unsigned char[][4])"
+.br
+.RI "constructStateArray - Function to convert the state array from a flat 1D array to a multidimensional array\&. "
+.ti -1c
+.RI "uint8_t \fBhexToInt\fP (char c)"
+.br
+.RI "hexToInt - Function that converts a given hex value into an integer\&. "
+.ti -1c
+.RI "uint8_t \fBhexToAscii\fP (char c, char d)"
+.br
+.RI "hexToAscii - Function that converts a given hex value to its ASCII equivalent\&. "
+.ti -1c
+.RI "void \fBhexToAsciiString\fP (char *str, char *done, int)"
+.br
+.RI "hexToAsciiString - Function that converts a given string of hex values into its ASCII equivalent\&. A hex string contains hex chars and is 'encoded' in ascii In order to encrypt it, it must be converted to the equivalent ascii plain text string plaintext string is half the size of hex, since two hex chars = 1 ascii char if hex string is '4A' it will be converted to 'J' in ascii which will have a hex representation of '4a' The original hex string converted to hex staright or printed in hex straight rather will print or have the value '0x34', '0x31' BASICALLY THE HEX STRING FF IS INTERPRETED AS THE CHARS FF, whereas when using this function we intend it to be 'J', ie the char 'J' "
+.ti -1c
+.RI "unsigned char * \fBasciiToHexString\fP (unsigned char *asciiString, unsigned char *hexString, size_t asciiStringLen)"
+.br
+.RI "Function name: asciiToHexString - convert an ascii String to an ascii string\&. "
+.ti -1c
+.RI "void \fBvalidateNumRounds\fP (int numRounds, int keyLength)"
+.br
+.RI "validateNumRounds - Function that validates the number of rounds that have been passed in by the "
+.ti -1c
+.RI "void \fBvalidatePlainTextLength\fP (size_t plainTextLength)"
+.br
+.RI "validatePlainTextLength - Function that validates the length of the plaintext\&. The validation is done against the AES_BLOCK_SIZE value "
+.ti -1c
+.RI "void \fBvalidateCipherTextLength\fP (int cipherTextLength)"
+.br
+.RI "validateCipherTextLength - Function that validates the length of the ciphertext\&. The validation is done against the AES_BLOCK_SIZE value "
+.ti -1c
+.RI "void \fBprintAESBlock\fP (unsigned char *temp)"
+.br
+.RI "printAESBlock - Function to print a single block in hex format to the terminal\&. "
+.ti -1c
+.RI "int \fBfileNameDirIndex\fP (char *fileName, int fileNameLength)"
+.br
+.RI "Returns the last index of '/' in a given path, otherwise returns -1 if no '/' is found\&. "
+.ti -1c
+.RI "void \fBstripDirectory\fP (char *fileName, char *extractedFileName, char *extractedFilePath, int fileNameLength, int slashIndex)"
+.br
+.RI "stripDirectory - Function that removes path from the provided path to a file and returns only the file name "
+.ti -1c
+.RI "void \fBgetOutputFileName\fP (int type, char *fileName, char *outputFileName, char *)"
+.br
+.RI "Get the output file name from all the parameters passed in\&. "
+.ti -1c
+.RI "uint8_t \fBisFileTxt\fP (unsigned char *fileName)"
+.br
+.RI "isFileTxt - Function to determine if the file passed in as a paramter "
+.ti -1c
+.RI "unsigned char * \fBkeyHexToAscii\fP (unsigned char *hexKey, int keyLength)"
+.br
+.RI "keyHexToAscii - Function to convert a key from a Hex string passed in as a paramter "
+.ti -1c
+.RI "unsigned char * \fBIVHexToAscii\fP (unsigned char *hexIV, int IVLength)"
+.br
+.RI "IVHexToAscii - Function to convert a initialization vector from a Hex string passed in as a paramter\&. "
+.ti -1c
+.RI "unsigned char * \fBXORBlocks\fP (unsigned char *block1, unsigned char *block2, int length)"
+.br
+.RI "XORBlocks - Function to XOR two blocks of length\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBVERBOSE\fP"
+.br
+.RI "Variable- size_t VERBOSE Used to dictate whether verbose output is printed to the terminal or not\&. If 0, does not print verbose\&. If 1, prints verbose\&. "
+.ti -1c
+.RI "const size_t \fBAES_BLOCK_SIZE\fP"
+.br
+.RI "Variable- const size_t AES_BLOCK_SIZE\&. Used to dictate the length in bytes of a single AES block used for encryption and decryption\&. Set to 16 bytes for a single block\&. "
+.ti -1c
+.RI "const unsigned char \fBinvSBox\fP [256]"
+.br
+.RI "const unsigned char invSBox\&. Lookup table for the inverse sbox values used during AES Decryption\&. "
+.ti -1c
+.RI "const unsigned char \fBsbox\fP [256]"
+.br
+.RI "const unsigned char sbox\&. Lookup table for the sbox values used during AES Encryption\&. "
+.ti -1c
+.RI "const unsigned char \fBRcon\fP [255]"
+.br
+.RI "const unsigned char Rcon\&. Lookup table for the Rcon values used during Rijndael Key Schedule during the AES Encryption and Decryption\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+AES encryption and decryption module header file\&. This file contains the function headers for the functions used for AES encryption and decryption\&. Input must be ASCII and not hex\&. The functions implemented in this file, perform the AES encryption and decryption on a single block of size dictated by the variable AES_BLOCK_SIZE\&. 
+
+
+.PP
+\fBAuthors:\fP
+.RS 4
+Mohamed Ameen Omar (u16055323) 
+.PP
+Douglas Healy (u16018100) 
+.PP
+Llewellyn Moyse (u15100708) 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2019-03-20
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (c) 2019 
+.RE
+.PP
+
+.PP
+Definition in file \fBAES\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void AddRoundKey (unsigned char state[4][4], unsigned char key[4][4])"
+
+.PP
+AddRoundKey - Function that performs the Bitwise XOR between state and key as per AES encryption\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption 
+.br
+\fIkey\fP - unsigned char - sub key to be added for the current round to the current state vector 
+.RE
+.PP
+
+.PP
+Definition at line 688 of file AES\&.c\&.
+.SS "unsigned char* AESDecrypt (unsigned char * cipherText, unsigned char * key, int cipherTextLength, int keyLength)"
+
+.PP
+AESDecrypt - Function to decrypt a single block of ciphertext passed in as parameter  cipherText using AES decryption, for 128, 192 and 256 bit keys\&. Validates the keylength and returns the corresponding plaintext\&. The caller of the function must ensure that the returned plaintext pointer is freed\&. The plaintext returned is always 16 bytes and the plainText must be 16 bytes or less\&. Makes use of zero padding\&. All input must be in ASCII and NOT hex\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchar\fP - unsigned char* cipherText - pointer to the ciphertext that needs to be decrypted using AES decryption\&. 
+.br
+\fIchar\fP - unsigned char* key - reference to the key that must be used for AES decryption\&. 
+.br
+\fIcipherTextLength\fP - length of the ciphertext in 
+.br
+\fIcipherText\fP to be decrypted\&. 
+.br
+\fIkeyLength\fP - length of the key passed in as 
+.br
+\fIkey\fP used for the AES decryption\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned* char - Plaintext resulting from the decryption of the ciphertext passed in as 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcipherText\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 399 of file AES\&.c\&.
+.SS "unsigned char* AESEncrypt (unsigned char * plainText, unsigned char * key, int plainTextLength, int keyLength)"
+
+.PP
+AESEncrypt - Function to encrypt a single block of plaintext passed in as parameter  plainText using AES encryption, for 128, 192 and 256 bit keys\&. Validates the keylength and returns the corresponding ciphertext\&. The caller of the function must ensure that the returned ciphertext pointer is freed\&. The ciphertext returned is always 16 bytes and the plainText must be 16 bytes or less\&. Makes use of zero padding\&. All input must be in ASCII and NOT hex\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchar\fP - unsigned char* plainText - pointer to the plaintext that needs to be encrypted using AES encryption\&. 
+.br
+\fIchar\fP - unsigned char* key - reference to the key that must be used for AES encryption\&. 
+.br
+\fIplainTextLength\fP - length of the plaintext in 
+.br
+\fIplainText\fP to be encrypted\&. 
+.br
+\fIkeyLength\fP - length of the key passed in as 
+.br
+\fIkey\fP used for the AES encryption\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned* char - Ciphertext resulting from the encryption of the plaintext passed in as 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplainText\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 198 of file AES\&.c\&.
+.SS "unsigned char* asciiToHexString (unsigned char * asciiString, unsigned char * hexString, size_t asciiStringLen)"
+
+.PP
+Function name: asciiToHexString - convert an ascii String to an ascii string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIasciiString\fP - unsigned char* pointing to the ASCII String to be converted\&. 
+.br
+\fIhexString\fP - unsigned char* pointing to a memory where the converted Hex string should be stored\&. 
+.br
+\fIasciiStringLen\fP - size_t containing the length of the ASCII String to be converted\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned char* asciiToHexString - pointer to the converted Hex String, pointing to the same memory location as 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhexString\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 971 of file AES\&.c\&.
+.SS "void constructStateArray (unsigned char * flatArray, unsigned char stateArray[][4])"
+
+.PP
+constructStateArray - Function to convert the state array from a flat 1D array to a multidimensional array\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchar\fP flatArray -the 1D array to be converted\&. 
+.br
+\fIstateArray\fP - the multidimensional array to which to copy the flat array elements to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 895 of file AES\&.c\&.
+.SS "int fileNameDirIndex (char * fileName, int fileNameLength)"
+
+.PP
+Returns the last index of '/' in a given path, otherwise returns -1 if no '/' is found\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP The path to a file 
+.br
+\fIfileNameLength\fP The length of the provided file 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int Index of the last '/' in the path, else -1 if no '/' was found 
+.RE
+.PP
+
+.PP
+Definition at line 1043 of file AES\&.c\&.
+.SS "unsigned char galloisFieldMult (unsigned char a, unsigned char b)"
+
+.PP
+galloisFieldMult - Function to perform the Galois field multiplication operation required for the inverse mix columns and the mix columns operation of the AES encryption and decryption processes\&. Returns the result of the multiplication\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP - first character to perform Galois field multiplication\&. 
+.br
+\fIb\fP - second character to perform Galois field multiplication\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned char - Result of the Galois field multiplication\&. 
+.RE
+.PP
+
+.PP
+Definition at line 764 of file AES\&.c\&.
+.SS "unsigned char getInvSBox (unsigned char index)"
+
+.PP
+getInvSBox - Function to return the inverse sBox value passed in as a parameter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\&.\fP Requires the original value required in hex\&.
+.br
+\fIindex\fP - unsigned char - hexadecimal representation of the index for which the inverse SBox value is required\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned char - inverse sBox value for the paramter 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file AES\&.c\&.
+.SS "int getNumRounds (int keyLength)"
+
+.PP
+getNumRounds - Function to return the number of rounds of AES encryption and decryption based off of the length of the key given in 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkeyLength\&.\fP 
+.br
+\fIkeyLength\fP - int - indicates the length of the key 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int - the number of rounds based off of the length of the key passed in the parameter 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkeyLength\&.\fP If the length of the key is not valid, returns -1\&. 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file AES\&.c\&.
+.SS "void getOutputFileName (int type, char * fileName, char * outputFileName, char * mode)"
+
+.PP
+Get the output file name from all the parameters passed in\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItype\fP 0 - Encrypt, 1 - Decrypt 
+.br
+\fIfileName\fP The name of the input file 
+.br
+\fIoutputFileName\fP The name of the output file 
+.br
+\fImode\fP Chipher mode to be used (ECB, CBC, CFB) 
+.RE
+.PP
+
+.PP
+Definition at line 1086 of file AES\&.c\&.
+.SS "int getPaddedKeyLength (int currentKeyLength)"
+
+.PP
+getPaddedKeyLength - Function to return a valid key length (in bytes) based off of the current key length passed in as 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcurrentKeyLength\&.\fP Corresponds to minimum and maximum key length required for AES encryption and decryption\&. The key will then be padded to the length of the value returned from this function\&. If the keylength is less than 16, will return 16\&. If greater than 16, but less than 24, will return 24\&. If greater than 32, will return -1\&.
+.br
+\fIcurrentKeyLength\fP - int - current key length in bytes, to be padded to the return value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int - the length in bytes that the key should be padded to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 172 of file AES\&.c\&.
+.SS "unsigned char getRconValue (unsigned char num)"
+
+.PP
+getRconValue - Function to return the Rcon value for the index passed in as a parameter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\&.\fP Requires the original value required in hex\&.
+.br
+\fIindex\fP - unsigned char - hexadecimal representation of the number for which the Rcon value is required during the key schedule\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned char - rCon value for the paramter 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 158 of file AES\&.c\&.
+.SS "void getRoundKey (unsigned char * expandedKey, unsigned char * roundKey, int roundNum)"
+
+.PP
+getRoundKey - Function to extract the correct sub-key to use for the appropriate round specified by 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroundNum\&.\fP Copies the sub-key from the expanded key in 
+.br
+\fIexpandedKey\fP to 
+.br
+\fIroundKey\&.\fP 
+.br
+\fIchar\fP - expandedKey - The expanded key from which to extract the sub-key\&. 
+.br
+\fIchar\fP - roundKey - memory to which to copy the sub-key\&. 
+.br
+\fIroundNum\fP - int - the round number for which the sub-key is required\&. 
+.RE
+.PP
+
+.PP
+Definition at line 881 of file AES\&.c\&.
+.SS "unsigned char getSBoxValue (unsigned char index)"
+
+.PP
+getSBoxValue - Function to return the sBox value passed in as a parameter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\&.\fP Requires the original value required in hex\&.
+.br
+\fIindex\fP - unsigned char - hexadecimal representation of the index for which the SBox value is required\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned char - sBox value for the paramter 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file AES\&.c\&.
+.SS "uint8_t hexToAscii (char ch1, char ch2)"
+
+.PP
+hexToAscii - Function that converts a given hex value to its ASCII equivalent\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch1\fP - char value of the first hex value\&. 
+.br
+\fIch2\fP - char value of the second hex value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 928 of file AES\&.c\&.
+.SS "void hexToAsciiString (char * hexString, char * asciiString, int hexStringLength)"
+
+.PP
+hexToAsciiString - Function that converts a given string of hex values into its ASCII equivalent\&. A hex string contains hex chars and is 'encoded' in ascii In order to encrypt it, it must be converted to the equivalent ascii plain text string plaintext string is half the size of hex, since two hex chars = 1 ascii char if hex string is '4A' it will be converted to 'J' in ascii which will have a hex representation of '4a' The original hex string converted to hex staright or printed in hex straight rather will print or have the value '0x34', '0x31' BASICALLY THE HEX STRING FF IS INTERPRETED AS THE CHARS FF, whereas when using this function we intend it to be 'J', ie the char 'J' 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchar*\fP hexString - The string of hex values to be converted\&. 
+.br
+\fIchar*\fP asciiString - The output of the converted hex string\&. 
+.br
+\fIint\fP hexStringLength - The length of parameter hexString\&. 
+.RE
+.PP
+
+.PP
+Definition at line 948 of file AES\&.c\&.
+.SS "uint8_t hexToInt (char ch)"
+
+.PP
+hexToInt - Function that converts a given hex value into an integer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch\fP - hex value that wil be converted to int\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+uint8_t the converted int value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 909 of file AES\&.c\&.
+.SS "void invMixColumns (unsigned char state[4][4])"
+
+.PP
+invMixColumns - Function that does the inverse of the Mix Column Step for AES Encryption\&. Performs the gallois field multiplication and the required XOR to the state passed in as a paramter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\&.\fP 
+.br
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption\&. 
+.RE
+.PP
+
+.PP
+Definition at line 740 of file AES\&.c\&.
+.SS "void invShiftRows (unsigned char state[4][4], int wordLength)"
+
+.PP
+invShiftRows - Function to shift the state array Inverse according to the AES encryption standard for 128 - bits blocks 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption 
+.RE
+.PP
+
+.PP
+Definition at line 835 of file AES\&.c\&.
+.SS "void invSubBytes (unsigned char state[4][4])"
+
+.PP
+invSubBytes - Function that performs the inverse of Function subBytes 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption 
+.RE
+.PP
+
+.PP
+Definition at line 802 of file AES\&.c\&.
+.SS "uint8_t isFileTxt (unsigned char * fileName)"
+
+.PP
+isFileTxt - Function to determine if the file passed in as a paramter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP is a text file with extension \&.txt or not\&. Returns a 1 if it is and a 0 if it isn't\&.
+.br
+\fIfileName\fP - unsigned char* fileName - path to file to determine if the file is a text file or not\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+uint8_t - boolean indicating if it is a text file or not\&. (0 is not a text file, 1 is a text file) 
+.RE
+.PP
+
+.PP
+Definition at line 1156 of file AES\&.c\&.
+.SS "unsigned char* IVHexToAscii (unsigned char * hexIV, int IVLength)"
+
+.PP
+IVHexToAscii - Function to convert a initialization vector from a Hex string passed in as a paramter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhexIV\fP to an ascii string\&. User must free the returned pointer to memory allocated\&. Returns the Ascii equivalent\&. The caller must free the pointer returned\&. 
+.br
+\fIchar\fP - unsigned char* hexIV - hex representation 
+.br
+\fIIVLength\fP - length of the hex representation of the IV passed in as paramter 
+.br
+\fIhexIV\&.\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned* - the ASCII representation of the hex IV passed in as parameter 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhexIV\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1205 of file AES\&.c\&.
+.SS "unsigned char* keyHexToAscii (unsigned char * hexKey, int keyLength)"
+
+.PP
+keyHexToAscii - Function to convert a key from a Hex string passed in as a paramter 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhexKey\fP to an ascii string\&. User must free the returned pointer to memory allocated\&. Returns the Ascii equivalent\&. The caller must free the pointer returned\&. 
+.br
+\fIchar\fP - unsigned char* hexKey - hex representation of the key to be converted to ASCII\&. 
+.br
+\fIkeyLength\fP - length of the hex representation of the key passed in as paramter 
+.br
+\fIhexKey\&.\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned* - the ASCII representation of the hex key passed in as parameter 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhexKey\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1178 of file AES\&.c\&.
+.SS "void KeyScheduleCore (unsigned char * word, int wordLength, int rConIterationVal)"
+
+.PP
+KeyScheduleCore - Function that performs the key schedule core for the Rijndael Key Schedule\&. Performs a single rotate left of the word passed in as\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIword\fP and applies the required s-box substituion and rcon XOR\&. 
+.br
+\fIchar\fP - unsigned char* word - pointer to the word onto which the key schedule core should be operated\&. 
+.br
+\fIwordLength\fP - length of the word passed in as a parameter 
+.br
+\fIword\&.\fP 
+.br
+\fIrConIterationVal\fP - the iteration value to be used for the rcon XOR\&. 
+.RE
+.PP
+
+.PP
+Definition at line 631 of file AES\&.c\&.
+.SS "void mixColumns (unsigned char state[4][4])"
+
+.PP
+mixColumns - Function that performs the MixColumns step of AES as specified by AES encryption\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption 
+.RE
+.PP
+
+.PP
+Definition at line 702 of file AES\&.c\&.
+.SS "void printAESBlock (unsigned char * block)"
+
+.PP
+printAESBlock - Function to print a single block in hex format to the terminal\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblock\fP - block to be printed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1028 of file AES\&.c\&.
+.SS "void printStateArray (uint8_t stateArray[4][4])"
+
+.PP
+printStateArray - Function to print the state array to the terminal in hex format\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstateArray\fP - the state array that should be printed to the terminal\&. 
+.RE
+.PP
+
+.PP
+Definition at line 673 of file AES\&.c\&.
+.SS "unsigned char* RijndaelKeySchedule (unsigned char * originalKey, int keyLength)"
+
+.PP
+RijndaelKeySchedule - Function that performs the Rijndael key scheduling for AES encryption\&. Takes in the original key passed in as parameter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoriginalKey\fP and the length of the original key given as parameter\&. The caller must free the memory allocated and returned\&. 
+.br
+\fIoriginalKey\fP - unsigned char * - An unsigned char pointer to the original key\&. 
+.br
+\fIkeyLength\fP - int - length of originalKey passed in as a parameter 
+.br
+\fIoriginalKey\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+expandedKey - The key that has been expanded\&. 
+.RE
+.PP
+
+.PP
+Definition at line 577 of file AES\&.c\&.
+.SS "void ShiftRows (unsigned char state[4][4], int wordLength)"
+
+.PP
+ShiftRows - Function to shift the state array according to the AES encryption standard for 128 - bits blocks\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption 
+.RE
+.PP
+
+.PP
+Definition at line 815 of file AES\&.c\&.
+.SS "void SingleRotateLeft (unsigned char * word, int wordLength)"
+
+.PP
+SingleRotateLeft - Function to rotate the array passed in as a paramter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIword,a\fP single time left (8 bits to the left), with the left most element becoming the right most element\&. As such: rotate(1d2c3a4f) = 2c3a4f1d\&. 
+.br
+\fIword\fP - unsigned char *word - the array/word to be left rotated by 8 bits\&. 
+.br
+\fIwordLength\fP - int - length of the parameter 
+.br
+\fIword\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 655 of file AES\&.c\&.
+.SS "void SingleRotateRight (unsigned char * word, int wordLength)"
+
+.PP
+SingleRotateRight - Function to rotate the array passed in as a paramter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIword,a\fP single time right (8 bits to the right), with the right most element becoming the left most element\&. As such: rotate(1d2c3a4f) = 4f1d2c3a\&.
+.br
+\fIword\fP - unsigned char *word - the array/word to be right rotated by 8 bits\&. 
+.br
+\fIwordLength\fP - int - length of the parameter 
+.br
+\fIword\&.\fP 
+.RE
+.PP
+
+.PP
+Definition at line 857 of file AES\&.c\&.
+.SS "void stripDirectory (char * fileName, char * extractedFileName, char * extractedFilePath, int fileNameLength, int slashIndex)"
+
+.PP
+stripDirectory - Function that removes path from the provided path to a file and returns only the file name 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP The path to a specified file 
+.br
+\fIextractedFileName\fP The name of the file within the provided path to a file 
+.br
+\fIextractedFilePath\fP The path to file, excluding the file name 
+.br
+\fIfileNameLength\fP The length of the paramter 
+.br
+\fIfileName\fP 
+.br
+\fIslashIndex\fP The index of the last '/' in the original file path passed in as a paramter 
+.br
+\fIfileName\fP stripDirectory - Function that removes path from the provided path to a file and returns only the file name
+.br
+\fIfileName\fP The path to a specified file 
+.br
+\fIextractedFileName\fP The name of the file within the provided path to a file 
+.br
+\fIextractedFilePath\fP The path to file, excluding the file name 
+.br
+\fIfileNameLength\fP The length of the paramter 
+.br
+\fIfileName\fP 
+.br
+\fIslashIndex\fP The index of the last '/' in the original file path passed in as a paramter 
+.br
+\fIfileName\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1063 of file AES\&.c\&.
+.SS "void subBytes (unsigned char state[4][4])"
+
+.PP
+subBytes - Function that performs the sub byte operation where each value is replaced by the s box value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP - unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption\&. 
+.RE
+.PP
+
+.PP
+Definition at line 789 of file AES\&.c\&.
+.SS "void validateCipherTextLength (int cipherTextLength)"
+
+.PP
+validateCipherTextLength - Function that validates the length of the ciphertext\&. The validation is done against the AES_BLOCK_SIZE value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcipherTextLength\fP - int - The length of the cipher text as an integer value 
+.RE
+.PP
+
+.PP
+Definition at line 1015 of file AES\&.c\&.
+.SS "void validateNumRounds (int numRounds, int keyLength)"
+
+.PP
+validateNumRounds - Function that validates the number of rounds that have been passed in by the 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInumRounds\&.\fP Upon invalid validation, relevent error information will be printed to terminal and the program will exit with an EXIT_FAILURE flag\&. 
+.br
+\fInumRounds\fP - int - Integer value of the number rounds 
+.RE
+.PP
+
+.PP
+Definition at line 989 of file AES\&.c\&.
+.SS "void validatePlainTextLength (size_t plainTextLength)"
+
+.PP
+validatePlainTextLength - Function that validates the length of the plaintext\&. The validation is done against the AES_BLOCK_SIZE value 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplainTextLength\fP - int - The length of the plaintext text as an integer value 
+.RE
+.PP
+
+.PP
+Definition at line 1002 of file AES\&.c\&.
+.SS "unsigned char* XORBlocks (unsigned char * block1, unsigned char * block2, int length)"
+
+.PP
+XORBlocks - Function to XOR two blocks of length\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlength\fP and retuns the XOR'd result\&. User must free the memory returned\&. 
+.br
+\fIchar\fP - block1 - First block to be XOR'd\&. 
+.br
+\fIchar\fP - block2 - Second block to be XOR'd\&. 
+.br
+\fIlength\fP - length of the blocks to be XOR'd\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+unsigned* - Result of the XOR\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1228 of file AES\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EHN 410 - Group 7 - AES Encryption from the source code\&.

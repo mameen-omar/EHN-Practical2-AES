@@ -1,0 +1,747 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ecb_8h" kind="file" language="C++">
+    <compoundname>ecb.h</compoundname>
+    <includes refid="_a_e_s_8h" local="yes">AES.h</includes>
+    <includes local="yes">stdio.h</includes>
+    <includes local="yes">math.h</includes>
+    <includedby refid="ecb_8c" local="yes">ecb.c</includedby>
+    <includedby refid="ecb_tester_8c" local="yes">ecbTester.c</includedby>
+    <includedby refid="encryption_platform_8h" local="yes">encryptionPlatform.h</includedby>
+    <incdepgraph>
+      <node id="114">
+        <label>stdbool.h</label>
+      </node>
+      <node id="111">
+        <label>stdint.h</label>
+      </node>
+      <node id="113">
+        <label>stdlib.h</label>
+      </node>
+      <node id="108">
+        <label>ecb.h</label>
+        <link refid="ecb_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>AES.h</label>
+        <link refid="_a_e_s_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>string.h</label>
+      </node>
+      <node id="115">
+        <label>math.h</label>
+      </node>
+      <node id="110">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="120">
+        <label>encryptionPlatform.c</label>
+        <link refid="encryption_platform_8c"/>
+      </node>
+      <node id="119">
+        <label>encryptionPlatform.h</label>
+        <link refid="encryption_platform_8h_source"/>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>ecb.c</label>
+        <link refid="ecb_8c"/>
+      </node>
+      <node id="116">
+        <label>ecb.h</label>
+        <link refid="ecb_8h"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>ecbTester.c</label>
+        <link refid="ecb_tester_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ecb_8h_1aa451eb4920a712afa521f06831277731" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ecbEncrypt</definition>
+        <argsstring>(unsigned char *plainText, unsigned char *key, int plainTextLength, int keyLength, int isTextHex, int isKeyHex)</argsstring>
+        <name>ecbEncrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>plainText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <briefdescription>
+<para>ecbEncrypt - Function to encrypt the user input pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plainText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and print encrypted result in hex to terminal. Performs encryption using the ECB mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform encryption and print it in hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* plainText - the user input to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the plaintext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ecb.h" line="36" column="1" bodyfile="ecb.c" bodystart="34" bodyend="103"/>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="ecb_8c_1a50ddfe369298c1293b5c57662f569127" compoundref="ecb_8c" startline="187" endline="192">ecbEcryptHelper</references>
+      </memberdef>
+      <memberdef kind="function" id="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ecbDecrypt</definition>
+        <argsstring>(unsigned char *cipherText, unsigned char *key, int cipherTextLength, int keyLength, int isTextHex, int isKeyHex)</argsstring>
+        <name>ecbDecrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>cipherText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <briefdescription>
+<para>ecbDecrypt - Function to decrypt the user input pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cipherText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and print decrypted result in hex to terminal. Performs decryption using the ECB mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform decryption and print it in hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* cipherText - the user input to be decrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the ciphertext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ecb.h" line="50" column="1" bodyfile="ecb.c" bodystart="116" bodyend="177"/>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="ecb_8c_1a9661ce321dd2649926ebadd2ab9dcd20" compoundref="ecb_8c" startline="202" endline="207">ecbDecryptHelper</references>
+      </memberdef>
+      <memberdef kind="function" id="ecb_8h_1a50ddfe369298c1293b5c57662f569127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ecbEcryptHelper</definition>
+        <argsstring>(unsigned char *plainText, unsigned char *key, int plainTextLength, int keyLength)</argsstring>
+        <name>ecbEcryptHelper</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>plainText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <briefdescription>
+<para>ecbEcryptHelper - Helper function used to encrypt the plaintext pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plainText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>using ECB mode of encryption and output the result to the terminal. Encrypts a single block of 16 bytes using AES encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* plainText - the block input to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the plaintext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ecb.h" line="61" column="1" bodyfile="ecb.c" bodystart="187" bodyend="192"/>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <referencedby refid="ecb_8h_1aa451eb4920a712afa521f06831277731" compoundref="ecb_8c" startline="34" endline="103">ecbEncrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ecb_8h_1a9661ce321dd2649926ebadd2ab9dcd20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ecbDecryptHelper</definition>
+        <argsstring>(unsigned char *cipherText, unsigned char *key, int cipherTextLength, int keyLength)</argsstring>
+        <name>ecbDecryptHelper</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>cipherText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <briefdescription>
+<para>ecbDecryptHelper - Helper function used to decrypt the ciphertext pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cipherText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>using ECB mode of decryption and output the result to the terminal. Decrypts a single block of 16 bytes using AES decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* cipherText - the block input to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the ciphertext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ecb.h" line="71" column="1" bodyfile="ecb.c" bodystart="202" bodyend="207"/>
+        <references refid="_a_e_s_8c_1ab51c63e6483f94f12bbc9b256374ec64" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <referencedby refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" compoundref="ecb_8c" startline="116" endline="177">ecbDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ecbEncryptFile</definition>
+        <argsstring>(unsigned char *fileName, unsigned char *key, int keyLength, int isTextHex, int isKeyHex)</argsstring>
+        <name>ecbEncryptFile</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <briefdescription>
+<para>ecbEncryptFile - Function to encrypt the file with name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and write the encrypted version to file with ecbEncrypted appended to the original filename. Performs encryption using the ecb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII. All terminal output, however, will be hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - the path to the file to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ecb.h" line="84" column="1" bodyfile="ecb.c" bodystart="221" bodyend="357"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+      </memberdef>
+      <memberdef kind="function" id="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ecbDecryptFile</definition>
+        <argsstring>(unsigned char *fileName, unsigned char *key, int keyLength, int isTextHex, int isKeyHex)</argsstring>
+        <name>ecbDecryptFile</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <briefdescription>
+<para>ecbDecryptFile - Function to encrypt the file with name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and write the decrypted version to file with ecbDecrypted appended to the original filename. Performs decryption using the ecb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII. All terminal output, however, will be hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - the path to the file to be decrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ecb.h" line="97" column="1" bodyfile="ecb.c" bodystart="370" bodyend="544"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <references refid="_a_e_s_8c_1ab51c63e6483f94f12bbc9b256374ec64" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</references>
+        <references refid="_a_e_s_8c_1ac189aee6672718650020cf627d45c780" compoundref="_a_e_s_8c" startline="971" endline="982">asciiToHexString</references>
+        <references refid="_a_e_s_8c_1a3bf513612c15693c3b2be10b94298e05" compoundref="_a_e_s_8c" startline="1156" endline="1167">isFileTxt</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Electronic code book (ECB) - AES header file This file contains the function headers of the functions used for the ECB mode of AES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The ECB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="authors"><para>Mohamed Ameen Omar (u16055323) </para></simplesect>
+<simplesect kind="authors"><para>Douglas Healy (u16018100) </para></simplesect>
+<simplesect kind="authors"><para>Llewellyn Moyse (u15100708) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2019-04-17</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ECB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_e_s_8h" kindref="compound">AES.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdio.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ecb_8h_1aa451eb4920a712afa521f06831277731" kindref="member">ecbEncrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>plainText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>plainTextLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex);<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" kindref="member">ecbDecrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cipherText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cipherTextLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex);<sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ecb_8h_1a50ddfe369298c1293b5c57662f569127" kindref="member">ecbEcryptHelper</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>plainText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>plainTextLength,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ecb_8h_1a9661ce321dd2649926ebadd2ab9dcd20" kindref="member">ecbDecryptHelper</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cipherText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cipherTextLength,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" kindref="member">ecbEncryptFile</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex);<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" kindref="member">ecbDecryptFile</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex);<sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>MACRO</highlight></codeline>
+    </programlisting>
+    <location file="ecb.h"/>
+  </compounddef>
+</doxygen>

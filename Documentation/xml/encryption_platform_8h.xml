@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="encryption_platform_8h" kind="file" language="C++">
+    <compoundname>encryptionPlatform.h</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">getopt.h</includes>
+    <includes refid="_a_e_s_8h" local="yes">AES.h</includes>
+    <includes refid="cfb_8h" local="yes">cfb.h</includes>
+    <includes refid="cbc_8h" local="yes">cbc.h</includes>
+    <includes refid="ecb_8h" local="yes">ecb.h</includes>
+    <includedby refid="encryption_platform_8c" local="yes">encryptionPlatform.c</includedby>
+    <incdepgraph>
+      <node id="154">
+        <label>stdbool.h</label>
+      </node>
+      <node id="155">
+        <label>cfb.h</label>
+        <link refid="cfb_8h"/>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>stdint.h</label>
+      </node>
+      <node id="147">
+        <label>stdlib.h</label>
+      </node>
+      <node id="146">
+        <label>encryptionPlatform.h</label>
+        <link refid="encryption_platform_8h"/>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>ecb.h</label>
+        <link refid="ecb_8h"/>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>AES.h</label>
+        <link refid="_a_e_s_8h"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>string.h</label>
+      </node>
+      <node id="150">
+        <label>unistd.h</label>
+      </node>
+      <node id="156">
+        <label>cbc.h</label>
+        <link refid="cbc_8h"/>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>math.h</label>
+      </node>
+      <node id="151">
+        <label>getopt.h</label>
+      </node>
+      <node id="149">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="160">
+        <label>encryptionPlatform.c</label>
+        <link refid="encryption_platform_8c"/>
+      </node>
+      <node id="159">
+        <label>encryptionPlatform.h</label>
+        <link refid="encryption_platform_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="encryption_platform_8h_1a48113b3faee8aad8efa17aac0b56b63b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t VERBOSE</definition>
+        <argsstring></argsstring>
+        <name>VERBOSE</name>
+        <briefdescription>
+<para>Variable- size_t VERBOSE Used to dictate whether verbose output is printed to the terminal or not. If 0, does not print verbose. If 1, prints verbose. </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable - VERBOSE - specifies if verbose output should be printed or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="encryptionPlatform.h" line="15" column="1" bodyfile="AES.c" bodystart="31" bodyend="-1"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="encryption_platform_8h_1ac3c0558617e372fc5ce3648e041e549c" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t AES_BLOCK_SIZE</definition>
+        <argsstring></argsstring>
+        <name>AES_BLOCK_SIZE</name>
+        <briefdescription>
+<para>Variable- const size_t AES_BLOCK_SIZE. Used to dictate the length in bytes of a single AES block used for encryption and decryption. Set to 16 bytes for a single block. </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable - AES_BLOCK_SIZE - specifies the length per AES block - 16 bytes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="encryptionPlatform.h" line="16" column="1" bodyfile="AES.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="encryption_platform_8h_1a0d20b69b0ad703df78459e1033d5c1d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printHelp</definition>
+        <argsstring>()</argsstring>
+        <name>printHelp</name>
+        <briefdescription>
+<para>Prints a usage menu to be shown to a user when entering the &apos;help&apos; command line parameter or when parameters are entered incorrectly. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="encryptionPlatform.h" line="22" column="1" bodyfile="encryptionPlatform.c" bodystart="232" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="encryption_platform_8h_1adcd7d4e4ddadb63af6bbbd1d44776e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void freeMemory</definition>
+        <argsstring>(unsigned char *key, unsigned char *IV, int freeKey, int freeIV)</argsstring>
+        <name>freeMemory</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>IV</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>freeKey</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>freeIV</declname>
+        </param>
+        <briefdescription>
+<para>Free up memory allocated to stored key and IV. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a location in memory containing the key </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a location in memory containing the IV </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>freeKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean value indicating whether or not the IV memory should be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>freeIV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean value indicating whether or not the Key memory should be freed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="encryptionPlatform.h" line="32" column="1" bodyfile="encryptionPlatform.c" bodystart="262" bodyend="270"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>ENCRYPTION_PLATFORM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ENCRYPTION_PLATFORM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;getopt.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_e_s_8h" kindref="compound">AES.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cfb_8h" kindref="compound">cfb.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cbc_8h" kindref="compound">cbc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ecb_8h" kindref="compound">ecb.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" kindref="member">VERBOSE</ref>;<sp/></highlight><highlight class="comment">//<sp/>for<sp/>verbose<sp/>output<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" kindref="member">AES_BLOCK_SIZE</ref>;<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>blocks<sp/>in<sp/>BYTES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="encryption_platform_8c_1a0d20b69b0ad703df78459e1033d5c1d4" kindref="member">printHelp</ref>();<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="encryption_platform_8c_1adcd7d4e4ddadb63af6bbbd1d44776e64" kindref="member">freeMemory</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>IV,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>freeKey,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>freeIV);<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="encryptionPlatform.h"/>
+  </compounddef>
+</doxygen>

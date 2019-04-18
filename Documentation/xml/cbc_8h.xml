@@ -1,0 +1,811 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="cbc_8h" kind="file" language="C++">
+    <compoundname>cbc.h</compoundname>
+    <includes refid="_a_e_s_8h" local="yes">AES.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includedby refid="cbc_8c" local="yes">cbc.c</includedby>
+    <includedby refid="cbc_tester_8c" local="yes">cbcTester.c</includedby>
+    <includedby refid="encryption_platform_8h" local="yes">encryptionPlatform.h</includedby>
+    <incdepgraph>
+      <node id="53">
+        <label>stdbool.h</label>
+      </node>
+      <node id="50">
+        <label>stdint.h</label>
+      </node>
+      <node id="52">
+        <label>stdlib.h</label>
+      </node>
+      <node id="48">
+        <label>AES.h</label>
+        <link refid="_a_e_s_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>string.h</label>
+      </node>
+      <node id="47">
+        <label>cbc.h</label>
+        <link refid="cbc_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="58">
+        <label>encryptionPlatform.c</label>
+        <link refid="encryption_platform_8c"/>
+      </node>
+      <node id="57">
+        <label>encryptionPlatform.h</label>
+        <link refid="encryption_platform_8h_source"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>cbcTester.c</label>
+        <link refid="cbc_tester_8c"/>
+      </node>
+      <node id="55">
+        <label>cbc.c</label>
+        <link refid="cbc_8c"/>
+      </node>
+      <node id="54">
+        <label>cbc.h</label>
+        <link refid="cbc_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="cbc_8h_1a48113b3faee8aad8efa17aac0b56b63b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t VERBOSE</definition>
+        <argsstring></argsstring>
+        <name>VERBOSE</name>
+        <briefdescription>
+<para>Variable- size_t VERBOSE Used to dictate whether verbose output is printed to the terminal or not. If 0, does not print verbose. If 1, prints verbose. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cbc.h" line="30" column="1" bodyfile="AES.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cbc_8h_1ac3c0558617e372fc5ce3648e041e549c" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t AES_BLOCK_SIZE</definition>
+        <argsstring></argsstring>
+        <name>AES_BLOCK_SIZE</name>
+        <briefdescription>
+<para>Variable- const size_t AES_BLOCK_SIZE. Used to dictate the length in bytes of a single AES block used for encryption and decryption. Set to 16 bytes for a single block. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cbc.h" line="31" column="1" bodyfile="AES.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbcEncryptFile</definition>
+        <argsstring>(unsigned char *fileName, unsigned char *key, unsigned char *initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cbcEncryptFile</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cbcEncryptFile - Function to encrypt the file with name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and write the encrypted version to file with cbcEncrypted appended to the original filename. Performs encryption using the cbc mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII. All terminal output, however, will be hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - the path to the file to be encrypted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cbc encryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cbc.h" line="47" column="1" bodyfile="cbc.c" bodystart="38" bodyend="246"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+      </memberdef>
+      <memberdef kind="function" id="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbcDecryptFile</definition>
+        <argsstring>(unsigned char *fileName, unsigned char *key, unsigned char *initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cbcDecryptFile</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cbcDecryptFile - Function to decrypt the file with name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and write the decrypted version to file with cbcDecrypted appended to the original filename. Performs decryption using the cbc mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform decryption and write it back to the file in the same format as the input. That is if the input file was a hexString, the decrypted file will also contain a hex string. All terminal output, however, will be hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - the path to the file to be decrypted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cbc decryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cbc.h" line="65" column="1" bodyfile="cbc.c" bodystart="263" bodyend="476"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <references refid="_a_e_s_8c_1ab51c63e6483f94f12bbc9b256374ec64" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+        <references refid="_a_e_s_8c_1ac189aee6672718650020cf627d45c780" compoundref="_a_e_s_8c" startline="971" endline="982">asciiToHexString</references>
+        <references refid="_a_e_s_8c_1a3bf513612c15693c3b2be10b94298e05" compoundref="_a_e_s_8c" startline="1156" endline="1167">isFileTxt</references>
+      </memberdef>
+      <memberdef kind="function" id="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbcEncrypt</definition>
+        <argsstring>(unsigned char *plainText, unsigned char *key, unsigned char *initializationVector, int plainTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cbcEncrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>plainText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cbcEncrypt - Function to encrypt the user input pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plainText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and print encrypted result in hex to terminal. Performs encryption using the cbc mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform encryption and print it in hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* plainText - the user input to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cbc encryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- - int - the length of the plaintext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Process for CBC encrypt file: Read from file, if hex, convert if not do nothing. Store read converted in plaintextblock Pad the converted plaintextblock and store in paddedPlaintext Store IV and previous ciphertext in placeholderblock XOR paddedPlaintext and placeholder - store in intermediate Encrypt intermediate - store in cipherTextBlock Write to the file Free memory, read again and check that the read buffer length (amount read from the file iss not 0)</para>        </inbodydescription>
+        <location file="cbc.h" line="83" column="1" bodyfile="cbc.c" bodystart="492" bodyend="632"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+      </memberdef>
+      <memberdef kind="function" id="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbcDecrypt</definition>
+        <argsstring>(unsigned char *cipherText, unsigned char *key, unsigned char *initializationVector, int cipherTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cbcDecrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>cipherText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cbcDecrypt - Function to decrypt the user input pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cipherText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and print decrypted result in hex to terminal. Performs decryption using the cbc mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform decryption and print it in hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* cipherText - the user input to be decrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cbc decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the ciphertext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cbc.h" line="100" column="1" bodyfile="cbc.c" bodystart="648" bodyend="766"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1ab51c63e6483f94f12bbc9b256374ec64" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Cipher Block Chaining (CBC) - AES Header file This file contains the function headers of the functions used for the CBC mode of AES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The CBC Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding. The IV is limited to 16 bytes and the key is limited to 32 bytes as per the AES encryption standard. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="authors"><para>Mohamed Ameen Omar (u16055323) </para></simplesect>
+<simplesect kind="authors"><para>Douglas Healy (u16018100) </para></simplesect>
+<simplesect kind="authors"><para>Llewellyn Moyse (u15100708) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2019-03-28</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Mohamed<sp/>Ameen<sp/>Omar<sp/>(u16055323)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor">#ifndef<sp/>CBC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CBC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_e_s_8h" kindref="compound">AES.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="cbc_8h_1a48113b3faee8aad8efa17aac0b56b63b" kindref="member">VERBOSE</ref>;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="cbc_8h_1ac3c0558617e372fc5ce3648e041e549c" kindref="member">AES_BLOCK_SIZE</ref>;<sp/></highlight><highlight class="comment">//<sp/>16<sp/>is<sp/>the<sp/>block<sp/>size<sp/>for<sp/>AES<sp/>(from<sp/>AES.h)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" kindref="member">cbcEncryptFile</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" kindref="member">cbcDecryptFile</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" kindref="member">cbcEncrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>plainText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>plainTextLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" kindref="member">cbcDecrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cipherText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cipherTextLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="cbc.h"/>
+  </compounddef>
+</doxygen>

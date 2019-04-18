@@ -1,0 +1,91 @@
+\hypertarget{encryption_platform_8c}{}\section{encryption\+Platform.\+c File Reference}
+\label{encryption_platform_8c}\index{encryption\+Platform.\+c@{encryption\+Platform.\+c}}
+
+
+Implementation file for the cbc and cfb encryption platform. All functions, to specify key, IV, type of encrytion mode, file path or string controlled by commandline parameters.  
+
+
+{\ttfamily \#include \char`\"{}encryption\+Platform.\+h\char`\"{}}\newline
+Include dependency graph for encryption\+Platform.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{encryption_platform_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{encryption_platform_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{encryption_platform_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{encryption_platform_8c_a0d20b69b0ad703df78459e1033d5c1d4}{print\+Help} ()
+\begin{DoxyCompactList}\small\item\em Prints a usage menu to be shown to a user when entering the \textquotesingle{}help\textquotesingle{} command line parameter or when parameters are entered incorrectly. \end{DoxyCompactList}\item 
+void \hyperlink{encryption_platform_8c_adcd7d4e4ddadb63af6bbbd1d44776e64}{free\+Memory} (unsigned char $\ast$key, unsigned char $\ast$IV, int free\+Key, int free\+IV)
+\begin{DoxyCompactList}\small\item\em Free up memory allocated to stored key and IV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation file for the cbc and cfb encryption platform. All functions, to specify key, IV, type of encrytion mode, file path or string controlled by commandline parameters. 
+
+\begin{DoxyAuthor}{Authors}
+Mohamed Ameen Omar (u16055323) 
+
+Douglas Healy (u16018100) 
+
+Llewellyn Moyse (u15100708) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/04-\/03
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{encryption_platform_8c_adcd7d4e4ddadb63af6bbbd1d44776e64}\label{encryption_platform_8c_adcd7d4e4ddadb63af6bbbd1d44776e64}} 
+\index{encryption\+Platform.\+c@{encryption\+Platform.\+c}!free\+Memory@{free\+Memory}}
+\index{free\+Memory@{free\+Memory}!encryption\+Platform.\+c@{encryption\+Platform.\+c}}
+\subsubsection{\texorpdfstring{free\+Memory()}{freeMemory()}}
+{\footnotesize\ttfamily void free\+Memory (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{key,  }\item[{unsigned char $\ast$}]{IV,  }\item[{int}]{free\+Key,  }\item[{int}]{free\+IV }\end{DoxyParamCaption})}
+
+
+
+Free up memory allocated to stored key and IV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & Pointer to a location in memory containing the key \\
+\hline
+{\em char} & Pointer to a location in memory containing the IV \\
+\hline
+{\em free\+Key} & Boolean value indicating whether or not the IV memory should be freed \\
+\hline
+{\em free\+IV} & Boolean value indicating whether or not the Key memory should be freed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 262 of file encryption\+Platform.\+c.
+
+\mbox{\Hypertarget{encryption_platform_8c_a0d20b69b0ad703df78459e1033d5c1d4}\label{encryption_platform_8c_a0d20b69b0ad703df78459e1033d5c1d4}} 
+\index{encryption\+Platform.\+c@{encryption\+Platform.\+c}!print\+Help@{print\+Help}}
+\index{print\+Help@{print\+Help}!encryption\+Platform.\+c@{encryption\+Platform.\+c}}
+\subsubsection{\texorpdfstring{print\+Help()}{printHelp()}}
+{\footnotesize\ttfamily void print\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints a usage menu to be shown to a user when entering the \textquotesingle{}help\textquotesingle{} command line parameter or when parameters are entered incorrectly. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 232 of file encryption\+Platform.\+c.
+

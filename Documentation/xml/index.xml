@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="_a_e_s_8c" kind="file"><name>AES.c</name>
+    <member refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" kind="variable"><name>AES_BLOCK_SIZE</name></member>
+    <member refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" kind="variable"><name>VERBOSE</name></member>
+    <member refid="_a_e_s_8c_1abbb6f385c467cfd964a68eeb6caaa04f" kind="variable"><name>sbox</name></member>
+    <member refid="_a_e_s_8c_1afdaefaa3b28b23dc18709335449a1427" kind="variable"><name>invSBox</name></member>
+    <member refid="_a_e_s_8c_1a58c62505f9b71b2c257046ccf4c9153c" kind="variable"><name>Rcon</name></member>
+    <member refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" kind="function"><name>getNumRounds</name></member>
+    <member refid="_a_e_s_8c_1acdf4abe2846c02b4d3e674782807fdfa" kind="function"><name>getSBoxValue</name></member>
+    <member refid="_a_e_s_8c_1a425f9b1e2cd595f2c45f129bc5d0a6d0" kind="function"><name>getInvSBox</name></member>
+    <member refid="_a_e_s_8c_1a4e58d2e928429bc56387394251b8ece5" kind="function"><name>getRconValue</name></member>
+    <member refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" kind="function"><name>getPaddedKeyLength</name></member>
+    <member refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" kind="function"><name>AESEncrypt</name></member>
+    <member refid="_a_e_s_8c_1ab51c63e6483f94f12bbc9b256374ec64" kind="function"><name>AESDecrypt</name></member>
+    <member refid="_a_e_s_8c_1a185c827e4ccbc8e4608e83dfbf9dfc8e" kind="function"><name>RijndaelKeySchedule</name></member>
+    <member refid="_a_e_s_8c_1af2f914cf17729a0ee89102c98b39665e" kind="function"><name>KeyScheduleCore</name></member>
+    <member refid="_a_e_s_8c_1ac769b0533ccecd203cc3ab64e6b2f950" kind="function"><name>SingleRotateLeft</name></member>
+    <member refid="_a_e_s_8c_1ae9af90db32afa65125a7eec339ed9d58" kind="function"><name>printStateArray</name></member>
+    <member refid="_a_e_s_8c_1aef4d8fc4282e3cc21708d25c0ec9ad06" kind="function"><name>AddRoundKey</name></member>
+    <member refid="_a_e_s_8c_1aca09b30896a351db6587639a1cc1bf0d" kind="function"><name>mixColumns</name></member>
+    <member refid="_a_e_s_8c_1a9de891875f23dd3dff8fe3f8e10ba3ad" kind="function"><name>invMixColumns</name></member>
+    <member refid="_a_e_s_8c_1a7dbbb13c3ab5608765b6d368eb9f4fe1" kind="function"><name>galloisFieldMult</name></member>
+    <member refid="_a_e_s_8c_1aec40f89d2cbf831fd0d5d5f1bfa616f5" kind="function"><name>subBytes</name></member>
+    <member refid="_a_e_s_8c_1a8e72edc1f652f8626aacd2781303c86b" kind="function"><name>invSubBytes</name></member>
+    <member refid="_a_e_s_8c_1abeb4dba64fcf4d07eac178e732ca6aa8" kind="function"><name>ShiftRows</name></member>
+    <member refid="_a_e_s_8c_1a903e34d08dd07be2e2d9618d4d489ee6" kind="function"><name>invShiftRows</name></member>
+    <member refid="_a_e_s_8c_1a4fc33ada95d0d2aaea28086aefe173bb" kind="function"><name>SingleRotateRight</name></member>
+    <member refid="_a_e_s_8c_1abe15a731f43315f6f595674d3cd62d57" kind="function"><name>getRoundKey</name></member>
+    <member refid="_a_e_s_8c_1a1c1a633a58f7328faa397db9e45e7e0c" kind="function"><name>constructStateArray</name></member>
+    <member refid="_a_e_s_8c_1a7e5ab2188af44718071074f450963568" kind="function"><name>hexToInt</name></member>
+    <member refid="_a_e_s_8c_1aa177516503b10de65b504a3714073ad7" kind="function"><name>hexToAscii</name></member>
+    <member refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" kind="function"><name>hexToAsciiString</name></member>
+    <member refid="_a_e_s_8c_1ac189aee6672718650020cf627d45c780" kind="function"><name>asciiToHexString</name></member>
+    <member refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" kind="function"><name>validateNumRounds</name></member>
+    <member refid="_a_e_s_8c_1acefcd728377e1e14187fa8fcd20f4064" kind="function"><name>validatePlainTextLength</name></member>
+    <member refid="_a_e_s_8c_1ae01a1e7833d53f19b534e37ace03a691" kind="function"><name>validateCipherTextLength</name></member>
+    <member refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" kind="function"><name>printAESBlock</name></member>
+    <member refid="_a_e_s_8c_1a9dcad0047890de22f3d15611a10ab74f" kind="function"><name>fileNameDirIndex</name></member>
+    <member refid="_a_e_s_8c_1ab066697b473ad5ce74faaceae6def5e5" kind="function"><name>stripDirectory</name></member>
+    <member refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" kind="function"><name>getOutputFileName</name></member>
+    <member refid="_a_e_s_8c_1a3bf513612c15693c3b2be10b94298e05" kind="function"><name>isFileTxt</name></member>
+    <member refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" kind="function"><name>keyHexToAscii</name></member>
+    <member refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" kind="function"><name>IVHexToAscii</name></member>
+    <member refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" kind="function"><name>XORBlocks</name></member>
+  </compound>
+  <compound refid="_a_e_s_8h" kind="file"><name>AES.h</name>
+    <member refid="_a_e_s_8h_1a48113b3faee8aad8efa17aac0b56b63b" kind="variable"><name>VERBOSE</name></member>
+    <member refid="_a_e_s_8h_1ac3c0558617e372fc5ce3648e041e549c" kind="variable"><name>AES_BLOCK_SIZE</name></member>
+    <member refid="_a_e_s_8h_1afdaefaa3b28b23dc18709335449a1427" kind="variable"><name>invSBox</name></member>
+    <member refid="_a_e_s_8h_1abbb6f385c467cfd964a68eeb6caaa04f" kind="variable"><name>sbox</name></member>
+    <member refid="_a_e_s_8h_1a58c62505f9b71b2c257046ccf4c9153c" kind="variable"><name>Rcon</name></member>
+    <member refid="_a_e_s_8h_1ab7583f82c95236839316097a3baf8e21" kind="function"><name>getNumRounds</name></member>
+    <member refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" kind="function"><name>AESEncrypt</name></member>
+    <member refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" kind="function"><name>AESDecrypt</name></member>
+    <member refid="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" kind="function"><name>RijndaelKeySchedule</name></member>
+    <member refid="_a_e_s_8h_1aa2c2bbef104b3d3e4c4851ca338ffb8c" kind="function"><name>printStateArray</name></member>
+    <member refid="_a_e_s_8h_1a6692cb12e0e4495fbba5cb07af94e20d" kind="function"><name>getSBoxValue</name></member>
+    <member refid="_a_e_s_8h_1a533c79baa5917f8daa5ef751b87dc6b9" kind="function"><name>getInvSBox</name></member>
+    <member refid="_a_e_s_8h_1af2da93be75f2ce31bfd9c7b18dcd3642" kind="function"><name>getRconValue</name></member>
+    <member refid="_a_e_s_8h_1a772c8b1e9ef554b5c2d995ae5834cc3b" kind="function"><name>SingleRotateLeft</name></member>
+    <member refid="_a_e_s_8h_1a4d8c6f749326403dce59fae3f81cd120" kind="function"><name>KeyScheduleCore</name></member>
+    <member refid="_a_e_s_8h_1a3171e930e8e63e937e3542740b7c94d6" kind="function"><name>ShiftRows</name></member>
+    <member refid="_a_e_s_8h_1a6674963eab83fe4573ea8b5ee36728ad" kind="function"><name>AddRoundKey</name></member>
+    <member refid="_a_e_s_8h_1a07eae9e44f492880e0a0fb59edb17d34" kind="function"><name>subBytes</name></member>
+    <member refid="_a_e_s_8h_1adef9f30a148bc7732de37901f741ba5e" kind="function"><name>mixColumns</name></member>
+    <member refid="_a_e_s_8h_1abbaab65a86e18c20ed73cb7f712e0eed" kind="function"><name>invSubBytes</name></member>
+    <member refid="_a_e_s_8h_1a0b8bd9c3f028f65310f63598410d816b" kind="function"><name>invShiftRows</name></member>
+    <member refid="_a_e_s_8h_1ab94b816921097af452b3bcf62c701258" kind="function"><name>SingleRotateRight</name></member>
+    <member refid="_a_e_s_8h_1a65882384e88b16eb2b875f28119bfa71" kind="function"><name>getPaddedKeyLength</name></member>
+    <member refid="_a_e_s_8h_1a15e43c925ddfb0fcc1e4a6138962ce68" kind="function"><name>invMixColumns</name></member>
+    <member refid="_a_e_s_8h_1a3d380a2242622d7f06999c772b6f09eb" kind="function"><name>galloisFieldMult</name></member>
+    <member refid="_a_e_s_8h_1a66cd2ce21006225467c842eb708f7923" kind="function"><name>getRoundKey</name></member>
+    <member refid="_a_e_s_8h_1a997ca47a4474fdb26b9bdbdcef4b734c" kind="function"><name>constructStateArray</name></member>
+    <member refid="_a_e_s_8h_1a7b4ba0ba076b29e7eca94cc3bcba9f9d" kind="function"><name>hexToInt</name></member>
+    <member refid="_a_e_s_8h_1acb25fd10b0e1c3e0844d4bde447259de" kind="function"><name>hexToAscii</name></member>
+    <member refid="_a_e_s_8h_1a69dcfd00e48471cb60dc1b24ba6e5520" kind="function"><name>hexToAsciiString</name></member>
+    <member refid="_a_e_s_8h_1ac189aee6672718650020cf627d45c780" kind="function"><name>asciiToHexString</name></member>
+    <member refid="_a_e_s_8h_1a0e0b199ded54d7fb53a3bda3fcc02256" kind="function"><name>validateNumRounds</name></member>
+    <member refid="_a_e_s_8h_1acefcd728377e1e14187fa8fcd20f4064" kind="function"><name>validatePlainTextLength</name></member>
+    <member refid="_a_e_s_8h_1ae01a1e7833d53f19b534e37ace03a691" kind="function"><name>validateCipherTextLength</name></member>
+    <member refid="_a_e_s_8h_1a0b24eb7a5fd67e9fcd9e21711630e86c" kind="function"><name>printAESBlock</name></member>
+    <member refid="_a_e_s_8h_1a9dcad0047890de22f3d15611a10ab74f" kind="function"><name>fileNameDirIndex</name></member>
+    <member refid="_a_e_s_8h_1ab066697b473ad5ce74faaceae6def5e5" kind="function"><name>stripDirectory</name></member>
+    <member refid="_a_e_s_8h_1ac206e95e4e98f7a5a92b046ad726f622" kind="function"><name>getOutputFileName</name></member>
+    <member refid="_a_e_s_8h_1a3bf513612c15693c3b2be10b94298e05" kind="function"><name>isFileTxt</name></member>
+    <member refid="_a_e_s_8h_1afba897e91364663f883cc51ed309dc92" kind="function"><name>keyHexToAscii</name></member>
+    <member refid="_a_e_s_8h_1ad82d1b77336ac1292ed5a24b92380f42" kind="function"><name>IVHexToAscii</name></member>
+    <member refid="_a_e_s_8h_1ab601c369ba50730fc02d03bc44aad4e0" kind="function"><name>XORBlocks</name></member>
+  </compound>
+  <compound refid="aes_tester_8c" kind="file"><name>aesTester.c</name>
+    <member refid="aes_tester_8c_1afdaefaa3b28b23dc18709335449a1427" kind="variable"><name>invSBox</name></member>
+    <member refid="aes_tester_8c_1abbb6f385c467cfd964a68eeb6caaa04f" kind="variable"><name>sbox</name></member>
+    <member refid="aes_tester_8c_1a58c62505f9b71b2c257046ccf4c9153c" kind="variable"><name>Rcon</name></member>
+    <member refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="cbc_8c" kind="file"><name>cbc.c</name>
+    <member refid="cbc_8c_1ad055b3ad2664ace8ba1ab68a481dc1b3" kind="function"><name>cbcEncryptFile</name></member>
+    <member refid="cbc_8c_1a9375da4cc24b1bedceb0364f2865bcc3" kind="function"><name>cbcDecryptFile</name></member>
+    <member refid="cbc_8c_1a90f1f37609cf336c57cd0300282c1dac" kind="function"><name>cbcEncrypt</name></member>
+    <member refid="cbc_8c_1a95fbad6d45d4b793610fe663939b5f8c" kind="function"><name>cbcDecrypt</name></member>
+  </compound>
+  <compound refid="cbc_8h" kind="file"><name>cbc.h</name>
+    <member refid="cbc_8h_1a48113b3faee8aad8efa17aac0b56b63b" kind="variable"><name>VERBOSE</name></member>
+    <member refid="cbc_8h_1ac3c0558617e372fc5ce3648e041e549c" kind="variable"><name>AES_BLOCK_SIZE</name></member>
+    <member refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" kind="function"><name>cbcEncryptFile</name></member>
+    <member refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" kind="function"><name>cbcDecryptFile</name></member>
+    <member refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" kind="function"><name>cbcEncrypt</name></member>
+    <member refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" kind="function"><name>cbcDecrypt</name></member>
+  </compound>
+  <compound refid="cbc_tester_8c" kind="file"><name>cbcTester.c</name>
+    <member refid="cbc_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="cfb_8c" kind="file"><name>cfb.c</name>
+    <member refid="cfb_8c_1aa4317305b1ad6f5e38b8e13a4cd3e126" kind="variable"><name>shiftRegLength</name></member>
+    <member refid="cfb_8c_1a1945f330e6dc1fd580e46cfa2a1b2a69" kind="variable"><name>streamSize</name></member>
+    <member refid="cfb_8c_1a9384de325e389ba7809b7ee98320f485" kind="function"><name>cfbEncryptFile</name></member>
+    <member refid="cfb_8c_1a6dce0b90ab3948c3df032eb61c2a64ea" kind="function"><name>cfbDecryptFile</name></member>
+    <member refid="cfb_8c_1a826aec09cb2af95cb8781d2b4c211182" kind="function"><name>cfbEncrypt</name></member>
+    <member refid="cfb_8c_1ad6a75d43203e367b8a83f6b7c7f506c6" kind="function"><name>cfbDecrypt</name></member>
+  </compound>
+  <compound refid="cfb_8h" kind="file"><name>cfb.h</name>
+    <member refid="cfb_8h_1a48113b3faee8aad8efa17aac0b56b63b" kind="variable"><name>VERBOSE</name></member>
+    <member refid="cfb_8h_1ac3c0558617e372fc5ce3648e041e549c" kind="variable"><name>AES_BLOCK_SIZE</name></member>
+    <member refid="cfb_8h_1a1aa2688ad79074b92b03ea0d5ae081e6" kind="variable"><name>shiftRegLength</name></member>
+    <member refid="cfb_8h_1a77cc5a70d7861999e22b0da3a15d72c5" kind="variable"><name>streamSize</name></member>
+    <member refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" kind="function"><name>cfbEncryptFile</name></member>
+    <member refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" kind="function"><name>cfbDecryptFile</name></member>
+    <member refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" kind="function"><name>cfbEncrypt</name></member>
+    <member refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" kind="function"><name>cfbDecrypt</name></member>
+  </compound>
+  <compound refid="cfb_tester_8c" kind="file"><name>cfbTester.c</name>
+    <member refid="cfb_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="ecb_8c" kind="file"><name>ecb.c</name>
+    <member refid="ecb_8c_1aa451eb4920a712afa521f06831277731" kind="function"><name>ecbEncrypt</name></member>
+    <member refid="ecb_8c_1acd982a867b70e4f75f2232c974a1e4ae" kind="function"><name>ecbDecrypt</name></member>
+    <member refid="ecb_8c_1a50ddfe369298c1293b5c57662f569127" kind="function"><name>ecbEcryptHelper</name></member>
+    <member refid="ecb_8c_1a9661ce321dd2649926ebadd2ab9dcd20" kind="function"><name>ecbDecryptHelper</name></member>
+    <member refid="ecb_8c_1ab68902caeba7880cf1be8b40e8bb9a50" kind="function"><name>ecbEncryptFile</name></member>
+    <member refid="ecb_8c_1ab4c77adefd8655ebd7bc79524f958013" kind="function"><name>ecbDecryptFile</name></member>
+  </compound>
+  <compound refid="ecb_8h" kind="file"><name>ecb.h</name>
+    <member refid="ecb_8h_1aa451eb4920a712afa521f06831277731" kind="function"><name>ecbEncrypt</name></member>
+    <member refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" kind="function"><name>ecbDecrypt</name></member>
+    <member refid="ecb_8h_1a50ddfe369298c1293b5c57662f569127" kind="function"><name>ecbEcryptHelper</name></member>
+    <member refid="ecb_8h_1a9661ce321dd2649926ebadd2ab9dcd20" kind="function"><name>ecbDecryptHelper</name></member>
+    <member refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" kind="function"><name>ecbEncryptFile</name></member>
+    <member refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" kind="function"><name>ecbDecryptFile</name></member>
+  </compound>
+  <compound refid="ecb_tester_8c" kind="file"><name>ecbTester.c</name>
+    <member refid="ecb_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="encryption_platform_8c" kind="file"><name>encryptionPlatform.c</name>
+    <member refid="encryption_platform_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+    <member refid="encryption_platform_8c_1a0d20b69b0ad703df78459e1033d5c1d4" kind="function"><name>printHelp</name></member>
+    <member refid="encryption_platform_8c_1adcd7d4e4ddadb63af6bbbd1d44776e64" kind="function"><name>freeMemory</name></member>
+  </compound>
+  <compound refid="encryption_platform_8h" kind="file"><name>encryptionPlatform.h</name>
+    <member refid="encryption_platform_8h_1a48113b3faee8aad8efa17aac0b56b63b" kind="variable"><name>VERBOSE</name></member>
+    <member refid="encryption_platform_8h_1ac3c0558617e372fc5ce3648e041e549c" kind="variable"><name>AES_BLOCK_SIZE</name></member>
+    <member refid="encryption_platform_8h_1a0d20b69b0ad703df78459e1033d5c1d4" kind="function"><name>printHelp</name></member>
+    <member refid="encryption_platform_8h_1adcd7d4e4ddadb63af6bbbd1d44776e64" kind="function"><name>freeMemory</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1a012f1efd611f43400997892cf8da2f4d" kind="variable"><name>AES_BLOCK_SIZE</name></member>
+    <member refid="main_8c_1afdaefaa3b28b23dc18709335449a1427" kind="variable"><name>invSBox</name></member>
+    <member refid="main_8c_1abbb6f385c467cfd964a68eeb6caaa04f" kind="variable"><name>sbox</name></member>
+    <member refid="main_8c_1a58c62505f9b71b2c257046ccf4c9153c" kind="variable"><name>Rcon</name></member>
+    <member refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="my_tester_8c" kind="file"><name>myTester.c</name>
+    <member refid="my_tester_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
+  </compound>
+</doxygenindex>

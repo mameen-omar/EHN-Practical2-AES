@@ -1,0 +1,2228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_a_e_s_8h" kind="file" language="C++">
+    <compoundname>AES.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includedby refid="_a_e_s_8c" local="yes">AES.c</includedby>
+    <includedby refid="aes_tester_8c" local="yes">aesTester.c</includedby>
+    <includedby refid="cbc_8h" local="yes">cbc.h</includedby>
+    <includedby refid="cfb_8h" local="yes">cfb.h</includedby>
+    <includedby refid="ecb_8h" local="yes">ecb.h</includedby>
+    <includedby refid="encryption_platform_8h" local="yes">encryptionPlatform.h</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <incdepgraph>
+      <node id="13">
+        <label>stdbool.h</label>
+      </node>
+      <node id="10">
+        <label>stdint.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>AES.h</label>
+        <link refid="_a_e_s_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>string.h</label>
+      </node>
+      <node id="9">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="23">
+        <label>cfb.c</label>
+        <link refid="cfb_8c"/>
+      </node>
+      <node id="22">
+        <label>cfb.h</label>
+        <link refid="cfb_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>encryptionPlatform.c</label>
+        <link refid="encryption_platform_8c"/>
+      </node>
+      <node id="20">
+        <label>encryptionPlatform.h</label>
+        <link refid="encryption_platform_8h_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>main.c</label>
+        <link refid="main_8c_source"/>
+      </node>
+      <node id="24">
+        <label>cfbTester.c</label>
+        <link refid="cfb_tester_8c"/>
+      </node>
+      <node id="26">
+        <label>ecb.c</label>
+        <link refid="ecb_8c"/>
+      </node>
+      <node id="25">
+        <label>ecb.h</label>
+        <link refid="ecb_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>cbcTester.c</label>
+        <link refid="cbc_tester_8c"/>
+      </node>
+      <node id="15">
+        <label>AES.c</label>
+        <link refid="_a_e_s_8c"/>
+      </node>
+      <node id="14">
+        <label>AES.h</label>
+        <link refid="_a_e_s_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>cbc.c</label>
+        <link refid="cbc_8c"/>
+      </node>
+      <node id="17">
+        <label>cbc.h</label>
+        <link refid="cbc_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>aesTester.c</label>
+        <link refid="aes_tester_8c"/>
+      </node>
+      <node id="27">
+        <label>ecbTester.c</label>
+        <link refid="ecb_tester_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_a_e_s_8h_1a48113b3faee8aad8efa17aac0b56b63b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t VERBOSE</definition>
+        <argsstring></argsstring>
+        <name>VERBOSE</name>
+        <briefdescription>
+<para>Variable- size_t VERBOSE Used to dictate whether verbose output is printed to the terminal or not. If 0, does not print verbose. If 1, prints verbose. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="27" column="1" bodyfile="AES.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_e_s_8h_1ac3c0558617e372fc5ce3648e041e549c" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t AES_BLOCK_SIZE</definition>
+        <argsstring></argsstring>
+        <name>AES_BLOCK_SIZE</name>
+        <briefdescription>
+<para>Variable- const size_t AES_BLOCK_SIZE. Used to dictate the length in bytes of a single AES block used for encryption and decryption. Set to 16 bytes for a single block. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="28" column="1" bodyfile="AES.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_e_s_8h_1afdaefaa3b28b23dc18709335449a1427" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char invSBox[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>invSBox</name>
+        <briefdescription>
+<para>const unsigned char invSBox. Lookup table for the inverse sbox values used during AES Decryption. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="29" column="1" bodyfile="AES.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_e_s_8h_1abbb6f385c467cfd964a68eeb6caaa04f" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char sbox[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>sbox</name>
+        <briefdescription>
+<para>const unsigned char sbox. Lookup table for the sbox values used during AES Encryption. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="30" column="1" bodyfile="AES.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_a_e_s_8h_1a58c62505f9b71b2c257046ccf4c9153c" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char Rcon[255]</definition>
+        <argsstring>[255]</argsstring>
+        <name>Rcon</name>
+        <briefdescription>
+<para>const unsigned char Rcon. Lookup table for the Rcon values used during Rijndael Key Schedule during the AES Encryption and Decryption. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="31" column="1" bodyfile="AES.c" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_a_e_s_8h_1ab7583f82c95236839316097a3baf8e21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getNumRounds</definition>
+        <argsstring>(int)</argsstring>
+        <name>getNumRounds</name>
+        <param>
+          <type>int</type>
+          <defname>keyLength</defname>
+        </param>
+        <briefdescription>
+<para>getNumRounds - Function to return the number of rounds of AES encryption and decryption based off of the length of the key given in </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyLength.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - indicates the length of the key </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int - the number of rounds based off of the length of the key passed in the parameter </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyLength.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the length of the key is not valid, returns -1. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="41" column="1" bodyfile="AES.c" bodystart="114" bodyend="125"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" compoundref="_a_e_s_8c" startline="577" endline="622">RijndaelKeySchedule</referencedby>
+        <referencedby refid="_a_e_s_8h_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1aa451eb4920a712afa521f06831277731" compoundref="ecb_8c" startline="34" endline="103">ecbEncrypt</referencedby>
+        <referencedby refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" compoundref="ecb_8c" startline="116" endline="177">ecbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* AESEncrypt</definition>
+        <argsstring>(unsigned char *, unsigned char *, int, int)</argsstring>
+        <name>AESEncrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>plainText</defname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>plainTextLength</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>keyLength</defname>
+        </param>
+        <briefdescription>
+<para>AESEncrypt - Function to encrypt a single block of plaintext passed in as parameter  plainText using AES encryption, for 128, 192 and 256 bit keys. Validates the keylength and returns the corresponding ciphertext. The caller of the function must ensure that the returned ciphertext pointer is freed. The ciphertext returned is always 16 bytes and the plainText must be 16 bytes or less. Makes use of zero padding. All input must be in ASCII and NOT hex. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* plainText - pointer to the plaintext that needs to be encrypted using AES encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - reference to the key that must be used for AES encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the plaintext in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the key passed in as </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>used for the AES encryption. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned* char - Ciphertext resulting from the encryption of the plaintext passed in as </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plainText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="54" column="1" bodyfile="AES.c" bodystart="198" bodyend="386"/>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1acefcd728377e1e14187fa8fcd20f4064" compoundref="_a_e_s_8c" startline="1002" endline="1009">validatePlainTextLength</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1a1c1a633a58f7328faa397db9e45e7e0c" compoundref="_a_e_s_8c" startline="895" endline="902">constructStateArray</references>
+        <references refid="_a_e_s_8c_1ae9af90db32afa65125a7eec339ed9d58" compoundref="_a_e_s_8c" startline="673" endline="681">printStateArray</references>
+        <references refid="_a_e_s_8c_1a185c827e4ccbc8e4608e83dfbf9dfc8e" compoundref="_a_e_s_8c" startline="577" endline="622">RijndaelKeySchedule</references>
+        <references refid="_a_e_s_8c_1abe15a731f43315f6f595674d3cd62d57" compoundref="_a_e_s_8c" startline="881" endline="887">getRoundKey</references>
+        <references refid="_a_e_s_8c_1aef4d8fc4282e3cc21708d25c0ec9ad06" compoundref="_a_e_s_8c" startline="688" endline="695">AddRoundKey</references>
+        <references refid="_a_e_s_8c_1aec40f89d2cbf831fd0d5d5f1bfa616f5" compoundref="_a_e_s_8c" startline="789" endline="796">subBytes</references>
+        <references refid="_a_e_s_8c_1abeb4dba64fcf4d07eac178e732ca6aa8" compoundref="_a_e_s_8c" startline="815" endline="829">ShiftRows</references>
+        <references refid="_a_e_s_8c_1aca09b30896a351db6587639a1cc1bf0d" compoundref="_a_e_s_8c" startline="702" endline="733">mixColumns</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1a50ddfe369298c1293b5c57662f569127" compoundref="ecb_8c" startline="187" endline="192">ecbEcryptHelper</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* AESDecrypt</definition>
+        <argsstring>(unsigned char *, unsigned char *, int, int)</argsstring>
+        <name>AESDecrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>cipherText</defname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>cipherTextLength</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>keyLength</defname>
+        </param>
+        <briefdescription>
+<para>AESDecrypt - Function to decrypt a single block of ciphertext passed in as parameter  cipherText using AES decryption, for 128, 192 and 256 bit keys. Validates the keylength and returns the corresponding plaintext. The caller of the function must ensure that the returned plaintext pointer is freed. The plaintext returned is always 16 bytes and the plainText must be 16 bytes or less. Makes use of zero padding. All input must be in ASCII and NOT hex. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* cipherText - pointer to the ciphertext that needs to be decrypted using AES decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - reference to the key that must be used for AES decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the ciphertext in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to be decrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the key passed in as </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>used for the AES decryption. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned* char - Plaintext resulting from the decryption of the ciphertext passed in as </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cipherText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="67" column="1" bodyfile="AES.c" bodystart="399" bodyend="567"/>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1ae01a1e7833d53f19b534e37ace03a691" compoundref="_a_e_s_8c" startline="1015" endline="1022">validateCipherTextLength</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1a1c1a633a58f7328faa397db9e45e7e0c" compoundref="_a_e_s_8c" startline="895" endline="902">constructStateArray</references>
+        <references refid="_a_e_s_8c_1ae9af90db32afa65125a7eec339ed9d58" compoundref="_a_e_s_8c" startline="673" endline="681">printStateArray</references>
+        <references refid="_a_e_s_8c_1a185c827e4ccbc8e4608e83dfbf9dfc8e" compoundref="_a_e_s_8c" startline="577" endline="622">RijndaelKeySchedule</references>
+        <references refid="_a_e_s_8c_1abe15a731f43315f6f595674d3cd62d57" compoundref="_a_e_s_8c" startline="881" endline="887">getRoundKey</references>
+        <references refid="_a_e_s_8c_1aef4d8fc4282e3cc21708d25c0ec9ad06" compoundref="_a_e_s_8c" startline="688" endline="695">AddRoundKey</references>
+        <references refid="_a_e_s_8c_1a903e34d08dd07be2e2d9618d4d489ee6" compoundref="_a_e_s_8c" startline="835" endline="848">invShiftRows</references>
+        <references refid="_a_e_s_8c_1a8e72edc1f652f8626aacd2781303c86b" compoundref="_a_e_s_8c" startline="802" endline="809">invSubBytes</references>
+        <references refid="_a_e_s_8c_1a9de891875f23dd3dff8fe3f8e10ba3ad" compoundref="_a_e_s_8c" startline="740" endline="754">invMixColumns</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1a9661ce321dd2649926ebadd2ab9dcd20" compoundref="ecb_8c" startline="202" endline="207">ecbDecryptHelper</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* RijndaelKeySchedule</definition>
+        <argsstring>(unsigned char *, int)</argsstring>
+        <name>RijndaelKeySchedule</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>originalKey</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>keyLength</defname>
+        </param>
+        <briefdescription>
+<para>RijndaelKeySchedule - Function that performs the Rijndael key scheduling for AES encryption. Takes in the original key passed in as parameter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>originalKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and the length of the original key given as parameter. The caller must free the memory allocated and returned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>originalKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char * - An unsigned char pointer to the original key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - length of originalKey passed in as a parameter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>originalKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>expandedKey - The key that has been expanded. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="77" column="1" bodyfile="AES.c" bodystart="577" bodyend="622"/>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1af2f914cf17729a0ee89102c98b39665e" compoundref="_a_e_s_8c" startline="631" endline="646">KeyScheduleCore</references>
+        <references refid="_a_e_s_8c_1acdf4abe2846c02b4d3e674782807fdfa" compoundref="_a_e_s_8c" startline="134" endline="137">getSBoxValue</references>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1aa2c2bbef104b3d3e4c4851ca338ffb8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printStateArray</definition>
+        <argsstring>(uint8_t[4][4])</argsstring>
+        <name>printStateArray</name>
+        <param>
+          <type>uint8_t</type>
+          <defname>stateArray</defname>
+          <array>[4][4]</array>
+        </param>
+        <briefdescription>
+<para>printStateArray - Function to print the state array to the terminal in hex format. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stateArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the state array that should be printed to the terminal. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="83" column="1" bodyfile="AES.c" bodystart="673" bodyend="681"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a6692cb12e0e4495fbba5cb07af94e20d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char getSBoxValue</definition>
+        <argsstring>(unsigned char)</argsstring>
+        <name>getSBoxValue</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>getSBoxValue - Function to return the sBox value passed in as a parameter </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requires the original value required in hex.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - hexadecimal representation of the index for which the SBox value is required. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned char - sBox value for the paramter </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="92" column="1" bodyfile="AES.c" bodystart="134" bodyend="137"/>
+        <references refid="_a_e_s_8c_1abbb6f385c467cfd964a68eeb6caaa04f" compoundref="_a_e_s_8c" startline="37">sbox</references>
+        <referencedby refid="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" compoundref="_a_e_s_8c" startline="577" endline="622">RijndaelKeySchedule</referencedby>
+        <referencedby refid="_a_e_s_8h_1a4d8c6f749326403dce59fae3f81cd120" compoundref="_a_e_s_8c" startline="631" endline="646">KeyScheduleCore</referencedby>
+        <referencedby refid="_a_e_s_8h_1a07eae9e44f492880e0a0fb59edb17d34" compoundref="_a_e_s_8c" startline="789" endline="796">subBytes</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a533c79baa5917f8daa5ef751b87dc6b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char getInvSBox</definition>
+        <argsstring>(unsigned char)</argsstring>
+        <name>getInvSBox</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+<para>getInvSBox - Function to return the inverse sBox value passed in as a parameter </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requires the original value required in hex.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - hexadecimal representation of the index for which the inverse SBox value is required. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned char - inverse sBox value for the paramter </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="101" column="1" bodyfile="AES.c" bodystart="146" bodyend="149"/>
+        <references refid="_a_e_s_8c_1afdaefaa3b28b23dc18709335449a1427" compoundref="_a_e_s_8c" startline="60">invSBox</references>
+        <referencedby refid="_a_e_s_8h_1abbaab65a86e18c20ed73cb7f712e0eed" compoundref="_a_e_s_8c" startline="802" endline="809">invSubBytes</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1af2da93be75f2ce31bfd9c7b18dcd3642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char getRconValue</definition>
+        <argsstring>(unsigned char)</argsstring>
+        <name>getRconValue</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+<para>getRconValue - Function to return the Rcon value for the index passed in as a parameter </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Requires the original value required in hex.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - hexadecimal representation of the number for which the Rcon value is required during the key schedule. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned char - rCon value for the paramter </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="110" column="1" bodyfile="AES.c" bodystart="158" bodyend="161"/>
+        <references refid="_a_e_s_8c_1a58c62505f9b71b2c257046ccf4c9153c" compoundref="_a_e_s_8c" startline="83">Rcon</references>
+        <referencedby refid="_a_e_s_8h_1a4d8c6f749326403dce59fae3f81cd120" compoundref="_a_e_s_8c" startline="631" endline="646">KeyScheduleCore</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a772c8b1e9ef554b5c2d995ae5834cc3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SingleRotateLeft</definition>
+        <argsstring>(unsigned char *, int)</argsstring>
+        <name>SingleRotateLeft</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>word</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>wordLength</defname>
+        </param>
+        <briefdescription>
+<para>SingleRotateLeft - Function to rotate the array passed in as a paramter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>word</parametername>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>single time left (8 bits to the left), with the left most element becoming the right most element. As such: rotate(1d2c3a4f) = 2c3a4f1d. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>word</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char *word - the array/word to be left rotated by 8 bits. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wordLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - length of the parameter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>word.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="118" column="1" bodyfile="AES.c" bodystart="655" bodyend="667"/>
+        <referencedby refid="_a_e_s_8h_1a4d8c6f749326403dce59fae3f81cd120" compoundref="_a_e_s_8c" startline="631" endline="646">KeyScheduleCore</referencedby>
+        <referencedby refid="_a_e_s_8h_1a3171e930e8e63e937e3542740b7c94d6" compoundref="_a_e_s_8c" startline="815" endline="829">ShiftRows</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a4d8c6f749326403dce59fae3f81cd120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeyScheduleCore</definition>
+        <argsstring>(unsigned char *, int, int)</argsstring>
+        <name>KeyScheduleCore</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>word</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>wordLength</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>rConIterationVal</defname>
+        </param>
+        <briefdescription>
+<para>KeyScheduleCore - Function that performs the key schedule core for the Rijndael Key Schedule. Performs a single rotate left of the word passed in as. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>word</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and applies the required s-box substituion and rcon XOR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* word - pointer to the word onto which the key schedule core should be operated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wordLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the word passed in as a parameter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>word.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rConIterationVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the iteration value to be used for the rcon XOR. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="127" column="1" bodyfile="AES.c" bodystart="631" bodyend="646"/>
+        <references refid="_a_e_s_8c_1ac769b0533ccecd203cc3ab64e6b2f950" compoundref="_a_e_s_8c" startline="655" endline="667">SingleRotateLeft</references>
+        <references refid="_a_e_s_8c_1acdf4abe2846c02b4d3e674782807fdfa" compoundref="_a_e_s_8c" startline="134" endline="137">getSBoxValue</references>
+        <references refid="_a_e_s_8c_1a4e58d2e928429bc56387394251b8ece5" compoundref="_a_e_s_8c" startline="158" endline="161">getRconValue</references>
+        <referencedby refid="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" compoundref="_a_e_s_8c" startline="577" endline="622">RijndaelKeySchedule</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a3171e930e8e63e937e3542740b7c94d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ShiftRows</definition>
+        <argsstring>(unsigned char[4][4], int)</argsstring>
+        <name>ShiftRows</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>wordLength</defname>
+        </param>
+        <briefdescription>
+<para>ShiftRows - Function to shift the state array according to the AES encryption standard for 128 - bits blocks. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="133" column="1" bodyfile="AES.c" bodystart="815" bodyend="829"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1ac769b0533ccecd203cc3ab64e6b2f950" compoundref="_a_e_s_8c" startline="655" endline="667">SingleRotateLeft</references>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a6674963eab83fe4573ea8b5ee36728ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddRoundKey</definition>
+        <argsstring>(unsigned char[4][4], unsigned char[4][4])</argsstring>
+        <name>AddRoundKey</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>key</defname>
+          <array>[4][4]</array>
+        </param>
+        <briefdescription>
+<para>AddRoundKey - Function that performs the Bitwise XOR between state and key as per AES encryption. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - sub key to be added for the current round to the current state vector </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="140" column="1" bodyfile="AES.c" bodystart="688" bodyend="695"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a07eae9e44f492880e0a0fb59edb17d34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void subBytes</definition>
+        <argsstring>(unsigned char[4][4])</argsstring>
+        <name>subBytes</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <briefdescription>
+<para>subBytes - Function that performs the sub byte operation where each value is replaced by the s box value </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="146" column="1" bodyfile="AES.c" bodystart="789" bodyend="796"/>
+        <references refid="_a_e_s_8c_1acdf4abe2846c02b4d3e674782807fdfa" compoundref="_a_e_s_8c" startline="134" endline="137">getSBoxValue</references>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1adef9f30a148bc7732de37901f741ba5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mixColumns</definition>
+        <argsstring>(unsigned char[4][4])</argsstring>
+        <name>mixColumns</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <briefdescription>
+<para>mixColumns - Function that performs the MixColumns step of AES as specified by AES encryption. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="152" column="1" bodyfile="AES.c" bodystart="702" bodyend="733"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1abbaab65a86e18c20ed73cb7f712e0eed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void invSubBytes</definition>
+        <argsstring>(unsigned char[4][4])</argsstring>
+        <name>invSubBytes</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <briefdescription>
+<para>invSubBytes - Function that performs the inverse of Function subBytes </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="158" column="1" bodyfile="AES.c" bodystart="802" bodyend="809"/>
+        <references refid="_a_e_s_8c_1a425f9b1e2cd595f2c45f129bc5d0a6d0" compoundref="_a_e_s_8c" startline="146" endline="149">getInvSBox</references>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a0b8bd9c3f028f65310f63598410d816b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void invShiftRows</definition>
+        <argsstring>(unsigned char[4][4], int)</argsstring>
+        <name>invShiftRows</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>wordLength</defname>
+        </param>
+        <briefdescription>
+<para>invShiftRows - Function to shift the state array Inverse according to the AES encryption standard for 128 - bits blocks </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="164" column="1" bodyfile="AES.c" bodystart="835" bodyend="848"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1a4fc33ada95d0d2aaea28086aefe173bb" compoundref="_a_e_s_8c" startline="857" endline="871">SingleRotateRight</references>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ab94b816921097af452b3bcf62c701258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SingleRotateRight</definition>
+        <argsstring>(unsigned char *, int)</argsstring>
+        <name>SingleRotateRight</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>word</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>wordLength</defname>
+        </param>
+        <briefdescription>
+<para>SingleRotateRight - Function to rotate the array passed in as a paramter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>word</parametername>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>single time right (8 bits to the right), with the right most element becoming the left most element. As such: rotate(1d2c3a4f) = 4f1d2c3a.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>word</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char *word - the array/word to be right rotated by 8 bits. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wordLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - length of the parameter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>word.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="173" column="1" bodyfile="AES.c" bodystart="857" bodyend="871"/>
+        <referencedby refid="_a_e_s_8h_1a0b8bd9c3f028f65310f63598410d816b" compoundref="_a_e_s_8c" startline="835" endline="848">invShiftRows</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a65882384e88b16eb2b875f28119bfa71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getPaddedKeyLength</definition>
+        <argsstring>(int)</argsstring>
+        <name>getPaddedKeyLength</name>
+        <param>
+          <type>int</type>
+          <defname>currentKeyLength</defname>
+        </param>
+        <briefdescription>
+<para>getPaddedKeyLength - Function to return a valid key length (in bytes) based off of the current key length passed in as </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentKeyLength.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Corresponds to minimum and maximum key length required for AES encryption and decryption. The key will then be padded to the length of the value returned from this function. If the keylength is less than 16, will return 16. If greater than 16, but less than 24, will return 24. If greater than 32, will return -1.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentKeyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - current key length in bytes, to be padded to the return value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int - the length in bytes that the key should be padded to. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="184" column="1" bodyfile="AES.c" bodystart="172" bodyend="184"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1aa451eb4920a712afa521f06831277731" compoundref="ecb_8c" startline="34" endline="103">ecbEncrypt</referencedby>
+        <referencedby refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" compoundref="ecb_8c" startline="116" endline="177">ecbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a15e43c925ddfb0fcc1e4a6138962ce68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void invMixColumns</definition>
+        <argsstring>(unsigned char[4][4])</argsstring>
+        <name>invMixColumns</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>state</defname>
+          <array>[4][4]</array>
+        </param>
+        <briefdescription>
+<para>invMixColumns - Function that does the inverse of the Mix Column Step for AES Encryption. Performs the gallois field multiplication and the required XOR to the state passed in as a paramter </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char - is the current state of the ciphertext or plaintext during AES encryption or decryption. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="191" column="1" bodyfile="AES.c" bodystart="740" bodyend="754"/>
+        <references refid="_a_e_s_8c_1a7dbbb13c3ab5608765b6d368eb9f4fe1" compoundref="_a_e_s_8c" startline="764" endline="783">galloisFieldMult</references>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a3d380a2242622d7f06999c772b6f09eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char galloisFieldMult</definition>
+        <argsstring>(unsigned char, unsigned char)</argsstring>
+        <name>galloisFieldMult</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>b</defname>
+        </param>
+        <briefdescription>
+<para>galloisFieldMult - Function to perform the Galois field multiplication operation required for the inverse mix columns and the mix columns operation of the AES encryption and decryption processes. Returns the result of the multiplication. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- first character to perform Galois field multiplication. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- second character to perform Galois field multiplication. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned char - Result of the Galois field multiplication. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="200" column="1" bodyfile="AES.c" bodystart="764" bodyend="783"/>
+        <referencedby refid="_a_e_s_8h_1a15e43c925ddfb0fcc1e4a6138962ce68" compoundref="_a_e_s_8c" startline="740" endline="754">invMixColumns</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a66cd2ce21006225467c842eb708f7923" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void getRoundKey</definition>
+        <argsstring>(unsigned char *, unsigned char *, int)</argsstring>
+        <name>getRoundKey</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>expandedKey</defname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <defname>roundKey</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>roundNum</defname>
+        </param>
+        <briefdescription>
+<para>getRoundKey - Function to extract the correct sub-key to use for the appropriate round specified by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>roundNum.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Copies the sub-key from the expanded key in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expandedKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roundKey.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- expandedKey - The expanded key from which to extract the sub-key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- roundKey - memory to which to copy the sub-key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roundNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the round number for which the sub-key is required. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="209" column="1" bodyfile="AES.c" bodystart="881" bodyend="887"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a997ca47a4474fdb26b9bdbdcef4b734c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void constructStateArray</definition>
+        <argsstring>(unsigned char *, unsigned char[][4])</argsstring>
+        <name>constructStateArray</name>
+        <param>
+          <type>unsigned char *</type>
+          <defname>flatArray</defname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+          <defname>stateArray</defname>
+          <array>[][4]</array>
+        </param>
+        <briefdescription>
+<para>constructStateArray - Function to convert the state array from a flat 1D array to a multidimensional array. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>flatArray -the 1D array to be converted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stateArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the multidimensional array to which to copy the flat array elements to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="217" column="1" bodyfile="AES.c" bodystart="895" bodyend="902"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a7b4ba0ba076b29e7eca94cc3bcba9f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t hexToInt</definition>
+        <argsstring>(char c)</argsstring>
+        <name>hexToInt</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+          <defname>ch</defname>
+        </param>
+        <briefdescription>
+<para>hexToInt - Function that converts a given hex value into an integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- hex value that wil be converted to int. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t the converted int value. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="224" column="1" bodyfile="AES.c" bodystart="909" bodyend="921"/>
+        <referencedby refid="_a_e_s_8h_1acb25fd10b0e1c3e0844d4bde447259de" compoundref="_a_e_s_8c" startline="928" endline="933">hexToAscii</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1acb25fd10b0e1c3e0844d4bde447259de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t hexToAscii</definition>
+        <argsstring>(char c, char d)</argsstring>
+        <name>hexToAscii</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+          <defname>ch1</defname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>d</declname>
+          <defname>ch2</defname>
+        </param>
+        <briefdescription>
+<para>hexToAscii - Function that converts a given hex value to its ASCII equivalent. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ch1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- char value of the first hex value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ch2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- char value of the second hex value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="231" column="1" bodyfile="AES.c" bodystart="928" bodyend="933"/>
+        <references refid="_a_e_s_8c_1a7e5ab2188af44718071074f450963568" compoundref="_a_e_s_8c" startline="909" endline="921">hexToInt</references>
+        <referencedby refid="_a_e_s_8h_1a69dcfd00e48471cb60dc1b24ba6e5520" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a69dcfd00e48471cb60dc1b24ba6e5520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hexToAsciiString</definition>
+        <argsstring>(char *str, char *done, int)</argsstring>
+        <name>hexToAsciiString</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+          <defname>hexString</defname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>done</declname>
+          <defname>asciiString</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>hexStringLength</defname>
+        </param>
+        <briefdescription>
+<para>hexToAsciiString - Function that converts a given string of hex values into its ASCII equivalent. A hex string contains hex chars and is &quot;encoded&quot; in ascii In order to encrypt it, it must be converted to the equivalent ascii plain text string plaintext string is half the size of hex, since two hex chars = 1 ascii char if hex string is &quot;4A&quot; it will be converted to &quot;J&quot; in ascii which will have a hex representation of &quot;4a&quot; The original hex string converted to hex staright or printed in hex straight rather will print or have the value &quot;0x34&quot;, &quot;0x31&quot; BASICALLY THE HEX STRING FF IS INTERPRETED AS THE CHARS FF, whereas when using this function we intend it to be &quot;J&quot;, ie the char &quot;J&quot; </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>char*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hexString - The string of hex values to be converted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char*</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>asciiString - The output of the converted hex string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hexStringLength - The length of parameter hexString. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="245" column="1" bodyfile="AES.c" bodystart="948" bodyend="961"/>
+        <references refid="_a_e_s_8c_1aa177516503b10de65b504a3714073ad7" compoundref="_a_e_s_8c" startline="928" endline="933">hexToAscii</references>
+        <referencedby refid="_a_e_s_8h_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</referencedby>
+        <referencedby refid="_a_e_s_8h_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</referencedby>
+        <referencedby refid="aes_tester_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="aes_tester_8c" startline="32" endline="868">main</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1aa451eb4920a712afa521f06831277731" compoundref="ecb_8c" startline="34" endline="103">ecbEncrypt</referencedby>
+        <referencedby refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" compoundref="ecb_8c" startline="116" endline="177">ecbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ac189aee6672718650020cf627d45c780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* asciiToHexString</definition>
+        <argsstring>(unsigned char *asciiString, unsigned char *hexString, size_t asciiStringLen)</argsstring>
+        <name>asciiToHexString</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>asciiString</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>hexString</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>asciiStringLen</declname>
+        </param>
+        <briefdescription>
+<para>Function name: asciiToHexString - convert an ascii String to an ascii string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>asciiString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* pointing to the ASCII String to be converted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hexString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* pointing to a memory where the converted Hex string should be stored. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>asciiStringLen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- size_t containing the length of the ASCII String to be converted. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned char* asciiToHexString - pointer to the converted Hex String, pointing to the same memory location as </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hexString.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="255" column="1" bodyfile="AES.c" bodystart="971" bodyend="982"/>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a0e0b199ded54d7fb53a3bda3fcc02256" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void validateNumRounds</definition>
+        <argsstring>(int numRounds, int keyLength)</argsstring>
+        <name>validateNumRounds</name>
+        <param>
+          <type>int</type>
+          <declname>numRounds</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <briefdescription>
+<para>validateNumRounds - Function that validates the number of rounds that have been passed in by the </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numRounds.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upon invalid validation, relevent error information will be printed to terminal and the program will exit with an EXIT_FAILURE flag. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numRounds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - Integer value of the number rounds </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="262" column="1" bodyfile="AES.c" bodystart="989" bodyend="996"/>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" compoundref="_a_e_s_8c" startline="577" endline="622">RijndaelKeySchedule</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1aa451eb4920a712afa521f06831277731" compoundref="ecb_8c" startline="34" endline="103">ecbEncrypt</referencedby>
+        <referencedby refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" compoundref="ecb_8c" startline="116" endline="177">ecbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1acefcd728377e1e14187fa8fcd20f4064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void validatePlainTextLength</definition>
+        <argsstring>(size_t plainTextLength)</argsstring>
+        <name>validatePlainTextLength</name>
+        <param>
+          <type>size_t</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <briefdescription>
+<para>validatePlainTextLength - Function that validates the length of the plaintext. The validation is done against the AES_BLOCK_SIZE value </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plainTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - The length of the plaintext text as an integer value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="268" column="1" bodyfile="AES.c" bodystart="1002" bodyend="1009"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ae01a1e7833d53f19b534e37ace03a691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void validateCipherTextLength</definition>
+        <argsstring>(int cipherTextLength)</argsstring>
+        <name>validateCipherTextLength</name>
+        <param>
+          <type>int</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <briefdescription>
+<para>validateCipherTextLength - Function that validates the length of the ciphertext. The validation is done against the AES_BLOCK_SIZE value </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cipherTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - The length of the cipher text as an integer value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="274" column="1" bodyfile="AES.c" bodystart="1015" bodyend="1022"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a0b24eb7a5fd67e9fcd9e21711630e86c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printAESBlock</definition>
+        <argsstring>(unsigned char *temp)</argsstring>
+        <name>printAESBlock</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>temp</declname>
+          <defname>block</defname>
+        </param>
+        <briefdescription>
+<para>printAESBlock - Function to print a single block in hex format to the terminal. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>block</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- block to be printed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="280" column="1" bodyfile="AES.c" bodystart="1028" bodyend="1034"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <referencedby refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</referencedby>
+        <referencedby refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" compoundref="_a_e_s_8c" startline="399" endline="567">AESDecrypt</referencedby>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="ecb_8h_1a50ddfe369298c1293b5c57662f569127" compoundref="ecb_8c" startline="187" endline="192">ecbEcryptHelper</referencedby>
+        <referencedby refid="ecb_8h_1a9661ce321dd2649926ebadd2ab9dcd20" compoundref="ecb_8c" startline="202" endline="207">ecbDecryptHelper</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a9dcad0047890de22f3d15611a10ab74f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fileNameDirIndex</definition>
+        <argsstring>(char *fileName, int fileNameLength)</argsstring>
+        <name>fileNameDirIndex</name>
+        <param>
+          <type>char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fileNameLength</declname>
+        </param>
+        <briefdescription>
+<para>Returns the last index of &apos;/&apos; in a given path, otherwise returns -1 if no &apos;/&apos; is found. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to a file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileNameLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the provided file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int Index of the last &apos;/&apos; in the path, else -1 if no &apos;/&apos; was found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="289" column="1" bodyfile="AES.c" bodystart="1043" bodyend="1052"/>
+        <referencedby refid="_a_e_s_8h_1ac206e95e4e98f7a5a92b046ad726f622" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ab066697b473ad5ce74faaceae6def5e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void stripDirectory</definition>
+        <argsstring>(char *fileName, char *extractedFileName, char *extractedFilePath, int fileNameLength, int slashIndex)</argsstring>
+        <name>stripDirectory</name>
+        <param>
+          <type>char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>extractedFileName</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>extractedFilePath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fileNameLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slashIndex</declname>
+        </param>
+        <briefdescription>
+<para>stripDirectory - Function that removes path from the provided path to a file and returns only the file name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to a specified file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extractedFileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the file within the provided path to a file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extractedFilePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to file, excluding the file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileNameLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the paramter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slashIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the last &apos;/&apos; in the original file path passed in as a paramter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stripDirectory - Function that removes path from the provided path to a file and returns only the file name</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to a specified file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extractedFileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the file within the provided path to a file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extractedFilePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to file, excluding the file name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileNameLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the paramter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>slashIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the last &apos;/&apos; in the original file path passed in as a paramter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="300" column="1" bodyfile="AES.c" bodystart="1063" bodyend="1076"/>
+        <referencedby refid="_a_e_s_8h_1ac206e95e4e98f7a5a92b046ad726f622" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ac206e95e4e98f7a5a92b046ad726f622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void getOutputFileName</definition>
+        <argsstring>(int type, char *fileName, char *outputFileName, char *)</argsstring>
+        <name>getOutputFileName</name>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>outputFileName</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <defname>mode</defname>
+        </param>
+        <briefdescription>
+<para>Get the output file name from all the parameters passed in. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 - Encrypt, 1 - Decrypt </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the input file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outputFileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the output file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chipher mode to be used (ECB, CBC, CFB) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="309" column="1" bodyfile="AES.c" bodystart="1086" bodyend="1147"/>
+        <references refid="_a_e_s_8c_1a9dcad0047890de22f3d15611a10ab74f" compoundref="_a_e_s_8c" startline="1043" endline="1052">fileNameDirIndex</references>
+        <references refid="_a_e_s_8c_1ab066697b473ad5ce74faaceae6def5e5" compoundref="_a_e_s_8c" startline="1063" endline="1076">stripDirectory</references>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1a3bf513612c15693c3b2be10b94298e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t isFileTxt</definition>
+        <argsstring>(unsigned char *fileName)</argsstring>
+        <name>isFileTxt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+<para>isFileTxt - Function to determine if the file passed in as a paramter </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a text file with extension .txt or not. Returns a 1 if it is and a 0 if it isn&apos;t.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - path to file to determine if the file is a text file or not. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t - boolean indicating if it is a text file or not. (0 is not a text file, 1 is a text file) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="318" column="1" bodyfile="AES.c" bodystart="1156" bodyend="1167"/>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1afba897e91364663f883cc51ed309dc92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* keyHexToAscii</definition>
+        <argsstring>(unsigned char *hexKey, int keyLength)</argsstring>
+        <name>keyHexToAscii</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>hexKey</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <briefdescription>
+<para>keyHexToAscii - Function to convert a key from a Hex string passed in as a paramter </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hexKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to an ascii string. User must free the returned pointer to memory allocated. Returns the Ascii equivalent. The caller must free the pointer returned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* hexKey - hex representation of the key to be converted to ASCII. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the hex representation of the key passed in as paramter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hexKey.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned* - the ASCII representation of the hex key passed in as parameter </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hexKey.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="329" column="1" bodyfile="AES.c" bodystart="1178" bodyend="1195"/>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1aa451eb4920a712afa521f06831277731" compoundref="ecb_8c" startline="34" endline="103">ecbEncrypt</referencedby>
+        <referencedby refid="ecb_8h_1acd982a867b70e4f75f2232c974a1e4ae" compoundref="ecb_8c" startline="116" endline="177">ecbDecrypt</referencedby>
+        <referencedby refid="ecb_8h_1ab68902caeba7880cf1be8b40e8bb9a50" compoundref="ecb_8c" startline="221" endline="357">ecbEncryptFile</referencedby>
+        <referencedby refid="ecb_8h_1ab4c77adefd8655ebd7bc79524f958013" compoundref="ecb_8c" startline="370" endline="544">ecbDecryptFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ad82d1b77336ac1292ed5a24b92380f42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* IVHexToAscii</definition>
+        <argsstring>(unsigned char *hexIV, int IVLength)</argsstring>
+        <name>IVHexToAscii</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>hexIV</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>IVLength</declname>
+        </param>
+        <briefdescription>
+<para>IVHexToAscii - Function to convert a initialization vector from a Hex string passed in as a paramter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hexIV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to an ascii string. User must free the returned pointer to memory allocated. Returns the Ascii equivalent. The caller must free the pointer returned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* hexIV - hex representation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IVLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the hex representation of the IV passed in as paramter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hexIV.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned* - the ASCII representation of the hex IV passed in as parameter </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hexIV.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="340" column="1" bodyfile="AES.c" bodystart="1205" bodyend="1218"/>
+        <references refid="_a_e_s_8c_1ac3c0558617e372fc5ce3648e041e549c" compoundref="_a_e_s_8c" startline="24">AES_BLOCK_SIZE</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="_a_e_s_8h_1ab601c369ba50730fc02d03bc44aad4e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* XORBlocks</definition>
+        <argsstring>(unsigned char *block1, unsigned char *block2, int length)</argsstring>
+        <name>XORBlocks</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>block1</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>block2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>XORBlocks - Function to XOR two blocks of length. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and retuns the XOR&apos;d result. User must free the memory returned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- block1 - First block to be XOR&apos;d. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- block2 - Second block to be XOR&apos;d. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- length of the blocks to be XOR&apos;d. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>unsigned* - Result of the XOR. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="AES.h" line="350" column="1" bodyfile="AES.c" bodystart="1228" bodyend="1236"/>
+        <referencedby refid="cbc_8h_1ad055b3ad2664ace8ba1ab68a481dc1b3" compoundref="cbc_8c" startline="38" endline="246">cbcEncryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a9375da4cc24b1bedceb0364f2865bcc3" compoundref="cbc_8c" startline="263" endline="476">cbcDecryptFile</referencedby>
+        <referencedby refid="cbc_8h_1a90f1f37609cf336c57cd0300282c1dac" compoundref="cbc_8c" startline="492" endline="632">cbcEncrypt</referencedby>
+        <referencedby refid="cbc_8h_1a95fbad6d45d4b793610fe663939b5f8c" compoundref="cbc_8c" startline="648" endline="766">cbcDecrypt</referencedby>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>AES encryption and decryption module header file. This file contains the function headers for the functions used for AES encryption and decryption. Input must be ASCII and not hex. The functions implemented in this file, perform the AES encryption and decryption on a single block of size dictated by the variable AES_BLOCK_SIZE. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="authors"><para>Mohamed Ameen Omar (u16055323) </para></simplesect>
+<simplesect kind="authors"><para>Douglas Healy (u16018100) </para></simplesect>
+<simplesect kind="authors"><para>Llewellyn Moyse (u15100708) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2019-03-20</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="17"><highlight class="preprocessor">#ifndef<sp/>AES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a48113b3faee8aad8efa17aac0b56b63b" kindref="member">VERBOSE</ref>;<sp/></highlight><highlight class="comment">//<sp/>for<sp/>verbose<sp/>output<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1ac3c0558617e372fc5ce3648e041e549c" kindref="member">AES_BLOCK_SIZE</ref>;<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>blocks<sp/>in<sp/>BYTES<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1afdaefaa3b28b23dc18709335449a1427" kindref="member">invSBox</ref>[256];<sp/></highlight><highlight class="comment">//<sp/>inverse<sp/>s<sp/>box</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1abbb6f385c467cfd964a68eeb6caaa04f" kindref="member">sbox</ref>[256];<sp/></highlight><highlight class="comment">//<sp/>s<sp/>box<sp/>lookup<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a58c62505f9b71b2c257046ccf4c9153c" kindref="member">Rcon</ref>[255];<sp/></highlight><highlight class="comment">//<sp/>rcon<sp/>lookup<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1ab7583f82c95236839316097a3baf8e21" kindref="member">getNumRounds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1a0ac21e951d3e46598708ab8fd8bc61c5" kindref="member">AESEncrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>plaintext,<sp/>key<sp/>,<sp/>plaintext<sp/>length,<sp/>key<sp/>length</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1aea7dd7439aa08f23e6fecd32d4055ac3" kindref="member">AESDecrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>ciphertext,<sp/>key,<sp/>keyLength<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1a53bffc877a08f01e5fd9cf1e28298aab" kindref="member">RijndaelKeySchedule</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>take<sp/>in<sp/>the<sp/>original<sp/>key<sp/>and<sp/>the<sp/>key<sp/>length<sp/>(numBits)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1aa2c2bbef104b3d3e4c4851ca338ffb8c" kindref="member">printStateArray</ref>(uint8_t[4][4]);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a6692cb12e0e4495fbba5cb07af94e20d" kindref="member">getSBoxValue</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a533c79baa5917f8daa5ef751b87dc6b9" kindref="member">getInvSBox</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1af2da93be75f2ce31bfd9c7b18dcd3642" kindref="member">getRconValue</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a772c8b1e9ef554b5c2d995ae5834cc3b" kindref="member">SingleRotateLeft</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a4d8c6f749326403dce59fae3f81cd120" kindref="member">KeyScheduleCore</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a3171e930e8e63e937e3542740b7c94d6" kindref="member">ShiftRows</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a6674963eab83fe4573ea8b5ee36728ad" kindref="member">AddRoundKey</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4]);<sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a07eae9e44f492880e0a0fb59edb17d34" kindref="member">subBytes</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4]);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1adef9f30a148bc7732de37901f741ba5e" kindref="member">mixColumns</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4]);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1abbaab65a86e18c20ed73cb7f712e0eed" kindref="member">invSubBytes</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4]);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a0b8bd9c3f028f65310f63598410d816b" kindref="member">invShiftRows</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1ab94b816921097af452b3bcf62c701258" kindref="member">SingleRotateRight</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a65882384e88b16eb2b875f28119bfa71" kindref="member">getPaddedKeyLength</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);<sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a15e43c925ddfb0fcc1e4a6138962ce68" kindref="member">invMixColumns</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[4][4]);<sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a3d380a2242622d7f06999c772b6f09eb" kindref="member">galloisFieldMult</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a66cd2ce21006225467c842eb708f7923" kindref="member">getRoundKey</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>);<sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a997ca47a4474fdb26b9bdbdcef4b734c" kindref="member">constructStateArray</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[][4]);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal">uint8_t<sp/><ref refid="_a_e_s_8h_1a7b4ba0ba076b29e7eca94cc3bcba9f9d" kindref="member">hexToInt</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">uint8_t<sp/><ref refid="_a_e_s_8h_1acb25fd10b0e1c3e0844d4bde447259de" kindref="member">hexToAscii</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>d);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a69dcfd00e48471cb60dc1b24ba6e5520" kindref="member">hexToAsciiString</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>done,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1ac189aee6672718650020cf627d45c780" kindref="member">asciiToHexString</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*asciiString,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>hexString,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>asciiStringLen);<sp/></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a0e0b199ded54d7fb53a3bda3fcc02256" kindref="member">validateNumRounds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numRounds,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1acefcd728377e1e14187fa8fcd20f4064" kindref="member">validatePlainTextLength</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>plainTextLength);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1ae01a1e7833d53f19b534e37ace03a691" kindref="member">validateCipherTextLength</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cipherTextLength);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a0b24eb7a5fd67e9fcd9e21711630e86c" kindref="member">printAESBlock</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>temp);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1a9dcad0047890de22f3d15611a10ab74f" kindref="member">fileNameDirIndex</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileNameLength);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1ab066697b473ad5ce74faaceae6def5e5" kindref="member">stripDirectory</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>extractedFileName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>extractedFilePath,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileNameLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>slashIndex);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_a_e_s_8h_1ac206e95e4e98f7a5a92b046ad726f622" kindref="member">getOutputFileName</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>outputFileName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*);<sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal">uint8_t<sp/><ref refid="_a_e_s_8h_1a3bf513612c15693c3b2be10b94298e05" kindref="member">isFileTxt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>fileName);<sp/></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1afba897e91364663f883cc51ed309dc92" kindref="member">keyHexToAscii</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>hexKey,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1ad82d1b77336ac1292ed5a24b92380f42" kindref="member">IVHexToAscii</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>hexIV,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IVLength);<sp/></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_a_e_s_8h_1ab601c369ba50730fc02d03bc44aad4e0" kindref="member">XORBlocks</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>block1,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>block2,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="AES.h"/>
+  </compounddef>
+</doxygen>

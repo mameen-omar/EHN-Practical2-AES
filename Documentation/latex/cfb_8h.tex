@@ -1,0 +1,317 @@
+\hypertarget{cfb_8h}{}\section{cfb.\+h File Reference}
+\label{cfb_8h}\index{cfb.\+h@{cfb.\+h}}
+
+
+Cipher Feedback (C\+FB) -\/ A\+ES header file This file contains the function headers of the functions used for the C\+FB mode of A\+ES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The C\+FB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding.  
+
+
+{\ttfamily \#include \char`\"{}A\+E\+S.\+h\char`\"{}}\newline
+Include dependency graph for cfb.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cfb_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{cfb_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cfb_8h_a9384de325e389ba7809b7ee98320f485}{cfb\+Encrypt\+File} (unsigned char $\ast$file\+Name, unsigned char $\ast$key, unsigned char $\ast$initialization\+Vector, int key\+Length, int initialization\+Vector\+Length, int is\+Text\+Hex, int is\+Key\+Hex, int is\+Iv\+Hex)
+\begin{DoxyCompactList}\small\item\em cfb\+Encrypt\+File -\/ Function to encrypt the file with name \end{DoxyCompactList}\item 
+void \hyperlink{cfb_8h_a6dce0b90ab3948c3df032eb61c2a64ea}{cfb\+Decrypt\+File} (unsigned char $\ast$file\+Name, unsigned char $\ast$key, unsigned char $\ast$initialization\+Vector, int key\+Length, int initialization\+Vector\+Length, int is\+Text\+Hex, int is\+Key\+Hex, int is\+Iv\+Hex)
+\begin{DoxyCompactList}\small\item\em cfb\+Decrypt\+File -\/ Function to decrypt the file with name \end{DoxyCompactList}\item 
+void \hyperlink{cfb_8h_a826aec09cb2af95cb8781d2b4c211182}{cfb\+Encrypt} (unsigned char $\ast$plain\+Text, unsigned char $\ast$key, unsigned char $\ast$initialization\+Vector, int plain\+Text\+Length, int key\+Length, int initialization\+Vector\+Length, int is\+Text\+Hex, int is\+Key\+Hex, int is\+Iv\+Hex)
+\begin{DoxyCompactList}\small\item\em cfb\+Encrypt -\/ Function to encrypt the user input pointed to by \end{DoxyCompactList}\item 
+void \hyperlink{cfb_8h_ad6a75d43203e367b8a83f6b7c7f506c6}{cfb\+Decrypt} (unsigned char $\ast$cipher\+Text, unsigned char $\ast$key, unsigned char $\ast$initialization\+Vector, int cipher\+Text\+Length, int key\+Length, int initialization\+Vector\+Length, int is\+Text\+Hex, int is\+Key\+Hex, int is\+Iv\+Hex)
+\begin{DoxyCompactList}\small\item\em cfb\+Decrypt -\/ Function to decrypt the user input pointed to by \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{cfb_8h_a48113b3faee8aad8efa17aac0b56b63b}{V\+E\+R\+B\+O\+SE}
+\begin{DoxyCompactList}\small\item\em Variable -\/ V\+E\+R\+B\+O\+SE -\/ specifies if verbose output should be printed or not. \end{DoxyCompactList}\item 
+const size\+\_\+t \hyperlink{cfb_8h_ac3c0558617e372fc5ce3648e041e549c}{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}
+\begin{DoxyCompactList}\small\item\em Variable -\/ A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE -\/ specifies the length per A\+ES block -\/ 16 bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{cfb_8h_a1aa2688ad79074b92b03ea0d5ae081e6}\label{cfb_8h_a1aa2688ad79074b92b03ea0d5ae081e6}} 
+const size\+\_\+t \hyperlink{cfb_8h_a1aa2688ad79074b92b03ea0d5ae081e6}{shift\+Reg\+Length}
+\begin{DoxyCompactList}\small\item\em Variable -\/ size\+\_\+t const shift\+Reg\+Length -\/ used to specify the length of the shift register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{cfb_8h_a77cc5a70d7861999e22b0da3a15d72c5}\label{cfb_8h_a77cc5a70d7861999e22b0da3a15d72c5}} 
+const size\+\_\+t \hyperlink{cfb_8h_a77cc5a70d7861999e22b0da3a15d72c5}{stream\+Size}
+\begin{DoxyCompactList}\small\item\em Variable -\/ size\+\_\+t const stream\+Size -\/ used to speciffy the length of the stream per encryption round. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cipher Feedback (C\+FB) -\/ A\+ES header file This file contains the function headers of the functions used for the C\+FB mode of A\+ES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The C\+FB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding. 
+
+\begin{DoxyAuthor}{Authors}
+Mohamed Ameen Omar (u16055323) 
+
+Douglas Healy (u16018100) 
+
+Llewellyn Moyse (u15100708) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2019-\/03-\/28
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cfb_8h_ad6a75d43203e367b8a83f6b7c7f506c6}\label{cfb_8h_ad6a75d43203e367b8a83f6b7c7f506c6}} 
+\index{cfb.\+h@{cfb.\+h}!cfb\+Decrypt@{cfb\+Decrypt}}
+\index{cfb\+Decrypt@{cfb\+Decrypt}!cfb.\+h@{cfb.\+h}}
+\subsubsection{\texorpdfstring{cfb\+Decrypt()}{cfbDecrypt()}}
+{\footnotesize\ttfamily void cfb\+Decrypt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{cipher\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{unsigned char $\ast$}]{initialization\+Vector,  }\item[{int}]{cipher\+Text\+Length,  }\item[{int}]{key\+Length,  }\item[{int}]{initialization\+Vector\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex,  }\item[{int}]{is\+Iv\+Hex }\end{DoxyParamCaption})}
+
+
+
+cfb\+Decrypt -\/ Function to decrypt the user input pointed to by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cipher\+Text} & and print decrypted result in hex to terminal. Performs decryption using the cfb mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform decryption and print it in hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ cipher\+Text -\/ the user input to be decrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for decryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ initialization\+Vector -\/ the initialization vector to use for cfb decryption. \\
+\hline
+{\em cipher\+Text\+Length} & -\/ int -\/ the length of the ciphertext to be encrypted in \\
+\hline
+{\em cipher\+Text.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em initialization\+Vector\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em initialization\+Vector.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Iv\+Hex} & -\/ int -\/ boolean used to signify whether the IV pointed to by \\
+\hline
+{\em initialization\+Vector} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 550 of file cfb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cfb_8h_ad6a75d43203e367b8a83f6b7c7f506c6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cfb_8h_a6dce0b90ab3948c3df032eb61c2a64ea}\label{cfb_8h_a6dce0b90ab3948c3df032eb61c2a64ea}} 
+\index{cfb.\+h@{cfb.\+h}!cfb\+Decrypt\+File@{cfb\+Decrypt\+File}}
+\index{cfb\+Decrypt\+File@{cfb\+Decrypt\+File}!cfb.\+h@{cfb.\+h}}
+\subsubsection{\texorpdfstring{cfb\+Decrypt\+File()}{cfbDecryptFile()}}
+{\footnotesize\ttfamily void cfb\+Decrypt\+File (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{file\+Name,  }\item[{unsigned char $\ast$}]{key,  }\item[{unsigned char $\ast$}]{initialization\+Vector,  }\item[{int}]{key\+Length,  }\item[{int}]{initialization\+Vector\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex,  }\item[{int}]{is\+Iv\+Hex }\end{DoxyParamCaption})}
+
+
+
+cfb\+Decrypt\+File -\/ Function to decrypt the file with name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & and write the decrypted version to file with cfb\+Decrypted appended to the original filename. Performs decryption using the cfb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform decryption and write it back to the file in the same format as the input. That is if the input file was a hex\+String, the decrypted file will also contain a hex string. All terminal output, however, will be hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ file\+Name -\/ the path to the file to be decrypted \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for decryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ initialization\+Vector -\/ the initialization vector to use for cfb decryption \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em initialization\+Vector\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em initialization\+Vector.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Iv\+Hex} & -\/ int -\/ boolean used to signify whether the IV pointed to by \\
+\hline
+{\em initialization\+Vector} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 221 of file cfb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cfb_8h_a6dce0b90ab3948c3df032eb61c2a64ea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cfb_8h_a826aec09cb2af95cb8781d2b4c211182}\label{cfb_8h_a826aec09cb2af95cb8781d2b4c211182}} 
+\index{cfb.\+h@{cfb.\+h}!cfb\+Encrypt@{cfb\+Encrypt}}
+\index{cfb\+Encrypt@{cfb\+Encrypt}!cfb.\+h@{cfb.\+h}}
+\subsubsection{\texorpdfstring{cfb\+Encrypt()}{cfbEncrypt()}}
+{\footnotesize\ttfamily void cfb\+Encrypt (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{plain\+Text,  }\item[{unsigned char $\ast$}]{key,  }\item[{unsigned char $\ast$}]{initialization\+Vector,  }\item[{int}]{plain\+Text\+Length,  }\item[{int}]{key\+Length,  }\item[{int}]{initialization\+Vector\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex,  }\item[{int}]{is\+Iv\+Hex }\end{DoxyParamCaption})}
+
+
+
+cfb\+Encrypt -\/ Function to encrypt the user input pointed to by 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plain\+Text} & and print encrypted result in hex to terminal. Performs encryption using the cfb mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform encryption and print it in hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ plain\+Text -\/ the user input to be encrypted. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for encryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ initialization\+Vector -\/ the initialization vector to use for cfb encryption \\
+\hline
+{\em plain\+Text\+Length} & -\/ -\/ int -\/ the length of the plaintext to be encrypted in \\
+\hline
+{\em plain\+Text.} & \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em initialization\+Vector\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em initialization\+Vector.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Iv\+Hex} & -\/ int -\/ boolean used to signify whether the IV pointed to by \\
+\hline
+{\em initialization\+Vector} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 405 of file cfb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cfb_8h_a826aec09cb2af95cb8781d2b4c211182_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cfb_8h_a9384de325e389ba7809b7ee98320f485}\label{cfb_8h_a9384de325e389ba7809b7ee98320f485}} 
+\index{cfb.\+h@{cfb.\+h}!cfb\+Encrypt\+File@{cfb\+Encrypt\+File}}
+\index{cfb\+Encrypt\+File@{cfb\+Encrypt\+File}!cfb.\+h@{cfb.\+h}}
+\subsubsection{\texorpdfstring{cfb\+Encrypt\+File()}{cfbEncryptFile()}}
+{\footnotesize\ttfamily void cfb\+Encrypt\+File (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{file\+Name,  }\item[{unsigned char $\ast$}]{key,  }\item[{unsigned char $\ast$}]{initialization\+Vector,  }\item[{int}]{key\+Length,  }\item[{int}]{initialization\+Vector\+Length,  }\item[{int}]{is\+Text\+Hex,  }\item[{int}]{is\+Key\+Hex,  }\item[{int}]{is\+Iv\+Hex }\end{DoxyParamCaption})}
+
+
+
+cfb\+Encrypt\+File -\/ Function to encrypt the file with name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & and write the encrypted version to file with cfb\+Encrypted appended to the original filename. Performs encryption using the cfb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as A\+S\+C\+II. All terminal output, however, will be hex. Makes use of zero padding. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ file\+Name -\/ the path to the file to be encrypted \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ key -\/ the key to use for encryption. \\
+\hline
+{\em char} & -\/ unsigned char$\ast$ initialization\+Vector -\/ the initialization vector to use for cfb encryption \\
+\hline
+{\em key\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em key.} & \\
+\hline
+{\em initialization\+Vector\+Length} & -\/ int -\/ the length of the key specified in \\
+\hline
+{\em initialization\+Vector.} & \\
+\hline
+{\em is\+Text\+Hex} & -\/ int -\/ boolean used to signify whether the file pointed to by \\
+\hline
+{\em file\+Name} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Key\+Hex} & -\/ int -\/ boolean used to signify whether the key pointed to by \\
+\hline
+{\em key} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+{\em is\+Iv\+Hex} & -\/ int -\/ boolean used to signify whether the IV pointed to by \\
+\hline
+{\em initialization\+Vector} & is a hex\+String or A\+S\+C\+II string. (1 = file is a hex\+String) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file cfb.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cfb_8h_a9384de325e389ba7809b7ee98320f485_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{cfb_8h_ac3c0558617e372fc5ce3648e041e549c}\label{cfb_8h_ac3c0558617e372fc5ce3648e041e549c}} 
+\index{cfb.\+h@{cfb.\+h}!A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}}
+\index{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE@{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}!cfb.\+h@{cfb.\+h}}
+\subsubsection{\texorpdfstring{A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}{AES\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily const size\+\_\+t A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE}
+
+
+
+Variable -\/ A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE -\/ specifies the length per A\+ES block -\/ 16 bytes. 
+
+Variable -\/ A\+E\+S\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE -\/ specifies the length per A\+ES block -\/ 16 bytes. 
+
+Definition at line 24 of file A\+E\+S.\+c.
+
+\mbox{\Hypertarget{cfb_8h_a48113b3faee8aad8efa17aac0b56b63b}\label{cfb_8h_a48113b3faee8aad8efa17aac0b56b63b}} 
+\index{cfb.\+h@{cfb.\+h}!V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}}
+\index{V\+E\+R\+B\+O\+SE@{V\+E\+R\+B\+O\+SE}!cfb.\+h@{cfb.\+h}}
+\subsubsection{\texorpdfstring{V\+E\+R\+B\+O\+SE}{VERBOSE}}
+{\footnotesize\ttfamily size\+\_\+t V\+E\+R\+B\+O\+SE}
+
+
+
+Variable -\/ V\+E\+R\+B\+O\+SE -\/ specifies if verbose output should be printed or not. 
+
+Variable -\/ V\+E\+R\+B\+O\+SE -\/ specifies if verbose output should be printed or not. 
+
+Definition at line 31 of file A\+E\+S.\+c.
+

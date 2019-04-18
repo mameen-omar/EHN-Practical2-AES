@@ -1,0 +1,843 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="cfb_8h" kind="file" language="C++">
+    <compoundname>cfb.h</compoundname>
+    <includes refid="_a_e_s_8h" local="yes">AES.h</includes>
+    <includedby refid="cfb_8c" local="yes">cfb.c</includedby>
+    <includedby refid="cfb_tester_8c" local="yes">cfbTester.c</includedby>
+    <includedby refid="encryption_platform_8h" local="yes">encryptionPlatform.h</includedby>
+    <incdepgraph>
+      <node id="83">
+        <label>stdbool.h</label>
+      </node>
+      <node id="77">
+        <label>cfb.h</label>
+        <link refid="cfb_8h"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>stdint.h</label>
+      </node>
+      <node id="82">
+        <label>stdlib.h</label>
+      </node>
+      <node id="78">
+        <label>AES.h</label>
+        <link refid="_a_e_s_8h"/>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>string.h</label>
+      </node>
+      <node id="79">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="85">
+        <label>cfb.c</label>
+        <link refid="cfb_8c"/>
+      </node>
+      <node id="84">
+        <label>cfb.h</label>
+        <link refid="cfb_8h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>encryptionPlatform.c</label>
+        <link refid="encryption_platform_8c"/>
+      </node>
+      <node id="87">
+        <label>encryptionPlatform.h</label>
+        <link refid="encryption_platform_8h_source"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>cfbTester.c</label>
+        <link refid="cfb_tester_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="cfb_8h_1a48113b3faee8aad8efa17aac0b56b63b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t VERBOSE</definition>
+        <argsstring></argsstring>
+        <name>VERBOSE</name>
+        <briefdescription>
+<para>Variable - VERBOSE - specifies if verbose output should be printed or not. </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable - VERBOSE - specifies if verbose output should be printed or not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="29" column="1" bodyfile="AES.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cfb_8h_1ac3c0558617e372fc5ce3648e041e549c" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t AES_BLOCK_SIZE</definition>
+        <argsstring></argsstring>
+        <name>AES_BLOCK_SIZE</name>
+        <briefdescription>
+<para>Variable - AES_BLOCK_SIZE - specifies the length per AES block - 16 bytes. </para>        </briefdescription>
+        <detaileddescription>
+<para>Variable - AES_BLOCK_SIZE - specifies the length per AES block - 16 bytes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="34" column="1" bodyfile="AES.c" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="cfb_8h_1a1aa2688ad79074b92b03ea0d5ae081e6" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t shiftRegLength</definition>
+        <argsstring></argsstring>
+        <name>shiftRegLength</name>
+        <briefdescription>
+<para>Variable - size_t const shiftRegLength - used to specify the length of the shift register. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="38" column="1" bodyfile="cfb.c" bodystart="26" bodyend="-1"/>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="cfb_8h_1a77cc5a70d7861999e22b0da3a15d72c5" prot="public" static="no" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t streamSize</definition>
+        <argsstring></argsstring>
+        <name>streamSize</name>
+        <briefdescription>
+<para>Variable - size_t const streamSize - used to speciffy the length of the stream per encryption round. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="42" column="1" bodyfile="cfb.c" bodystart="30" bodyend="-1"/>
+        <referencedby refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" compoundref="cfb_8c" startline="46" endline="204">cfbEncryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" compoundref="cfb_8c" startline="221" endline="389">cfbDecryptFile</referencedby>
+        <referencedby refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" compoundref="cfb_8c" startline="405" endline="533">cfbEncrypt</referencedby>
+        <referencedby refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" compoundref="cfb_8c" startline="550" endline="675">cfbDecrypt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="cfb_8h_1a9384de325e389ba7809b7ee98320f485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cfbEncryptFile</definition>
+        <argsstring>(unsigned char *fileName, unsigned char *key, unsigned char *initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cfbEncryptFile</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cfbEncryptFile - Function to encrypt the file with name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and write the encrypted version to file with cfbEncrypted appended to the original filename. Performs encryption using the cfb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform encryption and write it back as ASCII. All terminal output, however, will be hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - the path to the file to be encrypted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cfb encryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="58" column="1" bodyfile="cfb.c" bodystart="46" bodyend="204"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="cfb_8c_1aa4317305b1ad6f5e38b8e13a4cd3e126" compoundref="cfb_8c" startline="26">shiftRegLength</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+        <references refid="cfb_8c_1a1945f330e6dc1fd580e46cfa2a1b2a69" compoundref="cfb_8c" startline="30">streamSize</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+      </memberdef>
+      <memberdef kind="function" id="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cfbDecryptFile</definition>
+        <argsstring>(unsigned char *fileName, unsigned char *key, unsigned char *initializationVector, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cfbDecryptFile</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cfbDecryptFile - Function to decrypt the file with name </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and write the decrypted version to file with cfbDecrypted appended to the original filename. Performs decryption using the cfb mode and writes the result to a file. If any input is hex, it will convert it to ascii, perform decryption and write it back to the file in the same format as the input. That is if the input file was a hexString, the decrypted file will also contain a hex string. All terminal output, however, will be hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* fileName - the path to the file to be decrypted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cfb decryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="77" column="1" bodyfile="cfb.c" bodystart="221" bodyend="389"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="cfb_8c_1aa4317305b1ad6f5e38b8e13a4cd3e126" compoundref="cfb_8c" startline="26">shiftRegLength</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1acc2acf0b03a8863f9290bdd36dd6f478" compoundref="_a_e_s_8c" startline="1086" endline="1147">getOutputFileName</references>
+        <references refid="_a_e_s_8c_1aaba2e1b9466483b3c6b8669eb42aa5ed" compoundref="_a_e_s_8c" startline="1028" endline="1034">printAESBlock</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+        <references refid="cfb_8c_1a1945f330e6dc1fd580e46cfa2a1b2a69" compoundref="cfb_8c" startline="30">streamSize</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+        <references refid="_a_e_s_8c_1ac189aee6672718650020cf627d45c780" compoundref="_a_e_s_8c" startline="971" endline="982">asciiToHexString</references>
+        <references refid="_a_e_s_8c_1a3bf513612c15693c3b2be10b94298e05" compoundref="_a_e_s_8c" startline="1156" endline="1167">isFileTxt</references>
+      </memberdef>
+      <memberdef kind="function" id="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cfbEncrypt</definition>
+        <argsstring>(unsigned char *plainText, unsigned char *key, unsigned char *initializationVector, int plainTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cfbEncrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>plainText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plainTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cfbEncrypt - Function to encrypt the user input pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plainText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and print encrypted result in hex to terminal. Performs encryption using the cfb mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform encryption and print it in hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* plainText - the user input to be encrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for encryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cfb encryption </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- - int - the length of the plaintext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plainText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="95" column="1" bodyfile="cfb.c" bodystart="405" bodyend="533"/>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="cfb_8c_1aa4317305b1ad6f5e38b8e13a4cd3e126" compoundref="cfb_8c" startline="26">shiftRegLength</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+        <references refid="cfb_8c_1a1945f330e6dc1fd580e46cfa2a1b2a69" compoundref="cfb_8c" startline="30">streamSize</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+      </memberdef>
+      <memberdef kind="function" id="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cfbDecrypt</definition>
+        <argsstring>(unsigned char *cipherText, unsigned char *key, unsigned char *initializationVector, int cipherTextLength, int keyLength, int initializationVectorLength, int isTextHex, int isKeyHex, int isIvHex)</argsstring>
+        <name>cfbDecrypt</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>cipherText</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>initializationVector</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cipherTextLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>keyLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>initializationVectorLength</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isTextHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isKeyHex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>isIvHex</declname>
+        </param>
+        <briefdescription>
+<para>cfbDecrypt - Function to decrypt the user input pointed to by </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cipherText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and print decrypted result in hex to terminal. Performs decryption using the cfb mode prints the result to the terminal for each block in hex. If any input is hex, it will convert it to ascii, perform decryption and print it in hex. Makes use of zero padding. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* cipherText - the user input to be decrypted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* key - the key to use for decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>char</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- unsigned char* initializationVector - the initialization vector to use for cfb decryption. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherTextLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the ciphertext to be encrypted in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cipherText.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keyLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVectorLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - the length of the key specified in </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector.</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isTextHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the file pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isKeyHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the key pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isIvHex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- int - boolean used to signify whether the IV pointed to by </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>initializationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a hexString or ASCII string. (1 = file is a hexString) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cfb.h" line="113" column="1" bodyfile="cfb.c" bodystart="550" bodyend="675"/>
+        <references refid="_a_e_s_8c_1afba897e91364663f883cc51ed309dc92" compoundref="_a_e_s_8c" startline="1178" endline="1195">keyHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad82d1b77336ac1292ed5a24b92380f42" compoundref="_a_e_s_8c" startline="1205" endline="1218">IVHexToAscii</references>
+        <references refid="_a_e_s_8c_1ad697cbb5d9e462b3017df1f1d939ee96" compoundref="_a_e_s_8c" startline="948" endline="961">hexToAsciiString</references>
+        <references refid="cfb_8c_1aa4317305b1ad6f5e38b8e13a4cd3e126" compoundref="cfb_8c" startline="26">shiftRegLength</references>
+        <references refid="_a_e_s_8c_1a5d65eac115e562c64b00a43e72ee6aca" compoundref="_a_e_s_8c" startline="172" endline="184">getPaddedKeyLength</references>
+        <references refid="_a_e_s_8c_1a1c2a403d95a85400bbae142d48cb8c9d" compoundref="_a_e_s_8c" startline="114" endline="125">getNumRounds</references>
+        <references refid="_a_e_s_8c_1a0e0b199ded54d7fb53a3bda3fcc02256" compoundref="_a_e_s_8c" startline="989" endline="996">validateNumRounds</references>
+        <references refid="_a_e_s_8c_1a48113b3faee8aad8efa17aac0b56b63b" compoundref="_a_e_s_8c" startline="31">VERBOSE</references>
+        <references refid="_a_e_s_8c_1a41cef4df290905c4d632ce1357d0a9bd" compoundref="_a_e_s_8c" startline="198" endline="386">AESEncrypt</references>
+        <references refid="cfb_8c_1a1945f330e6dc1fd580e46cfa2a1b2a69" compoundref="cfb_8c" startline="30">streamSize</references>
+        <references refid="_a_e_s_8c_1ab601c369ba50730fc02d03bc44aad4e0" compoundref="_a_e_s_8c" startline="1228" endline="1236">XORBlocks</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Cipher Feedback (CFB) - AES header file This file contains the function headers of the functions used for the CFB mode of AES encryption. This system supports both file and user input encryption, as hex or ascii input. If the user inputs data to be encrypted or decrypted, the result will be printed to the terminal, whereas if the user specifies a file to be encrypted or decrypted, a new file will be created and the result will be written to the file. The CFB Encryption platform encrypts and decrypts blocks 16 bytes at a time, using 0 padding. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="authors"><para>Mohamed Ameen Omar (u16055323) </para></simplesect>
+<simplesect kind="authors"><para>Douglas Healy (u16018100) </para></simplesect>
+<simplesect kind="authors"><para>Llewellyn Moyse (u15100708) </para></simplesect>
+<simplesect kind="version"><para>0.1 </para></simplesect>
+<simplesect kind="date"><para>2019-03-28</para></simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019 </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="20"><highlight class="preprocessor">#ifndef<sp/>CFB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CFB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_e_s_8h" kindref="compound">AES.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1a48113b3faee8aad8efa17aac0b56b63b" kindref="member">VERBOSE</ref>;<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1ac3c0558617e372fc5ce3648e041e549c" kindref="member">AES_BLOCK_SIZE</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1a1aa2688ad79074b92b03ea0d5ae081e6" kindref="member">shiftRegLength</ref>;<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1a77cc5a70d7861999e22b0da3a15d72c5" kindref="member">streamSize</ref>;<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1a9384de325e389ba7809b7ee98320f485" kindref="member">cfbEncryptFile</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1a6dce0b90ab3948c3df032eb61c2a64ea" kindref="member">cfbDecryptFile</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fileName,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1a826aec09cb2af95cb8781d2b4c211182" kindref="member">cfbEncrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>plainText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>plainTextLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="cfb_8h_1ad6a75d43203e367b8a83f6b7c7f506c6" kindref="member">cfbDecrypt</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>cipherText,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>initializationVector,<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cipherTextLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>initializationVectorLength,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isTextHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isKeyHex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isIvHex);<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="cfb.h"/>
+  </compounddef>
+</doxygen>

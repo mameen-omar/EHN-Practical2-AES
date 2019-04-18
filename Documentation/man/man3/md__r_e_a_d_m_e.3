@@ -1,0 +1,63 @@
+.TH "md__r_e_a_d_m_e" 3 "Thu Apr 18 2019" "Version 1.0" "EHN 410 - Group 7 - AES Encryption" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_eREADME 
+ \- 
+.PP
+ 
+.SH "EHN 410 - Group 7"
+.PP
+.PP
+.PP
+.PP
+.PP
+ 
+.SS "Group members:"
+.PP
+.PP
+.IP "\(bu" 2
+Mohamed Ameen Omar (u16055323)
+.IP "\(bu" 2
+Douglas Healy (u16018100)
+.IP "\(bu" 2
+Llewellyn Moyse (u15100708)
+.PP
+.PP
+.PP
+ 
+.SS "To run Encryption Platform"
+.PP
+.PP
+.IP "1." 4
+Open a Linux Terminal\&.
+.IP "2." 4
+Navigate to the Encyption Platform Directory\&.
+.IP "3." 4
+Run the 'make' command\&.
+.IP "4." 4
+An executable called 'encyptionPlatform' will be created\&.
+.IP "5." 4
+Use '\&./encyptionPlatform' to run the encryption platform\&. (if no input parameters are specified, a help menu will be displayed)
+.IP "6." 4
+A list of input parameter and default values:
+.PP
+.PP
+Parameter Description Default Value  -h Print out the help menu -f or --filename Path to an ASCII file to encrypt/decrypt None -F Path to a hex file to encrypt/decrypt None -k or --key The encryption key 128 bit NULL key -K The encryption key (in hex) None -i or --IV The Initialisation vector 128 bit NULL IV -I The Initialisation vector (in hex) None -p or --plaintext Plaintext to encrypt None -P Plaintext to encrypt (in hex) None -c or --ciphertext Ciphertext to decrypt None -C Ciphertext to decrypt (in hex) None -m or --mode Mode of encryption/decryption (ecb, cbc or cfb) ecb -v or --verbose Print verbose output Flag not set -e or --encrypt Encrypt plaintext or file Flag set -d or --decrypt Decrypt ciphertext or file Flag not set -T Set if input text is a hex string Flag not set ## File Encryption Example 
+.PP
+.nf
+\&./encryptionPlatform -e -f <path/unencrypted_file\&.ext> -k <key> -i <iv>
+\&./encryptionPlatform -e -F <path/unencrypted_hex_file\&.ext> -K <hex_key> -I <hex_iv>
+
+.fi
+.PP
+.PP
+.SS "File Encryption Example"
+.PP
+.PP
+.nf
+\&./encryptionPlatform -d -f <path/encrypted_file\&.ext> -k <key> -i <iv>
+\&./encryptionPlatform -d -F <path/encrypted_hex_file\&.ext> -F <hex_key> -I <hex_iv>
+.fi
+.PP
+ 

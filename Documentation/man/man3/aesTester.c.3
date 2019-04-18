@@ -1,0 +1,101 @@
+.TH "aesTester.c" 3 "Thu Apr 18 2019" "Version 1.0" "EHN 410 - Group 7 - AES Encryption" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+aesTester.c \- Main file\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stdio\&.h'\fP
+.br
+\fC#include 'AES\&.h'\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const unsigned char \fBinvSBox\fP [256]"
+.br
+.RI "const unsigned char invSBox\&. Lookup table for the inverse sbox values used during AES Decryption\&. "
+.ti -1c
+.RI "const unsigned char \fBsbox\fP [256]"
+.br
+.RI "const unsigned char sbox\&. Lookup table for the sbox values used during AES Encryption\&. "
+.ti -1c
+.RI "const unsigned char \fBRcon\fP [255]"
+.br
+.RI "const unsigned char Rcon\&. Lookup table for the Rcon values used during Rijndael Key Schedule during the AES Encryption and Decryption\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Main file\&. 
+
+
+.PP
+\fBAuthors:\fP
+.RS 4
+Mohamed Ameen Omar (u16055323) 
+.PP
+Douglas Healy (u16018100) 
+.PP
+Llewellyn Moyse (u15100708) 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2019-03-19
+.RE
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (c) 2019 
+.RE
+.PP
+
+.PP
+Definition in file \fBaesTester\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+Result Should BE: d4 e0 b8 1e bf b4 41 27 5d 52 11 98 30 ae f1 e5
+.PP
+Result Should BE: e9 cb 3d af 31 32 2e 09 7d 2c 89 07 b5 72 5f 94
+.PP
+Result Should BE: \fI20\fP \fIB7\fP \fIEF\fP \fI8F\fP \fI45\fP \fIF9\fP \fIB7\fP \fI92\fP \fIF9\fP \fI8F\fP \fI92\fP \fI31\fP \fI8F\fP \fIB7\fP \fI4D\fP \fI31\fP
+.PP
+Result Should BE: 00 3C 6E 47 1F 4E 22 74 0E 08 1B 31 54 59 0B 1A
+.PP
+Result should be: 4a a8 b3 7a 6c 47 d8 c7 5b cf 6 29 7b 3a 3d 93
+.PP
+Result Should BE: { 0xd4,0xe0,0xb8,0x1e, 0x27,0xbf,0xb4,0x41, 0x11,0x98,0x5d,0x52, 0xae,0xf1,0xe5,0x30};
+.PP
+Result Should BE: {0xe9,0xcb,0x3d,0xaf, 0x09,0x31,0x32,0x2e, 0x89,0x07,0x7d,0x2c, 0x72,0x5f,0x94,0xb5};
+.PP
+Result should be: { 0x74,0x20,0x61,0x73, 0x68,0x69,0x20,0x74, 0x69,0x73,0x74,0x2e, 0x73,0x20,0x65,0x2e };
+.PP
+Definition at line 32 of file aesTester\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EHN 410 - Group 7 - AES Encryption from the source code\&.
